@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'dasbor/index'
+
   get 'salam/index'
   
   root 'salam#index'
