@@ -38,8 +38,8 @@ gem 'jbuilder', '~> 2.5'
 ## Templating
 gem "haml"
 gem "haml-rails", "~> 1.0" # Needed to replace Rails's Erb-based generators with Haml
-## Layout
-gem 'foundation-rails'
+gem 'bootstrap', '~> 4.0.0.beta'
+gem 'jquery-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
