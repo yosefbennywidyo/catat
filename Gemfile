@@ -38,7 +38,6 @@ gem 'jbuilder', '~> 2.5'
 ## Templating
 gem "haml"
 gem "haml-rails", "~> 1.0" # Needed to replace Rails's Erb-based generators with Haml
-gem 'bootstrap', '~> 4.0.0.beta'
 gem 'jquery-rails'
 gem "font-awesome-rails"
 
