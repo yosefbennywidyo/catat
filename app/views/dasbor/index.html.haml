@@ -1,2 +1,32 @@
-%h1 Dasbor#index
-%p Find me in app/views/dasbor/index.html.haml
+= render 'elements/header'
+.p-5.text-center.bg-secondary.gradient-overlay.h-100
+  .container
+    .row
+      .col-md-4
+        .card.p-5.m-1
+          .card-block
+            %h2
+              %b Surat Masuk
+            %p Jumlah Surat Masuk
+            %p xxx
+          .card-block
+            %a.btn.btn-secondary{:href => "#"} Membuat Surat Masuk
+      .col-md-4
+        .card.p-5.m-1
+          .card-block
+            %h2
+              %b Surat Keluar
+            %p Jumlah Surat Keluar
+            %p xxx
+          .card-block
+            %a.btn.btn-secondary{:href => "#"} Membuat Surat Keluar
+      .col-md-4
+        .card.p-5.m-1
+          .card-block
+            %h2
+              %b Konsep Surat
+            %p Jumlah Konsep Surat
+            %p xxx
+          .card-block
+            %a.btn.btn-secondary{:href => "#"} Membuat Konsep Surat
+
