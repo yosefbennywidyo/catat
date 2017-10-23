@@ -1,43 +1,39 @@
-= form_for @surat_masuk do |f|
-  - if @surat_masuk.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@surat_masuk.errors.count, "error")} prohibited this surat_masuk from being saved:"
-      %ul
-        - @surat_masuk.errors.full_messages.each do |message|
-          %li= message
-
-  .field
-    = f.label :nomor_surat
-    = f.text_field :nomor_surat
-  .field
-    = f.label :tanggal_surat
-    = f.date_select :tanggal_surat
-  .field
-    = f.label :lampiran
-    = f.text_field :lampiran
-  .field
-    = f.label :diterima_tgl
-    = f.date_select :diterima_tgl
-  .field
-    = f.label :no_agenda
-    = f.text_field :no_agenda
-  .field
-    = f.label :status
-    = f.text_field :status
-  .field
-    = f.label :sifat
-    = f.text_field :sifat
-  .field
-    = f.label :derajat
-    = f.text_field :derajat
-  .field
-    = f.label :pengaman
-    = f.text_field :pengaman
-  .field
-    = f.label :dari
-    = f.text_field :dari
-  .field
-    = f.label :perihal
-    = f.text_field :perihal
-  .actions
-    = f.submit 'Save'
+.container
+  = simple_form_for(@surat_masuk, html: { class: 'form-horizontal' }, defaults: { wrapper_html: { class: 'col-md-4 mb-2' } } ) do |f|
+    - if @surat_masuk.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@surat_masuk.errors.count, "error")} prohibited this surat_masuk from being saved:"
+        %ul
+          - @surat_masuk.errors.full_messages.each do |message|
+            %li= message
+    .row
+      = f.input :nomor_surat, label: 'Nomor surat'
+      = f.input :tanggal_surat, as: :date, label: 'Tanggal surat'
+      = f.input :lampiran, label: "Lampiran", wrapper_html: { class: 'col-md-3 mb-2' }
+    .row
+      = f.input :diterima_tgl, as: :date, label: 'Diterima tanggal'
+      = f.input :no_agenda, label: "Nomor agenda", wrapper_html: { class: 'col-md-3 mb-2' }
+      = f.input :status, label: "Status", wrapper_html: { class: 'col-md-3 mb-2' }
+    .row
+      = f.input :sifat, label: "Sifat", wrapper_html: { class: 'col-md-3 mb-2' }
+      = f.input :derajat, label: "Derajat pengaman"
+    .row
+      = f.input :derajat, label: "derajat"
+    .row
+      = f.button :submit
+/    = f.label :sifat
+/    = f.text_field :sifat
+/  .field
+/    = f.label :derajat
+/    = f.text_field :derajat
+/  .field
+/    = f.label :pengaman
+/    = f.text_field :pengaman
+/  .field
+/    = f.label :dari
+/    = f.text_field :dari
+/  .field
+/    = f.label :perihal
+/    = f.text_field :perihal
+/  .actions
+/    = f.submit 'Save'
