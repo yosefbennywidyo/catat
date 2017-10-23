@@ -1,0 +1,39 @@
+%p#notice= notice
+
+%p
+  %b Nomor surat:
+  = @surat_masuk.nomor_surat
+%p
+  %b Tanggal surat:
+  = @surat_masuk.tanggal_surat
+%p
+  %b Lampiran:
+  = @surat_masuk.lampiran
+%p
+  %b Diterima tgl:
+  = @surat_masuk.diterima_tgl
+%p
+  %b No agenda:
+  = @surat_masuk.no_agenda
+%p
+  %b Status:
+  = @surat_masuk.status
+%p
+  %b Sifat:
+  = @surat_masuk.sifat
+%p
+  %b Derajat:
+  = @surat_masuk.derajat
+%p
+  %b Pengaman:
+  = @surat_masuk.pengaman
+%p
+  %b Dari:
+  = @surat_masuk.dari
+%p
+  %b Perihal:
+  = @surat_masuk.perihal
+
+= link_to 'Edit', edit_surat_masuk_path(@surat_masuk)
+\|
+= link_to 'Back', surat_masuk_index_path

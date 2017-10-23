@@ -1,0 +1,2 @@
+class SuratMasuk < ApplicationRecord
+end

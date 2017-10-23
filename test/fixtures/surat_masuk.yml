@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nomor_surat: MyString
+  tanggal_surat: 2017-10-23
+  lampiran: MyString
+  diterima_tgl: 2017-10-23
+  no_agenda: MyString
+  status: MyString
+  sifat: MyString
+  derajat: MyString
+  pengaman: MyString
+  dari: MyString
+  perihal: MyString
+
+two:
+  nomor_surat: MyString
+  tanggal_surat: 2017-10-23
+  lampiran: MyString
+  diterima_tgl: 2017-10-23
+  no_agenda: MyString
+  status: MyString
+  sifat: MyString
+  derajat: MyString
+  pengaman: MyString
+  dari: MyString
+  perihal: MyString

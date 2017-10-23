@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :surat_masuk
   get 'dasbor/index'
 
   get 'salam/index'
