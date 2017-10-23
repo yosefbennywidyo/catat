@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171023061313) do
+ActiveRecord::Schema.define(version: 20171023090053) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 20171023061313) do
     t.string "no_agenda"
     t.string "status"
     t.string "sifat"
-    t.string "derajat"
     t.string "pengaman"
     t.string "dari"
     t.string "perihal"
