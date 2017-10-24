@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Judul:
+  = @surat_keluar.judul
+%p
+  %b Keterangan:
+  = @surat_keluar.keterangan
+
+= link_to 'Edit', edit_surat_keluar_path(@surat_keluar)
+\|
+= link_to 'Back', surat_keluar_index_path

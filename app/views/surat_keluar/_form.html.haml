@@ -1,0 +1,9 @@
+= simple_form_for(@surat_keluar) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :judul
+    = f.input :keterangan
+
+  .form-actions
+    = f.button :submit
