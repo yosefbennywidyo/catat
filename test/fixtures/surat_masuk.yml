@@ -8,8 +8,7 @@ one:
   no_agenda: MyString
   status: MyString
   sifat: MyString
-  derajat: MyString
-  pengaman: MyString
+  derajat_pengaman: MyString
   dari: MyString
   perihal: MyString
 
@@ -21,7 +20,6 @@ two:
   no_agenda: MyString
   status: MyString
   sifat: MyString
-  derajat: MyString
-  pengaman: MyString
+  derajat_pengaman: MyString
   dari: MyString
   perihal: MyString
