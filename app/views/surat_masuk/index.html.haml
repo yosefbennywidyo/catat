@@ -1,45 +1,42 @@
 %h1 Daftar surat_masuk
 
 .py-5
-  .container
-    .row
-      .col-md-12
-        %table.table
-          %thead
+  .row
+    .col-md-12
+      %table.table
+        %thead
+          %tr
+            %th Nomor surat
+            %th Tanggal surat
+            %th Lampiran
+            %th Diterima tgl
+            %th No agenda
+            %th Status
+            %th Sifat
+            %th Derajat pengaman
+            %th Dari
+            %th Perihal
+            %th
+            %th
+            %th
+        
+        %tbody
+          - @surat_masuk.each do |surat_masuk|
             %tr
-              %th Nomor surat
-              %th Tanggal surat
-              %th Lampiran
-              %th Diterima tgl
-              %th No agenda
-              %th Status
-              %th Sifat
-              %th Derajat pengaman
-              %th Dari
-              %th Perihal
-              %th
-              %th
-              %th
-        
-          %tbody
-            - @surat_masuk.each do |surat_masuk|
-              %tr
-                %td= surat_masuk.nomor_surat
-                %td= surat_masuk.tanggal_surat
-                %td= surat_masuk.lampiran
-                %td= surat_masuk.diterima_tgl
-                %td= surat_masuk.no_agenda
-                %td= surat_masuk.status
-                %td= surat_masuk.sifat
-                %td= surat_masuk.derajat_pengaman
-                %td= surat_masuk.dari
-                %td= surat_masuk.perihal
-                %td= link_to 'Show', surat_masuk
-                %td= link_to 'Edit', edit_surat_masuk_path(surat_masuk)
-                %td= link_to 'Destroy', surat_masuk, method: :delete, data: { confirm: 'Are you sure?' }
-        
-        %br
-        
-        = link_to 'New Surat masuk', new_surat_masuk_path, class: 'btn btn-lg btn-primary mx-1'
-
-
+              %td= surat_masuk.nomor_surat
+              %td= surat_masuk.tanggal_surat
+              %td= surat_masuk.lampiran
+              %td= surat_masuk.diterima_tgl
+              %td= surat_masuk.no_agenda
+              %td= surat_masuk.status
+              %td= surat_masuk.sifat
+              %td= surat_masuk.derajat_pengaman
+              %td= surat_masuk.dari
+              %td= surat_masuk.perihal
+              %td= link_to '<i class="fa d-inline fa-lg fa-expand" title="Tampilkan surat masuk"></i>'.html_safe, surat_masuk, class: 'btn btn-sm btn-primary mx-1'
+              %td= link_to '<i class="fa d-inline fa-lg fa-pencil" title="Edit surat masuk"></i>'.html_safe, edit_surat_masuk_path(surat_masuk), class: 'btn btn-sm btn-primary mx-1'
+              %td= link_to '<i class="fa d-inline fa-lg fa-trash" title="Hapus surat masuk"></i>'.html_safe, surat_masuk, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-primary mx-1'
+              
+.row.align-items-center.justify-content-center
+  .row
+    = link_to '<button class="btn btn-primary btn-circle btn-xl"><i class="fa fa-lg fa-plus" title="Buat surat masuk"></i></button>'.html_safe, new_surat_masuk_path, class: 'center-block'
