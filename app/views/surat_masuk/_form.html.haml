@@ -1,29 +1,28 @@
-.container
-  = simple_form_for(@surat_masuk, html: { class: 'form-horizontal' }, defaults: { wrapper_html: { class: 'col-md-4 mb-2' } } ) do |f|
-    - if @surat_masuk.errors.any?
-      #error_explanation
-        %h2= "#{pluralize(@surat_masuk.errors.count, "error")} prohibited this surat_masuk from being saved:"
-        %ul
-          - @surat_masuk.errors.full_messages.each do |message|
-            %li= message
-    .row
-      = f.input :nomor_surat, label: 'Nomor surat'
-      = f.input :tanggal_surat, as: :date, label: 'Tanggal surat'
-      = f.input :lampiran, label: "Lampiran", wrapper_html: { class: 'col-md-3 mb-2' }
-    .row
-      = f.input :diterima_tgl, as: :date, label: 'Diterima tanggal'
-      = f.input :no_agenda, label: "Nomor agenda", wrapper_html: { class: 'col-md-3 mb-2' }
-      = f.input :status, label: "Status", wrapper_html: { class: 'col-md-3 mb-2' }
-    .row
-      = f.input :sifat, label: "Sifat", wrapper_html: { class: 'col-md-3 mb-2' }
-      = f.input :derajat_pengaman, label: "Derajat pengaman"
-    .row
-      = f.input :dari, label: "Dari"
-      = f.input :perihal, label: "Perihal"
-    .row
-      = button_tag(type: 'submit', class: "btn btn-primary") do
-        %i.fa.d-inline.fa-lg.fa-save
-        Simpan
+= simple_form_for(@surat_masuk, html: { class: 'form-horizontal add-left-margin' }, defaults: { wrapper_html: { class: 'col-md-4 mb-2' } } ) do |f|
+  - if @surat_masuk.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@surat_masuk.errors.count, "error")} prohibited this surat_masuk from being saved:"
+      %ul
+        - @surat_masuk.errors.full_messages.each do |message|
+          %li= message
+  .row
+    = f.input :nomor_surat, label: 'Nomor surat'
+    = f.input :tanggal_surat, as: :date, label: 'Tanggal surat'
+    = f.input :lampiran, label: "Lampiran", wrapper_html: { class: 'col-md-3 mb-2' }
+  .row
+    = f.input :diterima_tgl, as: :date, label: 'Diterima tanggal'
+    = f.input :no_agenda, label: "Nomor agenda", wrapper_html: { class: 'col-md-3 mb-2' }
+    = f.input :status, label: "Status", wrapper_html: { class: 'col-md-3 mb-2' }
+  .row
+    = f.input :sifat, label: "Sifat", wrapper_html: { class: 'col-md-3 mb-2' }
+    = f.input :derajat_pengaman, label: "Derajat pengaman"
+  .row
+    = f.input :dari, label: "Dari"
+    = f.input :perihal, label: "Perihal"
+  .row
+    = button_tag(type: 'submit', class: "btn btn-primary") do
+      %i.fa.d-inline.fa-lg.fa-save
+      Simpan
 
 /    = f.label :dari
 /    = f.text_field :dari
