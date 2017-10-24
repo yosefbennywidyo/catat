@@ -21,7 +21,10 @@
       = f.input :dari, label: "Dari"
       = f.input :perihal, label: "Perihal"
     .row
-      = f.button :submit
+      = button_tag(type: 'submit', class: "btn btn-primary") do
+        %i.fa.d-inline.fa-lg.fa-save
+        Simpan
+
 /    = f.label :dari
 /    = f.text_field :dari
 /  .field
