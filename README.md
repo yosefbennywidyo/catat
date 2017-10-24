@@ -7,6 +7,7 @@
 * [ ] Membuat model untuk SuratKeluar
 * [ ] Membuat model untuk KonsepSurat
 * [ ] Membuat Model untuk CatatanKerja
+* [ ] Add white space to regex: `/catel/app/models/surat_masuk.rb`
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
