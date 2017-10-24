@@ -6,4 +6,6 @@
 = render 'form'
 
 %br
-%a.btn.btn-lg.btn-primary.mx-1{:href => surat_masuk_index_path} Kembali
+.row.align-items-center.justify-content-center
+  .row
+    = link_to '<button class="btn btn-primary btn-circle btn-xl"><i class="fa fa-lg fa-arrow-left" title="Batal membuat surat masuk"></i></button>'.html_safe, surat_masuk_index_path, class: 'center-block'
