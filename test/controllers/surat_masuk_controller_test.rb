@@ -17,7 +17,7 @@ class SuratMasukControllerTest < ActionDispatch::IntegrationTest
 
   test "should create surat_masuk" do
     assert_difference('SuratMasuk.count') do
-      post surat_masuk_index_url, params: { surat_masuk: { dari: @surat_masuk.dari, derajat: @surat_masuk.derajat, diterima_tgl: @surat_masuk.diterima_tgl, lampiran: @surat_masuk.lampiran, no_agenda: @surat_masuk.no_agenda, nomor_surat: @surat_masuk.nomor_surat, pengaman: @surat_masuk.pengaman, perihal: @surat_masuk.perihal, sifat: @surat_masuk.sifat, status: @surat_masuk.status, tanggal_surat: @surat_masuk.tanggal_surat } }
+      post surat_masuk_index_url, params: { surat_masuk: { dari: @surat_masuk.dari, derajat_pengaman: @surat_masuk.derajat_pengaman, diterima_tgl: @surat_masuk.diterima_tgl, lampiran: @surat_masuk.lampiran, no_agenda: @surat_masuk.no_agenda, nomor_surat: @surat_masuk.nomor_surat, perihal: @surat_masuk.perihal, sifat: @surat_masuk.sifat, status: @surat_masuk.status, tanggal_surat: @surat_masuk.tanggal_surat } }
     end
 
     assert_redirected_to surat_masuk_url(SuratMasuk.last)
@@ -34,7 +34,7 @@ class SuratMasukControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update surat_masuk" do
-    patch surat_masuk_url(@surat_masuk), params: { surat_masuk: { dari: @surat_masuk.dari, derajat: @surat_masuk.derajat, diterima_tgl: @surat_masuk.diterima_tgl, lampiran: @surat_masuk.lampiran, no_agenda: @surat_masuk.no_agenda, nomor_surat: @surat_masuk.nomor_surat, pengaman: @surat_masuk.pengaman, perihal: @surat_masuk.perihal, sifat: @surat_masuk.sifat, status: @surat_masuk.status, tanggal_surat: @surat_masuk.tanggal_surat } }
+    patch surat_masuk_url(@surat_masuk), params: { surat_masuk: { dari: @surat_masuk.dari, derajat_pengaman: @surat_masuk.derajat_pengaman, diterima_tgl: @surat_masuk.diterima_tgl, lampiran: @surat_masuk.lampiran, no_agenda: @surat_masuk.no_agenda, nomor_surat: @surat_masuk.nomor_surat, perihal: @surat_masuk.perihal, sifat: @surat_masuk.sifat, status: @surat_masuk.status, tanggal_surat: @surat_masuk.tanggal_surat } }
     assert_redirected_to surat_masuk_url(@surat_masuk)
   end
 
