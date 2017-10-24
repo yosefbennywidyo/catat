@@ -5,3 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+5.times do |i|
+  SuratMasuk.create!([{
+  nomor_surat: "nomor.surat/#{i}",
+  tanggal_surat: '01/01/2017',
+  lampiran: "-",
+  diterima_tgl: '01/01/2017',
+  no_agenda: "-",
+  status: "Asli",
+  sifat: "Sangat Segera/Kilat",
+  derajat_pengaman: "Sangat Rahasia",
+  dari: "Orang ke#{i}",
+  perihal: "perihal#{i}"
+  }])
+end
+
+p "Created #{SuratMasuk.count} surat masuk"
