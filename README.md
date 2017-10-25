@@ -14,11 +14,21 @@
 ## Error
 ### Rails Test
 ```bash
-Run options: --seed 8101
+Running via Spring preloader in process 6963
+Run options: --seed 23440
 
 # Running:
 
-F
+..F
+
+Failure:
+SuratKeluarControllerTest#test_should_update_surat_keluar [/home/ubuntu/workspace/catel/test/controllers/surat_keluar_controller_test.rb:38]:
+Expected response to be a <3XX: redirect>, but was a <200: OK>
+
+
+bin/rails test test/controllers/surat_keluar_controller_test.rb:36
+
+.F
 
 Failure:
 SuratKeluarControllerTest#test_should_create_surat_keluar [/home/ubuntu/workspace/catel/test/controllers/surat_keluar_controller_test.rb:19]:
@@ -29,16 +39,7 @@ Expected: 3
 
 bin/rails test test/controllers/surat_keluar_controller_test.rb:18
 
-.....F
-
-Failure:
-SuratKeluarControllerTest#test_should_update_surat_keluar [/home/ubuntu/workspace/catel/test/controllers/surat_keluar_controller_test.rb:38]:
-Expected response to be a <3XX: redirect>, but was a <200: OK>
-
-
-bin/rails test test/controllers/surat_keluar_controller_test.rb:36
-
-..........F
+..............F
 
 Failure:
 SuratMasukControllerTest#test_should_create_surat_masuk [/home/ubuntu/workspace/catel/test/controllers/surat_masuk_controller_test.rb:19]:
@@ -49,9 +50,10 @@ Expected: 3
 
 bin/rails test test/controllers/surat_masuk_controller_test.rb:18
 
-......
+....
 
-Finished in 0.943277s, 25.4432 runs/s, 30.7439 assertions/s.
+Finished in 1.005725s, 23.8634 runs/s, 28.8349 assertions/s.
+24 runs, 29 assertions, 3 failures, 0 errors, 0 skips
 ```
 
 
