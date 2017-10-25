@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :pengguna
   resources :daftar_pustaka
   resources :surat_keluar
   resources :surat_masuk

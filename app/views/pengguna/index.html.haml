@@ -1,0 +1,21 @@
+%h1 Listing pengguna
+
+%table
+  %thead
+    %tr
+      %th Nama
+      %th
+      %th
+      %th
+
+  %tbody
+    - @pengguna.each do |pengguna|
+      %tr
+        %td= pengguna.nama
+        %td= link_to 'Show', pengguna
+        %td= link_to 'Edit', edit_pengguna_path(pengguna)
+        %td= link_to 'Destroy', pengguna, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Pengguna', new_pengguna_path

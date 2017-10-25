@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Nama:
+  = @pengguna.nama
+
+= link_to 'Edit', edit_pengguna_path(@pengguna)
+\|
+= link_to 'Back', pengguna_index_path
