@@ -32,3 +32,14 @@ p "Created #{SuratMasuk.count} surat masuk"
 end
 
 p "Created #{SuratKeluar.count} surat keluar"
+
+
+
+5.times do |i|
+  DaftarPustaka.create!([{
+  judul: "Pustaka ke-#{i}",
+  keterangan: "Keterangan pustaka ke-#{i}"
+  }])
+end
+
+p "Created #{SuratKeluar.count} pustaka"
