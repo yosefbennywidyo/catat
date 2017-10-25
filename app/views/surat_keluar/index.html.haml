@@ -1,23 +1,31 @@
-%h1 Listing surat_keluar
+= render 'elements/header'
+%h1 Daftar Surat Masuk
 
-%table
-  %thead
-    %tr
-      %th Judul
-      %th Keterangan
-      %th
-      %th
-      %th
+.py-5
+  .row
+    .col-md-12
+      %table.table
+        %thead
+          %tr
+            %th Judul
+            %th Keterangan
+            %th
+            %th
+            %th
+        
+        %tbody
+          - @surat_keluar.each do |surat_keluar|
+            %tr
+              %td= surat_keluar.judul
+              %td= surat_keluar.keterangan
+              %td= link_to 'Show', surat_keluar
+              %td= link_to 'Edit', edit_surat_keluar_path(surat_keluar)
+              %td= link_to 'Destroy', surat_keluar, method: :delete, data: { confirm: 'Are you sure?' }
+              %td= link_to '<i class="fa d-inline fa-lg fa-expand" title="Tampilkan surat keluar"></i>'.html_safe, surat_keluar, class: 'btn btn-sm btn-primary mx-1'
+              %td= link_to '<i class="fa d-inline fa-lg fa-pencil" title="Edit surat keluar"></i>'.html_safe, edit_surat_keluar_path(surat_keluar), class: 'btn btn-sm btn-primary mx-1'
+              %td= link_to '<i class="fa d-inline fa-lg fa-trash" title="Hapus surat keluar"></i>'.html_safe, surat_keluar, method: :delete, data: { confirm: 'Anda yakin ingin menghapus surat ini?' }, class: 'btn btn-sm btn-primary mx-1'
 
-  %tbody
-    - @surat_keluar.each do |surat_keluar|
-      %tr
-        %td= surat_keluar.judul
-        %td= surat_keluar.keterangan
-        %td= link_to 'Show', surat_keluar
-        %td= link_to 'Edit', edit_surat_keluar_path(surat_keluar)
-        %td= link_to 'Destroy', surat_keluar, method: :delete, data: { confirm: 'Are you sure?' }
-
-%br
-
-= link_to 'New Surat keluar', new_surat_keluar_path
+.row.align-items-center.justify-content-center
+  .row
+    = link_to '<button class="btn btn-primary btn-circle btn-xl"><i class="fa fa-lg fa-arrow-left" title="Kembali ke Dasbor"></i></button>'.html_safe, dasbor_index_path, class: 'center-block'
+    = link_to '<button class="btn btn-primary btn-circle btn-xl"><i class="fa fa-lg fa-plus" title="Buat surat keluar"></i></button>'.html_safe, new_surat_keluar_path, class: 'center-block add-left-margin'
