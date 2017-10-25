@@ -19,7 +19,7 @@
               %td= daftar_pustaka.judul
               %td= daftar_pustaka.keterangan
               %td= link_to '<i class="fa d-inline fa-lg fa-expand" title="Tampilkan pustaka"></i>'.html_safe, daftar_pustaka, class: 'btn btn-sm btn-primary mx-1'
-              %td= link_to '<i class="fa d-inline fa-lg fa-pencil" title="Edit pustaka"></i>'.html_safe, edit_daftar_pustaka_path(surat_keluar), class: 'btn btn-sm btn-primary mx-1'
+              %td= link_to '<i class="fa d-inline fa-lg fa-pencil" title="Edit pustaka"></i>'.html_safe, edit_daftar_pustaka_path(daftar_pustaka), class: 'btn btn-sm btn-primary mx-1'
               %td= link_to '<i class="fa d-inline fa-lg fa-trash" title="Hapus pustaka"></i>'.html_safe, daftar_pustaka, method: :delete, data: { confirm: 'Anda yakin ingin menghapus surat ini?' }, class: 'btn btn-sm btn-primary mx-1'
 
 .row.align-items-center.justify-content-center
