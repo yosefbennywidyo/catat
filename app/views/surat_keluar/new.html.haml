@@ -1,5 +1,10 @@
-%h1 New surat_keluar
+= render 'elements/header'
+.container
+%h1.add-left-margin Membuat Surat Keluar
 
 = render 'form'
 
-= link_to 'Back', surat_keluar_index_path
+%br
+.row.align-items-center.justify-content-center
+  .row
+    = link_to '<button class="btn btn-primary btn-circle btn-xl"><i class="fa fa-lg fa-arrow-left" title="Batal membuat surat keluar"></i></button>'.html_safe, surat_keluar_index_path, class: 'center-block'
