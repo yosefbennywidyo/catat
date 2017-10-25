@@ -1,5 +1,10 @@
-%h1 New daftar_pustaka
+= render 'elements/header'
+.container
+%h1.add-left-margin Membuat Pustaka
 
 = render 'form'
 
-= link_to 'Back', daftar_pustaka_index_path
+%br
+.row.align-items-center.justify-content-center
+  .row
+    = link_to '<button class="btn btn-primary btn-circle btn-xl"><i class="fa fa-lg fa-arrow-left" title="Batal membuat surat keluar"></i></button>'.html_safe, daftar_pustaka_index_path, class: 'center-block'
