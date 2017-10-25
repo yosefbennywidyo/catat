@@ -10,10 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171025060428) do
+ActiveRecord::Schema.define(version: 20171025073132) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "Pengguna_StatusKepegawaian", id: false, force: :cascade do |t|
+    t.bigint "Pengguna_id", null: false
+    t.bigint "StatusKepegawaian_id", null: false
+  end
 
   create_table "daftar_pustaka", force: :cascade do |t|
     t.string "judul"
@@ -26,6 +31,12 @@ ActiveRecord::Schema.define(version: 20171025060428) do
     t.string "nama"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "status_kepegawaian"
+  end
+
+  create_table "pengguna_status_kepegawaian", id: false, force: :cascade do |t|
+    t.bigint "status_kepegawaian_id", null: false
+    t.bigint "pengguna_id", null: false
   end
 
   create_table "status_kepegawaian", force: :cascade do |t|

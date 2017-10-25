@@ -53,3 +53,14 @@ p "Created #{SuratKeluar.count} pustaka"
 end
 
 p "Created #{SuratKeluar.count} pengguna"
+
+
+
+StatusKepegawaian.create!([{
+  status_kepegawaian: "PNS"
+}])
+StatusKepegawaian.create!([{
+  status_kepegawaian: "PTT"
+}])
+
+p "Created #{StatusKepegawaian.count} status kepegawaian"
