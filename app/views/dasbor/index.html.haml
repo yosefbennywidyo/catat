@@ -7,7 +7,10 @@
           %h2
             %b Surat Masuk
           %p Anda dapat menemukan detil surat masuk disini
-          %p Jumlah Surat Masuk: xxx
+          %p
+          Jumlah Surat Masuk:
+          = @jumlah_surat_masuk
+          %p
         .card-block
           %a.btn.btn-secondary{:href => surat_masuk_index_path} Detil Surat Masuk
     .col-md-6
@@ -16,9 +19,12 @@
           %h2
             %b Surat Keluar
           %p Anda dapat menemukan detil surat keluar disini
-          %p Jumlah Surat Keluar: xxx
+          %p
+          Jumlah Surat Keluar:
+          = @jumlah_surat_keluar
+          %p
         .card-block
-          %a.btn.btn-secondary{:href => "#"} Membuat Surat Keluar
+          %a.btn.btn-secondary{:href => surat_keluar_index_path} Detil Surat Keluar
     .col-md-6
       .card.p-5.m-1
         .card-block
