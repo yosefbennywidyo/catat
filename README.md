@@ -4,10 +4,14 @@
 * [ ] [Association](https://github.com/plataformatec/simple_form#associations)
 * [ ] Membuat model untuk Status, Sifat and Derajat Pengaman (ex. comment as commentable)
 * [ ] Membuat model untuk Disposisi
-* [ ] Membuat model untuk SuratKeluar
+* [x] Membuat model untuk SuratKeluar
 * [x] Membuat model untuk SuratMasuk
-* [ ] Membuat model untuk KonsepSurat
+* [x] Membuat model untuk ~~KonsepSurat~~ DaftarPustaka
 * [ ] Membuat Model untuk CatatanKerja
+* [x] Membuat model untuk Pengguna
+  * [x] Nama
+  * [x] StatusKepegawaian
+  * [ ] Jabatan
 * [ ] Membuat model untuk Login/Signup
 * [ ] Add white space to regex: `/catel/app/models/surat_masuk.rb`
 
