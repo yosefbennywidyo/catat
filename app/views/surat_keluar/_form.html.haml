@@ -1,7 +1,7 @@
 = simple_form_for(@surat_keluar, html: { class: 'form-horizontal add-left-margin' }, defaults: { wrapper_html: { class: 'col-md-4 mb-2' } } ) do |f|
   - if @surat_keluar.errors.any?
     #error_explanation
-      %h2= "#{pluralize(@surat_masuk.errors.count, "error")} menyebabkan Surat Keluar yang dibuat tidak dapat disimpan:"
+      %h2= "#{pluralize(@surat_keluar.errors.count, "error")} menyebabkan Surat Keluar yang dibuat tidak dapat disimpan:"
       %ul
         - @surat_keluar.errors.full_messages.each do |message|
           %li= message
