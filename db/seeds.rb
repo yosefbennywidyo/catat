@@ -43,3 +43,13 @@ p "Created #{SuratKeluar.count} surat keluar"
 end
 
 p "Created #{SuratKeluar.count} pustaka"
+
+
+
+5.times do |i|
+  Pengguna.create!([{
+  nama: "Pengguna ke-#{i}"
+  }])
+end
+
+p "Created #{SuratKeluar.count} pengguna"
