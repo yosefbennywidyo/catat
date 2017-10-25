@@ -1,7 +1,9 @@
-%h1 Editing daftar_pustaka
+= render 'elements/header'
+%h1 Edit Pustaka
 
 = render 'form'
 
-= link_to 'Show', @daftar_pustaka
-\|
-= link_to 'Back', daftar_pustaka_index_path
+.row.align-items-center.justify-content-center
+  .row
+    = link_to '<button class="btn btn-primary btn-circle btn-xl"><i class="fa fa-lg fa-close" title="Batal edit pustaka"></i></button>'.html_safe, daftar_pustaka_index_path, class: 'center-block'
+    = link_to '<button class="btn btn-primary btn-circle btn-xl"><i class="fa fa-lg fa-expand" title="Tampilkan pustaka"></i></button>'.html_safe, @daftar_pustaka, class: 'center-block add-left-margin'
