@@ -1,5 +1,5 @@
 = render 'elements/header'
-%h1 Daftar Surat Masuk
+%h1 Daftar Surat Keluar
 
 .py-5
   .row
@@ -18,9 +18,6 @@
             %tr
               %td= surat_keluar.judul
               %td= surat_keluar.keterangan
-              %td= link_to 'Show', surat_keluar
-              %td= link_to 'Edit', edit_surat_keluar_path(surat_keluar)
-              %td= link_to 'Destroy', surat_keluar, method: :delete, data: { confirm: 'Are you sure?' }
               %td= link_to '<i class="fa d-inline fa-lg fa-expand" title="Tampilkan surat keluar"></i>'.html_safe, surat_keluar, class: 'btn btn-sm btn-primary mx-1'
               %td= link_to '<i class="fa d-inline fa-lg fa-pencil" title="Edit surat keluar"></i>'.html_safe, edit_surat_keluar_path(surat_keluar), class: 'btn btn-sm btn-primary mx-1'
               %td= link_to '<i class="fa d-inline fa-lg fa-trash" title="Hapus surat keluar"></i>'.html_safe, surat_keluar, method: :delete, data: { confirm: 'Anda yakin ingin menghapus surat ini?' }, class: 'btn btn-sm btn-primary mx-1'
