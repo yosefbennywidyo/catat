@@ -1,0 +1,21 @@
+%h1 Listing status_kepegawaian
+
+%table
+  %thead
+    %tr
+      %th Status kepegawaian
+      %th
+      %th
+      %th
+
+  %tbody
+    - @status_kepegawaian.each do |status_kepegawaian|
+      %tr
+        %td= status_kepegawaian.status_kepegawaian
+        %td= link_to 'Show', status_kepegawaian
+        %td= link_to 'Edit', edit_status_kepegawaian_path(status_kepegawaian)
+        %td= link_to 'Destroy', status_kepegawaian, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Status kepegawaian', new_status_kepegawaian_path

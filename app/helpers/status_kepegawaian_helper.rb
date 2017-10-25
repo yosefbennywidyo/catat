@@ -1,0 +1,2 @@
+module StatusKepegawaianHelper
+end

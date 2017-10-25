@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Status kepegawaian:
+  = @status_kepegawaian.status_kepegawaian
+
+= link_to 'Edit', edit_status_kepegawaian_path(@status_kepegawaian)
+\|
+= link_to 'Back', status_kepegawaian_index_path

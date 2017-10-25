@@ -1,0 +1,2 @@
+class StatusKepegawaian < ApplicationRecord
+end
