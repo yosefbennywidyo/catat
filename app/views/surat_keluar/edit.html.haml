@@ -1,7 +1,9 @@
-%h1 Editing surat_keluar
+= render 'elements/header'
+%h1 Edit Surat Masuk
 
 = render 'form'
 
-= link_to 'Show', @surat_keluar
-\|
-= link_to 'Back', surat_keluar_index_path
+.row.align-items-center.justify-content-center
+  .row
+    = link_to '<button class="btn btn-primary btn-circle btn-xl"><i class="fa fa-lg fa-close" title="Batal edit surat keluar"></i></button>'.html_safe, surat_keluar_index_path, class: 'center-block'
+    = link_to '<button class="btn btn-primary btn-circle btn-xl"><i class="fa fa-lg fa-expand" title="Tampilkan surat keluar"></i></button>'.html_safe, @surat_keluar, class: 'center-block add-left-margin'
