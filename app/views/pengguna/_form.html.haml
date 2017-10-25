@@ -3,6 +3,9 @@
 
   .form-inputs
     = f.input :nama
+  
+  .form-inputs
+    = f.association :status_kepegawaian, label_method: :status_kepegawaian, value_method: :id, include_blank: false, as: :radio_buttons
 
   .form-actions
     = f.button :submit
