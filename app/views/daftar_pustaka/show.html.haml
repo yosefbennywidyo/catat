@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Judul:
+  = @daftar_pustaka.judul
+%p
+  %b Keterangan:
+  = @daftar_pustaka.keterangan
+
+= link_to 'Edit', edit_daftar_pustaka_path(@daftar_pustaka)
+\|
+= link_to 'Back', daftar_pustaka_index_path

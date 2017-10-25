@@ -1,0 +1,23 @@
+%h1 Listing daftar_pustaka
+
+%table
+  %thead
+    %tr
+      %th Judul
+      %th Keterangan
+      %th
+      %th
+      %th
+
+  %tbody
+    - @daftar_pustaka.each do |daftar_pustaka|
+      %tr
+        %td= daftar_pustaka.judul
+        %td= daftar_pustaka.keterangan
+        %td= link_to 'Show', daftar_pustaka
+        %td= link_to 'Edit', edit_daftar_pustaka_path(daftar_pustaka)
+        %td= link_to 'Destroy', daftar_pustaka, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Daftar pustaka', new_daftar_pustaka_path

@@ -1,0 +1,2 @@
+class DaftarPustaka < ApplicationRecord
+end
