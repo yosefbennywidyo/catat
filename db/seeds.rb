@@ -21,3 +21,14 @@
 end
 
 p "Created #{SuratMasuk.count} surat masuk"
+
+
+
+5.times do |i|
+  SuratKeluar.create!([{
+  judul: "Surat keluar ke-#{i}",
+  keterangan: "Keterangan surat keluar ke-#{i}"
+  }])
+end
+
+p "Created #{SuratKeluar.count} surat keluar"
