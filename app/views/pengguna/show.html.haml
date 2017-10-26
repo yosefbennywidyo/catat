@@ -1,9 +1,11 @@
+= render 'elements/header'
 %p#notice= notice
+.add-trbl-margin
+  %p
+    %b Nama:
+    = @pengguna.nama
 
-%p
-  %b Nama:
-  = @pengguna.nama
-
-= link_to 'Edit', edit_pengguna_path(@pengguna)
-\|
-= link_to 'Back', pengguna_index_path
+  = link_to '<button class="btn btn-primary btn-circle btn-xl"><i class="fa fa-lg fa-pencil" title="Edit status kepegawaian"></i></button>'.html_safe, edit_pengguna_path(@pengguna), class: 'center-block'
+  .row.align-items-center.justify-content-center
+    .row
+      = link_to '<button class="btn btn-primary btn-circle btn-xl"><i class="fa fa-lg fa-arrow-left" title="Kembali ke daftar status kepegawaian"></i></button>'.html_safe, pengguna_index_path, class: 'center-block'
