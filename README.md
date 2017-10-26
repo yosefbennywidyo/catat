@@ -11,9 +11,13 @@
 * [x] Membuat model untuk Pengguna
   * [x] Nama
   * [x] StatusKepegawaian
-  * [ ] Jabatan
+  * [x] Jabatan
+  * [x] Seksi
 * [ ] Membuat model untuk Login/Signup
 * [ ] Add white space to regex: `/catel/app/models/surat_masuk.rb`
+
+Future Improvements
+* If `Jabatan.nama = Kepala..../Penyelenggara....` is doing other task outside the office than `Jabatan.nama = PLH....`
 
 ## Error
 ### Rails Test
