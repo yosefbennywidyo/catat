@@ -8,7 +8,7 @@
             %b Surat Masuk
           %p Anda dapat menemukan detil surat masuk disini
           %p
-          Jumlah Surat Masuk:
+          Jumlah surat masuk:
           = @jumlah_surat_masuk
           %p
         .card-block
@@ -20,7 +20,7 @@
             %b Surat Keluar
           %p Anda dapat menemukan detil surat keluar disini
           %p
-          Jumlah Surat Keluar:
+          Jumlah surat keluar:
           = @jumlah_surat_keluar
           %p
         .card-block
@@ -32,8 +32,44 @@
             %b Pustaka
           %p Anda dapat menemukan detil rujukan pembuatan surat disini
           %p
-          Jumlah Pustaka: 
+          Jumlah pustaka: 
           = @jumlah_pustaka
           %p
         .card-block
           %a.btn.btn-secondary{:href => daftar_pustaka_index_path} Detil Pustaka
+    .col-md-6
+      .card.p-5.m-1
+        .card-block
+          %h2
+            %b Pengguna
+          %p Anda dapat menemukan detil pengguna disini
+          %p
+          Jumlah pengguna: 
+          = @jumlah_pengguna
+          %p
+        .card-block
+          %a.btn.btn-secondary{:href => pengguna_index_path} Detil Pengguna
+    .col-md-6
+      .card.p-5.m-1
+        .card-block
+          %h2
+            %b Status Kepegawaian
+          %p Anda dapat menemukan detil status kepegawaian disini
+          %p
+          Jumlah status kepegawaian: 
+          = @jumlah_status_kepegawaian
+          %p
+        .card-block
+          %a.btn.btn-secondary{:href => status_kepegawaian_index_path} Detil Status Kepegawaian
+    .col-md-6
+      .card.p-5.m-1
+        .card-block
+          %h2
+            %b Jabatan
+          %p Anda dapat menemukan detil jabatan disini
+          %p
+          Jumlah jabatan: 
+          = @jumlah_jabatan
+          %p
+        .card-block
+          %a.btn.btn-secondary{:href => jabatan_index_path} Detil Jabatan
