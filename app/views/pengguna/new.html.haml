@@ -1,5 +1,10 @@
-%h1 New pengguna
+= render 'elements/header'
+.container
+%h1.add-left-margin Membuat Pengguna
 
 = render 'form'
 
-= link_to 'Back', pengguna_index_path
+%br
+.row.align-items-center.justify-content-center
+  .row
+    = link_to '<button class="btn btn-primary btn-circle btn-xl"><i class="fa fa-lg fa-arrow-left" title="Batal membuat pengguna"></i></button>'.html_safe, pengguna_index_path, class: 'center-block'
