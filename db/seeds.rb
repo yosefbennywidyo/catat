@@ -64,3 +64,56 @@ StatusKepegawaian.create!([{
 }])
 
 p "Created #{StatusKepegawaian.count} status kepegawaian"
+
+
+
+Jabatan.create!([{
+  nama: "Kepala Kantor"
+}])
+Jabatan.create!([{
+  nama: "PLH Kepala Kantor"
+}])
+Jabatan.create!([{
+  nama: "Kepala Sub Bagian Tata Usaha"
+}])
+Jabatan.create!([{
+  nama: "PLH Kepala Sub Bagian Tata Usaha"
+}])
+Jabatan.create!([{
+  nama: "Kepala Seksi Urusan Agama Katolik"
+}])
+Jabatan.create!([{
+  nama: "PLH Kepala Seksi Urusan Agama Katolik"
+}])
+Jabatan.create!([{
+  nama: "Kepala Seksi Urusan Agama Kristen"
+}])
+Jabatan.create!([{
+  nama: "PLH Kepala Seksi Urusan Agama Kristen"
+}])
+Jabatan.create!([{
+  nama: "Penyelenggara Pendidikan Agama Katolik"
+}])
+Jabatan.create!([{
+  nama: "PLH Penyelenggara Pendidikan Agama Katolik"
+}])
+Jabatan.create!([{
+  nama: "Kepala Seksi Pendidikan Agama Kristen"
+}])
+Jabatan.create!([{
+  nama: "PLH Kepala Seksi Pendidikan Agama Kristen"
+}])
+Jabatan.create!([{
+  nama: "Kepala Seksi Pendidikan dan Bimbingan Masyarakat Islam"
+}])
+Jabatan.create!([{
+  nama: "PLH Kepala Seksi Pendidikan dan Bimbingan Masyarakat Islam"
+}])
+Jabatan.create!([{
+  nama: "Penyelenggara Haji dan Umrah"
+}])
+Jabatan.create!([{
+  nama: "PLH Penyelenggara Haji dan Umrah"
+}])
+
+p "Created #{Jabatan.count} nama jabatan"
