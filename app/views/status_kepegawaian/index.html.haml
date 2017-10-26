@@ -1,21 +1,26 @@
-%h1 Listing status_kepegawaian
+= render 'elements/header'
+%h1 Daftar Status Kepegawaian
 
-%table
-  %thead
-    %tr
-      %th Status kepegawaian
-      %th
-      %th
-      %th
+.py-5
+  .row
+    .col-md-12
+      %table.table
+        %thead
+          %tr
+            %th Status Kepegawaian
+            %th
+            %th
+            %th
+        
+        %tbody
+          - @status_kepegawaian.each do |status_kepegawaian|
+            %tr
+              %td= status_kepegawaian.status_kepegawaian
+              %td= link_to '<i class="fa d-inline fa-lg fa-expand" title="Tampilkan status kepegawaian"></i>'.html_safe, status_kepegawaian, class: 'btn btn-sm btn-primary mx-1'
+              %td= link_to '<i class="fa d-inline fa-lg fa-pencil" title="Edit status kepegawaian"></i>'.html_safe, edit_status_kepegawaian_path(status_kepegawaian), class: 'btn btn-sm btn-primary mx-1'
+              %td= link_to '<i class="fa d-inline fa-lg fa-trash" title="Hapus status kepegawaian"></i>'.html_safe, status_kepegawaian, method: :delete, data: { confirm: 'Anda yakin ingin menghapus status kepegawaian ini?' }, class: 'btn btn-sm btn-primary mx-1'
 
-  %tbody
-    - @status_kepegawaian.each do |status_kepegawaian|
-      %tr
-        %td= status_kepegawaian.status_kepegawaian
-        %td= link_to 'Show', status_kepegawaian
-        %td= link_to 'Edit', edit_status_kepegawaian_path(status_kepegawaian)
-        %td= link_to 'Destroy', status_kepegawaian, method: :delete, data: { confirm: 'Are you sure?' }
-
-%br
-
-= link_to 'New Status kepegawaian', new_status_kepegawaian_path
+.row.align-items-center.justify-content-center
+  .row
+    = link_to '<button class="btn btn-primary btn-circle btn-xl"><i class="fa fa-lg fa-arrow-left" title="Kembali ke Dasbor"></i></button>'.html_safe, dasbor_index_path, class: 'center-block'
+    = link_to '<button class="btn btn-primary btn-circle btn-xl"><i class="fa fa-lg fa-plus" title="Buat status kepegawaian"></i></button>'.html_safe, new_status_kepegawaian_path, class: 'center-block add-left-margin'

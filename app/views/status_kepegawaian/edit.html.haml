@@ -1,7 +1,9 @@
-%h1 Editing status_kepegawaian
+= render 'elements/header'
+%h1 Edit Status Kepegawaian
 
 = render 'form'
 
-= link_to 'Show', @status_kepegawaian
-\|
-= link_to 'Back', status_kepegawaian_index_path
+.row.align-items-center.justify-content-center
+  .row
+    = link_to '<button class="btn btn-primary btn-circle btn-xl"><i class="fa fa-lg fa-close" title="Batal edit status kepegawaian"></i></button>'.html_safe, status_kepegawaian_index_path, class: 'center-block'
+    = link_to '<button class="btn btn-primary btn-circle btn-xl"><i class="fa fa-lg fa-expand" title="Tampilkan status kepegawaian"></i></button>'.html_safe, @status_kepegawaian, class: 'center-block add-left-margin'
