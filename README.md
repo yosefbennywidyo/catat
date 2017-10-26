@@ -12,7 +12,12 @@
   * [x] Nama
   * [x] StatusKepegawaian
   * [x] Jabatan
-  * [x] Seksi
+  * [ ] Seksi
+
+    > Create join table
+
+    > Create validations
+
 * [ ] Membuat model untuk Login/Signup
 * [ ] Add white space to regex: `/catel/app/models/surat_masuk.rb`
 
