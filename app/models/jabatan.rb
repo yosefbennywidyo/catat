@@ -1,0 +1,2 @@
+class Jabatan < ApplicationRecord
+end

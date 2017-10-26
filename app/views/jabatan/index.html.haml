@@ -1,0 +1,21 @@
+%h1 Listing jabatan
+
+%table
+  %thead
+    %tr
+      %th Nama
+      %th
+      %th
+      %th
+
+  %tbody
+    - @jabatan.each do |jabatan|
+      %tr
+        %td= jabatan.nama
+        %td= link_to 'Show', jabatan
+        %td= link_to 'Edit', edit_jabatan_path(jabatan)
+        %td= link_to 'Destroy', jabatan, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Jabatan', new_jabatan_path
