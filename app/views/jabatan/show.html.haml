@@ -1,9 +1,11 @@
+= render 'elements/header'
 %p#notice= notice
+.add-trbl-margin
+  %p
+    %b Nama:
+    = @jabatan.nama
 
-%p
-  %b Nama:
-  = @jabatan.nama
-
-= link_to 'Edit', edit_jabatan_path(@jabatan)
-\|
-= link_to 'Back', jabatan_index_path
+  = link_to '<button class="btn btn-primary btn-circle btn-xl"><i class="fa fa-lg fa-pencil" title="Edit jabatan"></i></button>'.html_safe, edit_jabatan_path(@jabatan), class: 'center-block'
+  .row.align-items-center.justify-content-center
+    .row
+      = link_to '<button class="btn btn-primary btn-circle btn-xl"><i class="fa fa-lg fa-arrow-left" title="Kembali ke daftar jabatan"></i></button>'.html_safe, jabatan_index_path, class: 'center-block'

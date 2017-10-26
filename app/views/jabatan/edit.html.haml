@@ -1,7 +1,9 @@
-%h1 Editing jabatan
+= render 'elements/header'
+%h1 Edit Jabatan
 
 = render 'form'
 
-= link_to 'Show', @jabatan
-\|
-= link_to 'Back', jabatan_index_path
+.row.align-items-center.justify-content-center
+  .row
+    = link_to '<button class="btn btn-primary btn-circle btn-xl"><i class="fa fa-lg fa-close" title="Batal edit jabatan"></i></button>'.html_safe, jabatan_index_path, class: 'center-block'
+    = link_to '<button class="btn btn-primary btn-circle btn-xl"><i class="fa fa-lg fa-expand" title="Tampilkan jabatan"></i></button>'.html_safe, @jabatan, class: 'center-block add-left-margin'

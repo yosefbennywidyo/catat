@@ -1,21 +1,26 @@
-%h1 Listing jabatan
+= render 'elements/header'
+%h1 Daftar Jabatan
 
-%table
-  %thead
-    %tr
-      %th Nama
-      %th
-      %th
-      %th
+.py-5
+  .row
+    .col-md-12
+      %table.table
+        %thead
+          %tr
+            %th Nama
+            %th
+            %th
+            %th
+        
+        %tbody
+          - @jabatan.each do |jabatan|
+            %tr
+              %td= jabatan.nama
+              %td= link_to '<i class="fa d-inline fa-lg fa-expand" title="Tampilkan jabatan"></i>'.html_safe, jabatan, class: 'btn btn-sm btn-primary mx-1'
+              %td= link_to '<i class="fa d-inline fa-lg fa-pencil" title="Edit jabatan"></i>'.html_safe, edit_jabatan_path(jabatan), class: 'btn btn-sm btn-primary mx-1'
+              %td= link_to '<i class="fa d-inline fa-lg fa-trash" title="Hapus jabatan"></i>'.html_safe, jabatan, method: :delete, data: { confirm: 'Anda yakin ingin menghapus jabatan ini?' }, class: 'btn btn-sm btn-primary mx-1'
 
-  %tbody
-    - @jabatan.each do |jabatan|
-      %tr
-        %td= jabatan.nama
-        %td= link_to 'Show', jabatan
-        %td= link_to 'Edit', edit_jabatan_path(jabatan)
-        %td= link_to 'Destroy', jabatan, method: :delete, data: { confirm: 'Are you sure?' }
-
-%br
-
-= link_to 'New Jabatan', new_jabatan_path
+.row.align-items-center.justify-content-center
+  .row
+    = link_to '<button class="btn btn-primary btn-circle btn-xl"><i class="fa fa-lg fa-arrow-left" title="Kembali ke Dasbor"></i></button>'.html_safe, dasbor_index_path, class: 'center-block'
+    = link_to '<button class="btn btn-primary btn-circle btn-xl"><i class="fa fa-lg fa-plus" title="Buat jabatan"></i></button>'.html_safe, new_jabatan_path, class: 'center-block add-left-margin'
