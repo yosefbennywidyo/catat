@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Nama:
+  = @seksi.nama
+
+= link_to 'Edit', edit_seksi_path(@seksi)
+\|
+= link_to 'Back', seksi_index_path

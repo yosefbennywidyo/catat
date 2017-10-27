@@ -1,0 +1,2 @@
+module SeksiHelper
+end

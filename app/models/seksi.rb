@@ -1,0 +1,2 @@
+class Seksi < ApplicationRecord
+end

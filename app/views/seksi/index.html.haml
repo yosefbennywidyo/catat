@@ -1,0 +1,21 @@
+%h1 Listing seksi
+
+%table
+  %thead
+    %tr
+      %th Nama
+      %th
+      %th
+      %th
+
+  %tbody
+    - @seksi.each do |seksi|
+      %tr
+        %td= seksi.nama
+        %td= link_to 'Show', seksi
+        %td= link_to 'Edit', edit_seksi_path(seksi)
+        %td= link_to 'Destroy', seksi, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Seksi', new_seksi_path
