@@ -69,6 +69,6 @@ class PenggunaController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pengguna_params
-      params.require(:pengguna).permit(:nama, status_kepegawaian_ids:[], jabatan_ids:[])
+      params.require(:pengguna).permit(:nama, status_kepegawaian_ids:[], jabatan_ids:[], seksi_ids:[])
     end
 end
