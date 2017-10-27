@@ -12,8 +12,8 @@
   * [x] Nama
   * [x] StatusKepegawaian
   * [x] Jabatan
-  * [ ] Seksi
-  * [ ] Unit
+  * [x] Seksi
+  * [ ] Unit?
 
     > Create join table
 
@@ -28,12 +28,63 @@ Future Improvements
 ## Error
 ### Rails Test
 ```bash
-Running via Spring preloader in process 6152
-Run options: --seed 43574
+Running via Spring preloader in process 6138
+Run options: --seed 62688
 
 # Running:
 
+..................F
+
+Failure:
+SeksiControllerTest#test_should_update_seksi [/home/ubuntu/workspace/catel/test/controllers/seksi_controller_test.rb:38]:
+Expected response to be a <3XX: redirect>, but was a <200: OK>
+
+
+bin/rails test test/controllers/seksi_controller_test.rb:36
+
 .F
+
+Failure:
+SeksiControllerTest#test_should_create_seksi [/home/ubuntu/workspace/catel/test/controllers/seksi_controller_test.rb:19]:
+"Seksi.count" didn't change by 1.
+Expected: 3
+  Actual: 2
+
+
+bin/rails test test/controllers/seksi_controller_test.rb:18
+
+...F
+
+Failure:
+SuratMasukControllerTest#test_should_create_surat_masuk [/home/ubuntu/workspace/catel/test/controllers/surat_masuk_controller_test.rb:19]:
+"SuratMasuk.count" didn't change by 1.
+Expected: 3
+  Actual: 2
+
+
+bin/rails test test/controllers/surat_masuk_controller_test.rb:18
+
+.....F
+
+Failure:
+SuratKeluarControllerTest#test_should_create_surat_keluar [/home/ubuntu/workspace/catel/test/controllers/surat_keluar_controller_test.rb:19]:
+"SuratKeluar.count" didn't change by 1.
+Expected: 3
+  Actual: 2
+
+
+bin/rails test test/controllers/surat_keluar_controller_test.rb:18
+
+..F
+
+Failure:
+SuratKeluarControllerTest#test_should_update_surat_keluar [/home/ubuntu/workspace/catel/test/controllers/surat_keluar_controller_test.rb:38]:
+Expected response to be a <3XX: redirect>, but was a <200: OK>
+
+
+bin/rails test test/controllers/surat_keluar_controller_test.rb:36
+
+..........F
 
 Failure:
 DaftarPustakaControllerTest#test_should_create_daftar_pustaka [/home/ubuntu/workspace/catel/test/controllers/daftar_pustaka_controller_test.rb:19]:
@@ -53,41 +104,10 @@ Expected response to be a <3XX: redirect>, but was a <200: OK>
 
 bin/rails test test/controllers/daftar_pustaka_controller_test.rb:36
 
-...F
+.
 
-Failure:
-SuratKeluarControllerTest#test_should_create_surat_keluar [/home/ubuntu/workspace/catel/test/controllers/surat_keluar_controller_test.rb:19]:
-"SuratKeluar.count" didn't change by 1.
-Expected: 3
-  Actual: 2
-
-
-bin/rails test test/controllers/surat_keluar_controller_test.rb:18
-
-....F
-
-Failure:
-SuratKeluarControllerTest#test_should_update_surat_keluar [/home/ubuntu/workspace/catel/test/controllers/surat_keluar_controller_test.rb:38]:
-Expected response to be a <3XX: redirect>, but was a <200: OK>
-
-
-bin/rails test test/controllers/surat_keluar_controller_test.rb:36
-
-.....................F
-
-Failure:
-SuratMasukControllerTest#test_should_create_surat_masuk [/home/ubuntu/workspace/catel/test/controllers/surat_masuk_controller_test.rb:19]:
-"SuratMasuk.count" didn't change by 1.
-Expected: 3
-  Actual: 2
-
-
-bin/rails test test/controllers/surat_masuk_controller_test.rb:18
-
-......
-
-Finished in 2.979279s, 15.1043 runs/s, 18.4608 assertions/s.
-45 runs, 55 assertions, 5 failures, 0 errors, 0 skips
+Finished in 1.761633s, 29.5181 runs/s, 35.7623 assertions/s.
+52 runs, 63 assertions, 7 failures, 0 errors, 0 skips
 ```
 
 
