@@ -130,12 +130,16 @@ Finished in 1.761633s, 29.5181 runs/s, 35.7623 assertions/s.
 * ...
 
 ## Learn resources
+* [Rails for Zombies](http://railsforzombies.org)
+* [Ruby Plus](https://rubyplus.com/articles/3901-Polymorphic-Association-in-Rails-5)
+* [Code Mentor](https://www.codementor.io/ruby-on-rails/tutorial/threaded-comments-polymorphic-associations)
+* [Try Ruby](http://tryruby.org)
 * [Sitepoint](https://www.sitepoint.com/save-multiple-checkbox-values-database-rails/)
 * [Rails Tutorial](https://www.railstutorial.org)
 * [8th Color](http://blog.8thcolor.com/en/2011/08/nested-resources-with-independent-views-in-ruby-on-rails/)
-* [It's about time zone](https://robots.thoughtbot.com/its-about-time-zones)
-* [Format Datetime in Ruby](https://hackhands.com/format-datetime-ruby/)
-* Rails Cast
+* [Robots Thoughbot](https://robots.thoughtbot.com/its-about-time-zones)
+* [Hack Hands](https://hackhands.com/format-datetime-ruby/)
+* Rails Casts
   * [Polymorphic Association](http://railscasts.com/episodes/154-polymorphic-association-revised)
   * [Authentication from Scratch](http://railscasts.com/episodes/250-authentication-from-scratch-revised)
   * [Remember Me Reset Password](http://railscasts.com/episodes/274-remember-me-reset-password)
