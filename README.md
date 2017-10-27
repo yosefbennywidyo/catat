@@ -133,6 +133,8 @@ Finished in 1.761633s, 29.5181 runs/s, 35.7623 assertions/s.
 * [Sitepoint](https://www.sitepoint.com/save-multiple-checkbox-values-database-rails/)
 * [Rails Tutorial](https://www.railstutorial.org)
 * [8th Color](http://blog.8thcolor.com/en/2011/08/nested-resources-with-independent-views-in-ruby-on-rails/)
+* [It's about time zone](https://robots.thoughtbot.com/its-about-time-zones)
+* [Format Datetime in Ruby](https://hackhands.com/format-datetime-ruby/)
 * Rails Cast
   * [Polymorphic Association](http://railscasts.com/episodes/154-polymorphic-association-revised)
   * [Authentication from Scratch](http://railscasts.com/episodes/250-authentication-from-scratch-revised)
