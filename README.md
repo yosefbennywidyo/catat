@@ -128,3 +128,16 @@ Finished in 1.761633s, 29.5181 runs/s, 35.7623 assertions/s.
 * Deployment instructions
 
 * ...
+
+## Learn resources
+* [Sitepoint](https://www.sitepoint.com/save-multiple-checkbox-values-database-rails/)
+* [Rails Tutorial](https://www.railstutorial.org)
+* [8th Color](http://blog.8thcolor.com/en/2011/08/nested-resources-with-independent-views-in-ruby-on-rails/)
+* Rails Cast
+  * [Polymorphic Association](http://railscasts.com/episodes/154-polymorphic-association-revised)
+  * [Authentication from Scratch](http://railscasts.com/episodes/250-authentication-from-scratch-revised)
+  * [Remember Me Reset Password](http://railscasts.com/episodes/274-remember-me-reset-password)
+
+## Get stuck? Don't!
+* [Google](https://www.google.com)
+* [Stack Overflow](https://stackoverflow.com/)
