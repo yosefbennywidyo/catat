@@ -71,49 +71,42 @@ Jabatan.create!([{
   nama: "Kepala Kantor"
 }])
 Jabatan.create!([{
-  nama: "PLH Kepala Kantor"
+  nama: "PLT Kepala Kantor"
 }])
 Jabatan.create!([{
-  nama: "Kepala Sub Bagian Tata Usaha"
+  nama: "Kepala"
 }])
 Jabatan.create!([{
-  nama: "PLH Kepala Sub Bagian Tata Usaha"
+  nama: "Kepala Seksi"
 }])
 Jabatan.create!([{
-  nama: "Kepala Seksi Urusan Agama Katolik"
-}])
-Jabatan.create!([{
-  nama: "PLH Kepala Seksi Urusan Agama Katolik"
-}])
-Jabatan.create!([{
-  nama: "Kepala Seksi Urusan Agama Kristen"
-}])
-Jabatan.create!([{
-  nama: "PLH Kepala Seksi Urusan Agama Kristen"
-}])
-Jabatan.create!([{
-  nama: "Penyelenggara Pendidikan Agama Katolik"
-}])
-Jabatan.create!([{
-  nama: "PLH Penyelenggara Pendidikan Agama Katolik"
-}])
-Jabatan.create!([{
-  nama: "Kepala Seksi Pendidikan Agama Kristen"
-}])
-Jabatan.create!([{
-  nama: "PLH Kepala Seksi Pendidikan Agama Kristen"
-}])
-Jabatan.create!([{
-  nama: "Kepala Seksi Pendidikan dan Bimbingan Masyarakat Islam"
-}])
-Jabatan.create!([{
-  nama: "PLH Kepala Seksi Pendidikan dan Bimbingan Masyarakat Islam"
-}])
-Jabatan.create!([{
-  nama: "Penyelenggara Haji dan Umrah"
-}])
-Jabatan.create!([{
-  nama: "PLH Penyelenggara Haji dan Umrah"
+  nama: "Penyelenggara"
 }])
 
 p "Created #{Jabatan.count} nama jabatan"
+
+
+
+Seksi.create!([{
+  nama: "Sub Bagian Tata Usaha"
+}])
+Seksi.create!([{
+  nama: "Urusan Agama Katolik"
+}])
+Seksi.create!([{
+  nama: "Urusan Agama Kristen"
+}])
+Seksi.create!([{
+  nama: "Pendidikan Agama Katolik"
+}])
+Seksi.create!([{
+  nama: "Pendidikan Agama Kristen"
+}])
+Seksi.create!([{
+  nama: "Pendidikan dan Bimbingan Masyarakat Islam"
+}])
+Seksi.create!([{
+  nama: "Penyelenggara Haji dan Umrah"
+}])
+
+p "Created #{Seksi.count} nama seksi"
