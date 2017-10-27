@@ -1,7 +1,9 @@
-%h1 Editing seksi
+= render 'elements/header'
+%h1 Edit Seksi
 
 = render 'form'
 
-= link_to 'Show', @seksi
-\|
-= link_to 'Back', seksi_index_path
+.row.align-items-center.justify-content-center
+  .row
+    = link_to '<button class="btn btn-primary btn-circle btn-xl"><i class="fa fa-lg fa-close" title="Batal edit seksi"></i></button>'.html_safe, seksi_index_path, class: 'center-block'
+    = link_to '<button class="btn btn-primary btn-circle btn-xl"><i class="fa fa-lg fa-expand" title="Tampilkan seksi"></i></button>'.html_safe, @seksi, class: 'center-block add-left-margin'

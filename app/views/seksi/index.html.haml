@@ -1,21 +1,26 @@
-%h1 Listing seksi
+= render 'elements/header'
+%h1 Daftar Seksi
 
-%table
-  %thead
-    %tr
-      %th Nama
-      %th
-      %th
-      %th
+.py-5
+  .row
+    .col-md-12
+      %table.table
+        %thead
+          %tr
+            %th Seksi
+            %th
+            %th
+            %th
+        
+        %tbody
+          - @seksi.each do |seksi|
+            %tr
+              %td= seksi.nama
+              %td= link_to '<i class="fa d-inline fa-lg fa-expand" title="Tampilkan seksi"></i>'.html_safe, seksi, class: 'btn btn-sm btn-primary mx-1'
+              %td= link_to '<i class="fa d-inline fa-lg fa-pencil" title="Edit seksi"></i>'.html_safe, edit_seksi_path(seksi), class: 'btn btn-sm btn-primary mx-1'
+              %td= link_to '<i class="fa d-inline fa-lg fa-trash" title="Hapus seksi"></i>'.html_safe, seksi, method: :delete, data: { confirm: 'Anda yakin ingin menghapus seksi ini?' }, class: 'btn btn-sm btn-primary mx-1'
 
-  %tbody
-    - @seksi.each do |seksi|
-      %tr
-        %td= seksi.nama
-        %td= link_to 'Show', seksi
-        %td= link_to 'Edit', edit_seksi_path(seksi)
-        %td= link_to 'Destroy', seksi, method: :delete, data: { confirm: 'Are you sure?' }
-
-%br
-
-= link_to 'New Seksi', new_seksi_path
+.row.align-items-center.justify-content-center
+  .row
+    = link_to '<button class="btn btn-primary btn-circle btn-xl"><i class="fa fa-lg fa-arrow-left" title="Kembali ke Dasbor"></i></button>'.html_safe, dasbor_index_path, class: 'center-block'
+    = link_to '<button class="btn btn-primary btn-circle btn-xl"><i class="fa fa-lg fa-plus" title="Buat seksi"></i></button>'.html_safe, new_seksi_path, class: 'center-block add-left-margin'
