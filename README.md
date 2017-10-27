@@ -13,6 +13,7 @@
   * [x] StatusKepegawaian
   * [x] Jabatan
   * [ ] Seksi
+  * [ ] Unit
 
     > Create join table
 
