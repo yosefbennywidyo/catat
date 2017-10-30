@@ -1,11 +1,26 @@
-= link_to(@surat_keluar.judul, @surat_keluar.url, target: "_blank")
-%br
-%small
-  Submitted #{time_ago_in_words(@surat_keluar.created_at)} ago
-%h3 Komentar
-= form_for [@surat_keluar, Komentar.new] do |f|
-  = f.text_area :isi, placeholder: "Tambahkan komentar"
+= render 'elements/header'
+%p#notice= notice
+.add-trbl-margin
+  %p
+    %b Judul:
+    = @surat_keluar.judul
+  %p
+    %b Keterangan:
+    = @surat_keluar.keterangan
+
+
   %br
-  = f.submit "Tambah komentar"
-%ul
-  = render(partial: 'komentar/komentar', collection: @surat_keluar.komentar)
+  %small
+    Submitted #{time_ago_in_words(@surat_keluar.created_at)} ago
+  %h3 Komentar
+  = form_for [@surat_keluar, Komentar.new] do |f|
+    = f.text_area :isi, placeholder: "Tambahkan komentar"
+    %br
+    = f.submit "Tambah komentar"
+  %ul
+    = render(partial: 'komentar/komentar', collection: @surat_keluar.komentar)    
+
+  = link_to '<button class="btn btn-primary btn-circle btn-xl"><i class="fa fa-lg fa-pencil" title="Edit surat keluar"></i></button>'.html_safe, edit_surat_keluar_path(@surat_keluar), class: 'center-block'
+  .row.align-items-center.justify-content-center
+    .row
+      = link_to '<button class="btn btn-primary btn-circle btn-xl"><i class="fa fa-lg fa-arrow-left" title="Kembali ke daftar surat keluar"></i></button>'.html_safe, surat_keluar_index_path, class: 'center-block'
