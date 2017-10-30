@@ -9,9 +9,9 @@ before_action :find_commentable
       @komentar = @commentable.komentar.new komentar_params
 
       if @komentar.save
-        redirect_to :back, notice: 'Komentar Anda berhasil dibuat!'
+        redirect_back fallback_location: root_path, notice: 'Komentar Anda berhasil dibuat!'
       else
-        redirect_to :back, notice: "Komentar Anda tidak berhasil dibuat!"
+        redirect_back fallback_location: root_path, notice: "Komentar Anda tidak berhasil dibuat!"
       end
     end
 

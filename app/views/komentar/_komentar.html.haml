@@ -4,7 +4,7 @@
   %small
     Dibuat #{time_ago_in_words(komentar.created_at)} ago
   = form_for [komentar, Komentar.new] do |f|
-    = f.text_area :body, placeholder: "Tambahkan tanggapan"
+    = f.text_area :isi, placeholder: "Tambahkan tanggapan"
     %br
     = f.submit "Tanggapi"
   %ul
