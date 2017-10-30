@@ -4,8 +4,16 @@ Rails.application.routes.draw do
   resources :status_kepegawaian
   resources :pengguna
   resources :daftar_pustaka
-  resources :surat_keluar
   resources :surat_masuk
+  
+  resources :surat_keluar do
+    resources :komentar
+  end
+
+  resources :komentar do
+    resources :komentar
+  end
+  
   get 'dasbor/index'
 
   get 'salam/index'
