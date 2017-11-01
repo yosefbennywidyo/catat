@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
+  get 'signup', to: 'pengguna#new', as: 'signup'
+  get 'login', to: 'sessions#new', as: 'login'
+  get 'logout', to: 'sessions#destroy', as: 'logout'
 
+  resources :sessions
   resources :seksi
   resources :jabatan
   resources :status_kepegawaian
