@@ -4,6 +4,17 @@
     %button.navbar-toggler.navbar-toggler-right{"aria-controls" => "navbar2SupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbar2SupportedContent", "data-toggle" => "collapse", :type => "button"}
       %span.navbar-toggler-icon
     #navbar2SupportedContent.collapse.navbar-collapse.text-center.justify-content-end
-      %a.btn.navbar-btn.btn-primary.ml-2.text-white{:href => dasbor_index_path}
-        %i.fa.d-inline.fa-lg.fa-user-circle-o
-        Masuk
+      - if current_user
+        Anda masuk sebagai #{current_user.nama}.
+        %a.btn.navbar-btn.btn-primary.ml-2.text-white{:href => logout_path}
+          %i.fa.d-inline.fa-lg.fa-user-circle-o
+          Keluar
+      - else
+        %a.btn.navbar-btn.btn-primary.ml-2.text-white{:href => signup_path}
+          %i.fa.d-inline.fa-lg.fa-user-circle-o
+          Daftar
+        %a.btn.navbar-btn.btn-primary.ml-2.text-white{:href => login_path}
+          %i.fa.d-inline.fa-lg.fa-user-circle-o
+          Masuk
+        
+        

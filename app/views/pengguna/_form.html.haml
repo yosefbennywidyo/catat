@@ -8,6 +8,10 @@
   .row
     = f.input :nama, label: 'Nama'
   .row
+    = f.input :password, label: 'Kata kunci'
+  .row
+    = f.input :password_confirmation, label: 'Konfirmasi kata kunci'
+  .row
     = f.association :status_kepegawaian, label_method: :status_kepegawaian, value_method: :id, include_blank: false
   .row
     = f.association :jabatan, label_method: :nama, value_method: :id, include_blank: false
