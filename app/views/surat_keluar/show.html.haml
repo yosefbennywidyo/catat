@@ -7,7 +7,9 @@
   %p
     %b Keterangan:
     = @surat_keluar.keterangan
-
+  %p
+    = button_to "Kirim konsep surat", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Konsep'}),
+      :class => "btn btn-primary", :method => :put                          |
 
   %br
   = simple_form_for [@surat_keluar, Komentar.new] do |f|
