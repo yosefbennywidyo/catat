@@ -26,16 +26,13 @@ class PenggunaController < ApplicationController
   def create
     @pengguna = Pengguna.new(pengguna_params)
 
-    respond_to do |format|
-      if @pengguna.save
-        session[:pengguna_id] = @pengguna.id
-        redirect_to root_url, notice: "Terima kasih telah mendaftar di Catel! Lanjutkan dengan login"
-        #format.html { redirect_to @pengguna, notice: 'Pengguna was successfully created.' }
-        #format.json { render :show, status: :created, location: @pengguna }
-      else
-        format.html { render :new }
-        format.json { render json: @pengguna.errors, status: :unprocessable_entity }
-      end
+    if @pengguna.save
+      session[:pengguna_id] = @pengguna.id
+      redirect_to root_url, notice: "Terima kasih telah mendaftar di Catel! Lanjutkan dengan login"
+      #format.html { redirect_to @pengguna, notice: 'Pengguna was successfully created.' }
+      #format.json { render :show, status: :created, location: @pengguna }
+    else
+      render "new"
     end
   end
 
@@ -71,6 +68,6 @@ class PenggunaController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pengguna_params
-      params.require(:pengguna).permit(:nama, status_kepegawaian_ids:[], jabatan_ids:[], seksi_ids:[])
+      params.require(:pengguna).permit(:nama, :password, :password_confirmation, status_kepegawaian_ids:[], jabatan_ids:[], seksi_ids:[])
     end
 end
