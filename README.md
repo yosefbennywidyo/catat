@@ -5,6 +5,10 @@
 * [ ] Create Status, Sifat and Derajat Pengaman (ex. comment as commentable) model
 * [ ] Create Disposisi model
 * [x] Create SuratKeluar model
+  * [x] Add StatusSurat to SuratKeluar
+
+  > Change StatusSurat state from Konsep to Final
+
 * [x] Create SuratMasuk model
 * [x] Create ~~KonsepSurat~~ DaftarPustaka model
 * [ ] Create CatatanKerja model
