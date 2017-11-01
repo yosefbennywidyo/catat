@@ -29,7 +29,7 @@ class PenggunaController < ApplicationController
     respond_to do |format|
       if @pengguna.save
         session[:pengguna_id] = @pengguna.id
-        redirect_to dasbor_index_path, notice: "Terima kasih telah mendaftar di Catel!"
+        redirect_to root_url, notice: "Terima kasih telah mendaftar di Catel! Lanjutkan dengan login"
         #format.html { redirect_to @pengguna, notice: 'Pengguna was successfully created.' }
         #format.json { render :show, status: :created, location: @pengguna }
       else
