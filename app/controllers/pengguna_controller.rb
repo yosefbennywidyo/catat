@@ -28,8 +28,10 @@ class PenggunaController < ApplicationController
 
     respond_to do |format|
       if @pengguna.save
-        format.html { redirect_to @pengguna, notice: 'Pengguna was successfully created.' }
-        format.json { render :show, status: :created, location: @pengguna }
+        session[:pengguna_id] = @pengguna.id
+        redirect_to dasbor_index_path, notice: "Terima kasih telah mendaftar di Catel!"
+        #format.html { redirect_to @pengguna, notice: 'Pengguna was successfully created.' }
+        #format.json { render :show, status: :created, location: @pengguna }
       else
         format.html { render :new }
         format.json { render json: @pengguna.errors, status: :unprocessable_entity }
