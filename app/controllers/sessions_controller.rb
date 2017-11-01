@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
   end
   
   def destroy
-    session[:user_id] = nil
+    session[:pengguna_id] = nil
     redirect_to root_url, notice: "Anda berhasil keluar, terima kasih telah mengggunakan Catel!"
   end
 end
