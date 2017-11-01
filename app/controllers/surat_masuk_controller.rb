@@ -1,4 +1,5 @@
 class SuratMasukController < ApplicationController
+  before_action :authorize
   before_action :set_surat_masuk, only: [:show, :edit, :update, :destroy]
 
   # GET /surat_masuk

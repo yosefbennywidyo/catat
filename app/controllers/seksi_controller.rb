@@ -1,4 +1,5 @@
 class SeksiController < ApplicationController
+  before_action :authorize
   before_action :set_seksi, only: [:show, :edit, :update, :destroy]
 
   # GET /seksi

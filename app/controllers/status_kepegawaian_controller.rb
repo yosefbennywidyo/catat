@@ -1,4 +1,5 @@
 class StatusKepegawaianController < ApplicationController
+  before_action :authorize
   before_action :set_status_kepegawaian, only: [:show, :edit, :update, :destroy]
 
   # GET /status_kepegawaian

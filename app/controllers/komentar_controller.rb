@@ -1,5 +1,7 @@
 class KomentarController < ApplicationController
-before_action :find_commentable
+  before_action :authorize
+  
+  before_action :find_commentable
 
     def new
       @komentar = Komentar.new
