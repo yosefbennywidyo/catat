@@ -9,7 +9,5 @@ class Pengguna < ApplicationRecord
   
   has_secure_password
   
-  attr_accessible :nama, :password, :password_confirmation
-  
   validates_uniqueness_of :nama
 end
