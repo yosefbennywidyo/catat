@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
   resources :seksi
   resources :jabatan
   resources :status_kepegawaian
