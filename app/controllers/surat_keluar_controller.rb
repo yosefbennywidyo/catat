@@ -69,6 +69,6 @@ class SuratKeluarController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def surat_keluar_params
-      params.require(:surat_keluar).permit(:judul, :keterangan)
+      params.require(:surat_keluar).permit(:judul, :keterangan, :status_surat)
     end
 end
