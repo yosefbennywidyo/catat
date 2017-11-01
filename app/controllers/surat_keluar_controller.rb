@@ -1,5 +1,5 @@
 class SuratKeluarController < ApplicationController
-  before_filter :authorize
+  before_action :authorize
   before_action :set_surat_keluar, only: [:show, :edit, :update, :destroy]
 
   # GET /surat_keluar
