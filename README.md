@@ -10,6 +10,7 @@
 * [ ] Create CatatanKerja model
 * [x] Create Pengguna model
   * [x] Nama
+  * [x] Password
   * [x] StatusKepegawaian
   * [x] Jabatan
   * [x] Seksi
@@ -19,7 +20,7 @@
 
     > Create validations
 
-* [ ] Create Login/Signup model
+* [x] Create Login/Signup model
 * [ ] Add white space to regex: `/catel/app/models/surat_masuk.rb`
 
 Future Improvements
@@ -28,32 +29,12 @@ Future Improvements
 ## Error
 ### Rails Test
 ```bash
-Running via Spring preloader in process 6138
-Run options: --seed 62688
+Running via Spring preloader in process 8966
+Run options: --seed 6740
 
 # Running:
 
-..................F
-
-Failure:
-SeksiControllerTest#test_should_update_seksi [/home/ubuntu/workspace/catel/test/controllers/seksi_controller_test.rb:38]:
-Expected response to be a <3XX: redirect>, but was a <200: OK>
-
-
-bin/rails test test/controllers/seksi_controller_test.rb:36
-
-.F
-
-Failure:
-SeksiControllerTest#test_should_create_seksi [/home/ubuntu/workspace/catel/test/controllers/seksi_controller_test.rb:19]:
-"Seksi.count" didn't change by 1.
-Expected: 3
-  Actual: 2
-
-
-bin/rails test test/controllers/seksi_controller_test.rb:18
-
-...F
+......F
 
 Failure:
 SuratMasukControllerTest#test_should_create_surat_masuk [/home/ubuntu/workspace/catel/test/controllers/surat_masuk_controller_test.rb:19]:
@@ -64,27 +45,36 @@ Expected: 3
 
 bin/rails test test/controllers/surat_masuk_controller_test.rb:18
 
-.....F
+.F
 
 Failure:
-SuratKeluarControllerTest#test_should_create_surat_keluar [/home/ubuntu/workspace/catel/test/controllers/surat_keluar_controller_test.rb:19]:
-"SuratKeluar.count" didn't change by 1.
+PenggunaControllerTest#test_should_create_pengguna [/home/ubuntu/workspace/catel/test/controllers/pengguna_controller_test.rb:19]:
+"Pengguna.count" didn't change by 1.
 Expected: 3
   Actual: 2
 
 
-bin/rails test test/controllers/surat_keluar_controller_test.rb:18
+bin/rails test test/controllers/pengguna_controller_test.rb:18
 
 ..F
 
 Failure:
-SuratKeluarControllerTest#test_should_update_surat_keluar [/home/ubuntu/workspace/catel/test/controllers/surat_keluar_controller_test.rb:38]:
+PenggunaControllerTest#test_should_update_pengguna [/home/ubuntu/workspace/catel/test/controllers/pengguna_controller_test.rb:38]:
 Expected response to be a <3XX: redirect>, but was a <200: OK>
 
 
-bin/rails test test/controllers/surat_keluar_controller_test.rb:36
+bin/rails test test/controllers/pengguna_controller_test.rb:36
 
-..........F
+...........F
+
+Failure:
+DaftarPustakaControllerTest#test_should_update_daftar_pustaka [/home/ubuntu/workspace/catel/test/controllers/daftar_pustaka_controller_test.rb:38]:
+Expected response to be a <3XX: redirect>, but was a <200: OK>
+
+
+bin/rails test test/controllers/daftar_pustaka_controller_test.rb:36
+
+.F
 
 Failure:
 DaftarPustakaControllerTest#test_should_create_daftar_pustaka [/home/ubuntu/workspace/catel/test/controllers/daftar_pustaka_controller_test.rb:19]:
@@ -95,19 +85,118 @@ Expected: 3
 
 bin/rails test test/controllers/daftar_pustaka_controller_test.rb:18
 
-.....F
+..F
 
 Failure:
-DaftarPustakaControllerTest#test_should_update_daftar_pustaka [/home/ubuntu/workspace/catel/test/controllers/daftar_pustaka_controller_test.rb:38]:
+SeksiControllerTest#test_should_create_seksi [/home/ubuntu/workspace/catel/test/controllers/seksi_controller_test.rb:19]:
+"Seksi.count" didn't change by 1.
+Expected: 3
+  Actual: 2
+
+
+bin/rails test test/controllers/seksi_controller_test.rb:18
+
+..F
+
+Failure:
+SeksiControllerTest#test_should_update_seksi [/home/ubuntu/workspace/catel/test/controllers/seksi_controller_test.rb:38]:
 Expected response to be a <3XX: redirect>, but was a <200: OK>
 
 
-bin/rails test test/controllers/daftar_pustaka_controller_test.rb:36
+bin/rails test test/controllers/seksi_controller_test.rb:36
 
-.
+....E
 
-Finished in 1.761633s, 29.5181 runs/s, 35.7623 assertions/s.
-52 runs, 63 assertions, 7 failures, 0 errors, 0 skips
+Error:
+SuratKeluarControllerTest#test_should_show_surat_keluar:
+ActionView::Template::Error: undefined method `judul' for nil:NilClass
+    app/views/surat_keluar/show.html.haml:6:in `_app_views_surat_keluar_show_html_haml___3692641867719819289_57476660'
+    test/controllers/surat_keluar_controller_test.rb:27:in `block in <class:SuratKeluarControllerTest>'
+
+
+bin/rails test test/controllers/surat_keluar_controller_test.rb:26
+
+E
+
+Error:
+SuratKeluarControllerTest#test_should_update_surat_keluar:
+AbstractController::ActionNotFound: The action 'update' could not be found for SuratKeluarController
+    test/controllers/surat_keluar_controller_test.rb:37:in `block in <class:SuratKeluarControllerTest>'
+
+
+bin/rails test test/controllers/surat_keluar_controller_test.rb:36
+
+E
+
+Error:
+SuratKeluarControllerTest#test_should_get_new:
+ActionView::Template::Error: First argument in form cannot contain nil or be empty
+    app/views/surat_keluar/_form.html.haml:1:in `_app_views_surat_keluar__form_html_haml__3835342730587651763_57313480'
+    app/views/surat_keluar/new.html.haml:5:in `_app_views_surat_keluar_new_html_haml___1767919705739880885_56932260'
+    test/controllers/surat_keluar_controller_test.rb:14:in `block in <class:SuratKeluarControllerTest>'
+
+
+bin/rails test test/controllers/surat_keluar_controller_test.rb:13
+
+E
+
+Error:
+SuratKeluarControllerTest#test_should_create_surat_keluar:
+AbstractController::ActionNotFound: The action 'create' could not be found for SuratKeluarController
+    test/controllers/surat_keluar_controller_test.rb:20:in `block (2 levels) in <class:SuratKeluarControllerTest>'
+    test/controllers/surat_keluar_controller_test.rb:19:in `block in <class:SuratKeluarControllerTest>'
+
+
+bin/rails test test/controllers/surat_keluar_controller_test.rb:18
+
+E
+
+Error:
+SuratKeluarControllerTest#test_should_destroy_surat_keluar:
+AbstractController::ActionNotFound: The action 'destroy' could not be found for SuratKeluarController
+    test/controllers/surat_keluar_controller_test.rb:43:in `block (2 levels) in <class:SuratKeluarControllerTest>'
+    test/controllers/surat_keluar_controller_test.rb:42:in `block in <class:SuratKeluarControllerTest>'
+
+
+bin/rails test test/controllers/surat_keluar_controller_test.rb:41
+
+E
+
+Error:
+SuratKeluarControllerTest#test_should_get_edit:
+ActionView::Template::Error: First argument in form cannot contain nil or be empty
+    app/views/surat_keluar/_form.html.haml:1:in `_app_views_surat_keluar__form_html_haml__3835342730587651763_57313480'
+    app/views/surat_keluar/edit.html.haml:4:in `_app_views_surat_keluar_edit_html_haml___1680900545137021469_56534360'
+    test/controllers/surat_keluar_controller_test.rb:32:in `block in <class:SuratKeluarControllerTest>'
+
+
+bin/rails test test/controllers/surat_keluar_controller_test.rb:31
+
+E
+
+Error:
+SuratKeluarControllerTest#test_should_get_index:
+ActionView::Template::Error: undefined method `each' for nil:NilClass
+    app/views/surat_keluar/index.html.haml:17:in `_app_views_surat_keluar_index_html_haml__2433178989011360098_56442240'
+    test/controllers/surat_keluar_controller_test.rb:9:in `block in <class:SuratKeluarControllerTest>'
+
+
+bin/rails test test/controllers/surat_keluar_controller_test.rb:8
+
+E
+
+Error:
+SessionsControllerTest#test_should_get_new:
+NameError: undefined local variable or method `sessions_new_url' for #<SessionsControllerTest:0x0000000696a748>
+    test/controllers/sessions_controller_test.rb:5:in `block in <class:SessionsControllerTest>'
+
+
+bin/rails test test/controllers/sessions_controller_test.rb:4
+
+.........
+
+Finished in 3.657943s, 14.4890 runs/s, 14.7624 assertions/s.
+53 runs, 54 assertions, 7 failures, 8 errors, 0 skips
 ```
 
 
