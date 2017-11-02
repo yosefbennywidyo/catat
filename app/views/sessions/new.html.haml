@@ -1,5 +1,5 @@
-%h1 Log In
-= form_tag sessions_index_path do
+%h1.add-left-margin Masuk ke Catel
+= form_tag sessions_index_path, class: "form-horizontal add-left-margin" do
   .field
     = label_tag :nama
     %br
@@ -8,4 +8,4 @@
     = label_tag :password
     %br
     = password_field_tag :password
-  .actions= submit_tag "Masuk"
+  .actions= submit_tag "Masuk", class: "btn btn-primary"
