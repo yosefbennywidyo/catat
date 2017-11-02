@@ -1,0 +1,10 @@
+= simple_form_for(@status) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :keterangan
+    = f.input :statuses_id
+    = f.input :statuses_type
+
+  .form-actions
+    = f.button :submit

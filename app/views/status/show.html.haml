@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Keterangan:
+  = @status.keterangan
+%p
+  %b Statuses:
+  = @status.statuses_id
+%p
+  %b Statuses type:
+  = @status.statuses_type
+
+= link_to 'Edit', edit_status_path(@status)
+\|
+= link_to 'Back', status_index_path
