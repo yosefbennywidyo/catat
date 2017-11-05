@@ -74,7 +74,7 @@ Jabatan.create!([{
   nama: "PLT Kepala Kantor"
 }])
 Jabatan.create!([{
-  nama: "Kepala"
+  nama: "Kepala Sub Bagian"
 }])
 Jabatan.create!([{
   nama: "Kepala Seksi"
@@ -88,7 +88,7 @@ p "Created #{Jabatan.count} nama jabatan"
 
 
 Seksi.create!([{
-  nama: "Sub Bagian Tata Usaha"
+  nama: "Tata Usaha"
 }])
 Seksi.create!([{
   nama: "Urusan Agama Katolik"
