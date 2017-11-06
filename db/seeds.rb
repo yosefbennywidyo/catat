@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-5.times do |i|
+20.times do |i|
   SuratMasuk.create!([{
   nomor_surat: "nomor.surat/#{i}",
   tanggal_surat: '01/01/2017',
@@ -24,7 +24,7 @@ p "Created #{SuratMasuk.count} surat masuk"
 
 
 
-5.times do |i|
+20.times do |i|
   SuratKeluar.create!([{
   judul: "Surat keluar ke-#{i}",
   keterangan: "Keterangan surat keluar ke-#{i}"
@@ -35,24 +35,24 @@ p "Created #{SuratKeluar.count} surat keluar"
 
 
 
-5.times do |i|
+20.times do |i|
   DaftarPustaka.create!([{
   judul: "Pustaka ke-#{i}",
   keterangan: "Keterangan pustaka ke-#{i}"
   }])
 end
 
-p "Created #{SuratKeluar.count} pustaka"
+p "Created #{DaftarPustaka.count} pustaka"
 
 
 
-5.times do |i|
+20.times do |i|
   Pengguna.create!([{
   nama: "Pengguna ke-#{i}"
   }])
 end
 
-p "Created #{SuratKeluar.count} pengguna"
+p "Created #{Pengguna.count} pengguna"
 
 
 
