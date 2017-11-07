@@ -45,7 +45,6 @@ end
 p "Created #{DaftarPustaka.count} pustaka"
 
 
-
 20.times do |i|
   Pengguna.create!([{
   nama: "Pengguna ke-#{i}",
@@ -108,7 +107,7 @@ Seksi.create!([{
   nama: "Pendidikan dan Bimbingan Masyarakat Islam"
 }])
 Seksi.create!([{
-  nama: "Penyelenggara Haji dan Umrah"
+  nama: "Haji dan Umrah"
 }])
 
 p "Created #{Seksi.count} nama seksi"
