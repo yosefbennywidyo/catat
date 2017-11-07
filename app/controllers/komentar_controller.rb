@@ -9,6 +9,7 @@ class KomentarController < ApplicationController
 
     def create
       @komentar = @commentable.komentar.new komentar_params
+      @komentar.pengomentar = current_user.nama if current_user
 
       if @komentar.save
         redirect_back fallback_location: root_path, notice: 'Komentar Anda berhasil dibuat!'
@@ -20,7 +21,7 @@ class KomentarController < ApplicationController
     private
 
     def komentar_params
-      params.require(:komentar).permit(:isi)
+      params.require(:komentar).permit(:isi, :pengomentar)
     end
 
     def find_commentable
