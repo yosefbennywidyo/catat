@@ -1,0 +1,21 @@
+%h1 Listing status_akun
+
+%table
+  %thead
+    %tr
+      %th Keterangan
+      %th
+      %th
+      %th
+
+  %tbody
+    - @status_akun.each do |status_akun|
+      %tr
+        %td= status_akun.keterangan
+        %td= link_to 'Show', status_akun
+        %td= link_to 'Edit', edit_status_akun_path(status_akun)
+        %td= link_to 'Destroy', status_akun, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Status akun', new_status_akun_path

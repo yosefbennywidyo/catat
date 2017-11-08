@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Keterangan:
+  = @status_akun.keterangan
+
+= link_to 'Edit', edit_status_akun_path(@status_akun)
+\|
+= link_to 'Back', status_akun_index_path

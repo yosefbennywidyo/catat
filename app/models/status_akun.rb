@@ -1,0 +1,2 @@
+class StatusAkun < ApplicationRecord
+end
