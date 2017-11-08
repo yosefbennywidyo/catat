@@ -4,3 +4,10 @@
 .add-trbl-margin {
   margin: 40px;
 }
+.add-left-right-margin {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.table {
+   text-align: center;   
+}
