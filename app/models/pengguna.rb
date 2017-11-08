@@ -6,6 +6,7 @@ class Pengguna < ApplicationRecord
   has_and_belongs_to_many :status_kepegawaian
   has_and_belongs_to_many :jabatan
   has_and_belongs_to_many :seksi
+  has_and_belongs_to_many :status_akun
   
   has_secure_password
   
