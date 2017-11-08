@@ -8,5 +8,6 @@ class DasborController < ApplicationController
     @jumlah_status_kepegawaian = StatusKepegawaian.count
     @jumlah_jabatan = Jabatan.count
     @jumlah_seksi = Seksi.count
+    @jumlah_status_akun = StatusAkun.count
   end
 end
