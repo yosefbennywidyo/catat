@@ -46,12 +46,16 @@ p "Created #{DaftarPustaka.count} pustaka"
 
 
 20.times do |i|
-  Pengguna.create!([{
-  nama: "Pengguna ke-#{i}",
+  Pengguna.create!([{ nama: "Pengguna ke-#{i}",
   password: "password",
   password_confirmation: "password"
   }])
 end
+
+Pengguna.create!([{ nama: "Administrator",
+  password: "Administrator",
+  password_confirmation: "Administrator"
+  }])
 
 p "Created #{Pengguna.count} pengguna"
 
