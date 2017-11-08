@@ -16,36 +16,36 @@
       = button_to "Kirim konsep surat", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Konsep'}),
         :class => "btn btn-primary", :method => :put
     - elsif @status_surat_keluar === "Konsep"
-      = button_to "Kirim koreksi ke-1", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Koreksi ke-1'}),
+      = button_to "Kirim koreksi ke-1", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Koreksi 1'}),
         :class => "btn btn-primary", :method => :put
-    - elsif @status_surat_keluar === "Koreksi ke-1"
-      = button_to "Kirim revisi ke-1", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Revisi ke-1'}),
+    - elsif @status_surat_keluar === "Koreksi 1"
+      = button_to "Kirim revisi ke-1", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Revisi 1'}),
         :class => "btn btn-primary", :method => :put
-    - elsif @status_surat_keluar === "Revisi ke-1"
-      = button_to "Kirim koreksi ke-2", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Koreksi ke-2'}),
+    - elsif @status_surat_keluar === "Revisi 1"
+      = button_to "Kirim koreksi ke-2", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Koreksi 2'}),
         :class => "btn btn-primary", :method => :put
-    - elsif @status_surat_keluar === "Koreksi ke-2"
-      = button_to "Kirim revisi ke-2", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Revisi ke-2'}),
+    - elsif @status_surat_keluar === "Koreksi 2"
+      = button_to "Kirim revisi ke-2", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Revisi 2'}),
         :class => "btn btn-primary", :method => :put
-    - elsif @status_surat_keluar === "Revisi ke-2"
-      = button_to "Kirim koreksi ke-3", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Koreksi ke-3'}),
+    - elsif @status_surat_keluar === "Revisi 2"
+      = button_to "Kirim koreksi ke-3", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Koreksi 3'}),
         :class => "btn btn-primary", :method => :put
-    - elsif @status_surat_keluar === "Koreksi ke-3"
-      = button_to "Kirim revisi ke-3", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Revisi ke-3'}),
+    - elsif @status_surat_keluar === "Koreksi 3"
+      = button_to "Kirim revisi ke-3", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Revisi 3'}),
         :class => "btn btn-primary", :method => :put
-    - elsif @status_surat_keluar === "Revisi ke-3"
-      = button_to "Kirim koreksi ke-4", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Koreksi ke-4'}),
+    - elsif @status_surat_keluar === "Revisi 3"
+      = button_to "Kirim koreksi ke-4", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Koreksi 4'}),
         :class => "btn btn-primary", :method => :put
-    - elsif @status_surat_keluar === "Koreksi ke-4"
-      = button_to "Kirim revisi ke-4", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Revisi ke-4'}),
+    - elsif @status_surat_keluar === "Koreksi 4"
+      = button_to "Kirim revisi ke-4", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Revisi 4'}),
         :class => "btn btn-primary", :method => :put
-    - elsif @status_surat_keluar === "Revisi ke-4"
-      = button_to "Kirim koreksi ke-5", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Koreksi ke-5'}),
+    - elsif @status_surat_keluar === "Revisi 4"
+      = button_to "Kirim koreksi ke-5", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Koreksi 5'}),
         :class => "btn btn-primary", :method => :put
-    - elsif @status_surat_keluar === "Koreksi ke-5"
-      = button_to "Arsipkan surat", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Final'}),
+    - elsif @status_surat_keluar === "Koreksi 5"
+      = button_to "Arsipkan surat", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Fix'}),
         :class => "btn btn-primary", :method => :put
-    - elsif @status_surat_keluar === "Final"
+    - elsif @status_surat_keluar === "Fix"
       %i.fa.fa-lg.fa-archive
 
   %br
