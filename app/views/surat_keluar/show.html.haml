@@ -8,8 +8,45 @@
     %b Keterangan:
     = @surat_keluar.keterangan
   %p
-    = button_to "Kirim konsep surat", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Konsep'}),
-      :class => "btn btn-primary", :method => :put                          |
+    %b xx:
+    = @surat_keluar.status_surat
+    
+    %p
+    - if @status_surat_keluar.nil?
+      = button_to "Kirim konsep surat", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Konsep'}),
+        :class => "btn btn-primary", :method => :put
+    - elsif @status_surat_keluar === "Konsep"
+      = button_to "Kirim koreksi ke-1", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Koreksi ke-1'}),
+        :class => "btn btn-primary", :method => :put
+    - elsif @status_surat_keluar === "Koreksi ke-1"
+      = button_to "Kirim revisi ke-1", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Revisi ke-1'}),
+        :class => "btn btn-primary", :method => :put
+    - elsif @status_surat_keluar === "Revisi ke-1"
+      = button_to "Kirim koreksi ke-2", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Koreksi ke-2'}),
+        :class => "btn btn-primary", :method => :put
+    - elsif @status_surat_keluar === "Koreksi ke-2"
+      = button_to "Kirim revisi ke-2", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Revisi ke-2'}),
+        :class => "btn btn-primary", :method => :put
+    - elsif @status_surat_keluar === "Revisi ke-2"
+      = button_to "Kirim koreksi ke-3", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Koreksi ke-3'}),
+        :class => "btn btn-primary", :method => :put
+    - elsif @status_surat_keluar === "Koreksi ke-3"
+      = button_to "Kirim revisi ke-3", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Revisi ke-3'}),
+        :class => "btn btn-primary", :method => :put
+    - elsif @status_surat_keluar === "Revisi ke-3"
+      = button_to "Kirim koreksi ke-4", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Koreksi ke-4'}),
+        :class => "btn btn-primary", :method => :put
+    - elsif @status_surat_keluar === "Koreksi ke-4"
+      = button_to "Kirim revisi ke-4", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Revisi ke-4'}),
+        :class => "btn btn-primary", :method => :put
+    - elsif @status_surat_keluar === "Revisi ke-4"
+      = button_to "Kirim koreksi ke-5", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Koreksi ke-5'}),
+        :class => "btn btn-primary", :method => :put
+    - elsif @status_surat_keluar === "Koreksi ke-5"
+      = button_to "Arsipkan surat", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Final'}),
+        :class => "btn btn-primary", :method => :put
+    - elsif @status_surat_keluar === "Final"
+      %i.fa.fa-lg.fa-archive
 
   %br
   = simple_form_for [@surat_keluar, Komentar.new] do |f|
