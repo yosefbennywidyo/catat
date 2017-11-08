@@ -58,6 +58,11 @@ ActiveRecord::Schema.define(version: 20171108095439) do
     t.bigint "status_kepegawaian_id", null: false
     t.bigint "pengguna_id", null: false
   end
+  
+  create_table "pengguna_status_akun", id: false, force: :cascade do |t|
+    t.bigint "status_akun_id", null: false
+    t.bigint "pengguna_id", null: false
+  end
 
   create_table "seksi", force: :cascade do |t|
     t.string "nama"
@@ -66,7 +71,7 @@ ActiveRecord::Schema.define(version: 20171108095439) do
   end
 
   create_table "status_akun", force: :cascade do |t|
-    t.string "keterangan"
+    t.string "keterangan", default: "Tidak aktif"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
