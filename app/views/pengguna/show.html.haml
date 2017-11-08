@@ -8,6 +8,10 @@
     = f.association :status_kepegawaian, label_method: :status_kepegawaian, value_method: :id, include_blank: false, disabled: true
   .row
     = f.association :jabatan, label_method: :nama, value_method: :id, disabled: true, include_blank: false
+  .row
+    = f.association :seksi, label_method: :nama, value_method: :id, disabled: true, include_blank: false
+  .row
+    = f.association :status_akun, label_method: :keterangan, value_method: :id, disabled: true, include_blank: false
 
   = link_to '<button class="btn btn-primary btn-circle btn-xl"><i class="fa fa-lg fa-pencil" title="Edit status kepegawaian"></i></button>'.html_safe, edit_pengguna_path(@pengguna), class: 'center-block'
   .row.align-items-center.justify-content-center

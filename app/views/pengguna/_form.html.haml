@@ -18,6 +18,8 @@
   .row
     = f.association :seksi, label_method: :nama, value_method: :id, include_blank: false
   .row
+    = f.association :status_akun, label_method: :keterangan, value_method: :id, include_blank: false
+  .row
     = button_tag(type: 'submit', class: "btn btn-primary") do
       %i.fa.d-inline.fa-lg.fa-save
       Simpan
