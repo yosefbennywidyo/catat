@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171108083239) do
+ActiveRecord::Schema.define(version: 20171108094740) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,6 +69,8 @@ ActiveRecord::Schema.define(version: 20171108083239) do
     t.string "keterangan"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "pengguna_id"
+    t.index ["pengguna_id"], name: "index_status_akun_on_pengguna_id"
   end
 
   create_table "status_kepegawaian", force: :cascade do |t|
@@ -100,4 +102,5 @@ ActiveRecord::Schema.define(version: 20171108083239) do
     t.string "derajat_pengaman"
   end
 
+  add_foreign_key "status_akun", "pengguna"
 end
