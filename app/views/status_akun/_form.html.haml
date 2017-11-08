@@ -1,8 +1,13 @@
-= simple_form_for(@status_akun) do |f|
-  = f.error_notification
-
-  .form-inputs
-    = f.input :keterangan
-
-  .form-actions
-    = f.button :submit
+= simple_form_for(@status_akun, html: { class: 'form-horizontal add-left-margin' }, defaults: { wrapper_html: { class: 'col-md-4 mb-2' } } ) do |f|
+  - if @status_akun.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@status_akun.errors.count, "error")} menyebabkan Status Akun yang dibuat tidak dapat disimpan:"
+      %ul
+        - @status_akun.errors.full_messages.each do |message|
+          %li= message
+  .row
+    = f.input :keterangan, label_method: :keterangan
+  .row
+    = button_tag(type: 'submit', class: "btn btn-primary") do
+      %i.fa.d-inline.fa-lg.fa-save
+      Simpan

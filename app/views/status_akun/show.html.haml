@@ -1,9 +1,11 @@
+= render 'elements/header'
 %p#notice= notice
+.add-trbl-margin
+  %p
+    %b Status akun:
+    = @status_akun.keterangan
 
-%p
-  %b Keterangan:
-  = @status_akun.keterangan
-
-= link_to 'Edit', edit_status_akun_path(@status_akun)
-\|
-= link_to 'Back', status_akun_index_path
+  = link_to '<button class="btn btn-primary btn-circle btn-xl"><i class="fa fa-lg fa-pencil" title="Edit status akun"></i></button>'.html_safe, edit_status_akun_path(@status_akun), class: 'center-block'
+  .row.align-items-center.justify-content-center
+    .row
+      = link_to '<button class="btn btn-primary btn-circle btn-xl"><i class="fa fa-lg fa-arrow-left" title="Kembali ke daftar status akun"></i></button>'.html_safe, status_akun_index_path, class: 'center-block'

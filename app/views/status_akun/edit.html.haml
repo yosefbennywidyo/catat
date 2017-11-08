@@ -1,7 +1,9 @@
-%h1 Editing status_akun
+= render 'elements/header'
+%h1 Edit Status Akun
 
 = render 'form'
 
-= link_to 'Show', @status_akun
-\|
-= link_to 'Back', status_akun_index_path
+.row.align-items-center.justify-content-center
+  .row
+    = link_to '<button class="btn btn-primary btn-circle btn-xl"><i class="fa fa-lg fa-close" title="Batal edit status akun"></i></button>'.html_safe, status_akun_index_path, class: 'center-block'
+    = link_to '<button class="btn btn-primary btn-circle btn-xl"><i class="fa fa-lg fa-expand" title="Tampilkan status akun"></i></button>'.html_safe, @status_akun, class: 'center-block add-left-margin'
