@@ -3,24 +3,23 @@
 
 .py-5
   .row
-    .col-md-12
-      %table.table
+    .col-sm-12
+      %table.table.table-striped
         %thead
-          %tr
-            %th Judul
-            %th Keterangan
-            %th
-            %th
-            %th
-        
+          %tr.row
+            %th.col-sm-4 Judul
+            %th.col-sm-4 Keterangan
+            %th.col-sm-4 Tindakan
+
         %tbody
           - @surat_keluar.each do |surat_keluar|
-            %tr
-              %td= surat_keluar.judul
-              %td= surat_keluar.keterangan
-              %td= link_to '<i class="fa d-inline fa-lg fa-expand" title="Tampilkan surat keluar"></i>'.html_safe, surat_keluar, class: 'btn btn-sm btn-primary mx-1'
-              %td= link_to '<i class="fa d-inline fa-lg fa-pencil" title="Edit surat keluar"></i>'.html_safe, edit_surat_keluar_path(surat_keluar), class: 'btn btn-sm btn-primary mx-1'
-              %td= link_to '<i class="fa d-inline fa-lg fa-trash" title="Hapus surat keluar"></i>'.html_safe, surat_keluar, method: :delete, data: { confirm: 'Anda yakin ingin menghapus surat ini?' }, class: 'btn btn-sm btn-primary mx-1'
+            %tr.row
+              %td.col-sm-4= surat_keluar.judul
+              %td.col-sm-4= surat_keluar.keterangan
+              %td.col-sm-1= link_to '<i class="fa d-inline fa-lg fa-expand" title="Tampilkan surat keluar"></i>'.html_safe, surat_keluar, class: 'btn btn-sm btn-primary mx-1'
+              %td.col-sm-1= link_to '<i class="fa d-inline fa-lg fa-pencil" title="Edit surat keluar"></i>'.html_safe, edit_surat_keluar_path(surat_keluar), class: 'btn btn-sm btn-primary mx-1'
+              %td.col-sm-1= link_to '<i class="fa d-inline fa-lg fa-trash" title="Hapus surat keluar"></i>'.html_safe, surat_keluar, method: :delete, data: { confirm: 'Anda yakin ingin menghapus surat ini?' }, class: 'btn btn-sm btn-primary mx-1'
+              %td.col-sm-1= surat_keluar.status_surat
 
 .row.align-items-center.justify-content-center
   .row
