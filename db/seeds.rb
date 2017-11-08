@@ -115,3 +115,17 @@ Seksi.create!([{
 }])
 
 p "Created #{Seksi.count} nama seksi"
+
+
+
+StatusAkun.create!([{
+  keterangan: "Tidak aktif"
+}])
+StatusAkun.create!([{
+  keterangan: "Aktif"
+}])
+StatusAkun.create!([{
+  keterangan: "Administrator"
+}])
+
+p "Created #{StatusAkun.count} status akun"
