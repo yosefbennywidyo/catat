@@ -595,3 +595,5 @@ Finished in 1.014562s, 52.2393 runs/s, 60.1244 assertions/s.
 ## Get stuck? Don't!
 * [Google](https://www.google.com)
 * [Stack Overflow](https://stackoverflow.com/)
+* [Ruby Doc](http://ruby-doc.org)
+* [Ruby on Rails](http://rubyonrails.org)

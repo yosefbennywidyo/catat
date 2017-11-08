@@ -11,6 +11,7 @@ class SuratKeluarController < ApplicationController
   # GET /surat_keluar/1
   # GET /surat_keluar/1.json
   def show
+    @status_surat_keluar = @surat_keluar.status_surat
   end
 
   # GET /surat_keluar/new
