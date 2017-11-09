@@ -1,5 +1,5 @@
 class PenggunaController < ApplicationController
-  before_action :authorize
+  before_action :authorize, except: [:new]
   before_action :set_pengguna, only: [:show, :edit, :update, :destroy]
 
   # GET /pengguna
@@ -17,7 +17,7 @@ class PenggunaController < ApplicationController
   def new
     @pengguna = Pengguna.new
   end
-
+  
   # GET /pengguna/1/edit
   def edit
   end
@@ -66,9 +66,9 @@ class PenggunaController < ApplicationController
     def set_pengguna
       @pengguna = Pengguna.find(params[:id])
     end
-
+    
     # Never trust parameters from the scary internet, only allow the white list through.
     def pengguna_params
-      params.require(:pengguna).permit(:nama, :password, :password_confirmation, status_kepegawaian_ids:[], jabatan_ids:[], seksi_ids:[])
+      params.require(:pengguna).permit(:nama, :password, :password_confirmation, status_kepegawaian_ids:[], jabatan_ids:[], seksi_ids:[], status_akun_ids:[])
     end
 end
