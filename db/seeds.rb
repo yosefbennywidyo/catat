@@ -45,14 +45,20 @@ end
 p "Created #{DaftarPustaka.count} pustaka"
 
 
-20.times do |i|
-  Pengguna.create!([{ nama: "Pengguna ke-#{i}",
+Pengguna.create!([{
+  nama: "Bulla Nggallu, S.Pd, M.Si",
   password: "password",
   password_confirmation: "password"
   }])
-end
+  
+Pengguna.create!([{
+  nama: "Yosef Rangga Kapodo, S.S",
+  password: "password",
+  password_confirmation: "password"
+  }])
 
-Pengguna.create!([{ nama: "Administrator",
+Pengguna.create!([{
+  nama: "Administrator",
   password: "Administrator",
   password_confirmation: "Administrator"
   }])
@@ -129,3 +135,8 @@ StatusAkun.create!([{
 }])
 
 p "Created #{StatusAkun.count} status akun"
+
+
+Pengguna.find(21).status_akun << StatusAkun.find(3)
+
+p "Created #{Pengguna.count} pengguna"
