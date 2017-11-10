@@ -5,7 +5,7 @@
       %ul
         - @pengguna.errors.full_messages.each do |message|
           %li= message
-  -if current_user.nil?
+  -if current_user.nil? or Pengguna.find(current_user.id).status_akun.where("keterangan = 'Administrator'").count === 0
     .row
       = f.input :nama, label: 'Nama'
     .row
@@ -16,15 +16,17 @@
       = f.association :status_akun, label_method: :keterangan, value_method: :id, include_blank: false, selected: 1
   - elsif Pengguna.find(current_user.id).status_akun.where("keterangan = 'Administrator'").count === 1
     .row
+      = f.input :nama, label: 'Nama'
+    .row
+      = f.input :password, label: 'Kata kunci'
+    .row
+      = f.input :password_confirmation, label: 'Konfirmasi kata kunci'
+    .row
       = f.association :status_kepegawaian, label_method: :status_kepegawaian, value_method: :id, include_blank: false
     .row
       = f.association :jabatan, label_method: :nama, value_method: :id, include_blank: false
     .row
       = f.association :seksi, label_method: :nama, value_method: :id, include_blank: false
-    .row
-      = button_tag(type: 'submit', class: "btn btn-primary") do
-        %i.fa.d-inline.fa-lg.fa-save
-        Simpan
   .row
     = button_tag(type: 'submit', class: "btn btn-primary") do
       %i.fa.d-inline.fa-lg.fa-save
