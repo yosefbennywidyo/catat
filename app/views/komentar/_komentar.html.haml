@@ -1,14 +1,18 @@
 %br
-%li
-  = komentar.isi
-  %small{:style => "color:green;"}
-    Dibuat #{time_ago_in_words(komentar.created_at)} yang lalu, oleh: 
-    = komentar.pengomentar
-  = simple_form_for [komentar, Komentar.new] do |f|
-    = f.input :isi, placeholder: "Tambahkan tanggapan", label: false
-    = button_tag(type: 'submit', class: "btn btn-primary") do
-      %i.fa.d-inline.fa-lg.fa-comments
-      Tanggapi
-    %br
-  %ul
-    = render partial: 'komentar/komentar', collection: komentar.komentar
+.card-deck
+  .col-md-12
+    .card.p-5.m-1
+      .card-block
+        %h4
+          = komentar.isi
+        %p
+          %small
+          Komentar dibuat #{time_ago_in_words(komentar.created_at)} yang lalu, oleh: 
+          = komentar.pengomentar
+      .card-block
+        = simple_form_for [komentar, Komentar.new] do |f|
+          = f.input :isi, placeholder: "Tambahkan tanggapan", label: false
+          = button_tag(type: 'submit', class: "btn btn-primary") do
+            %i.fa.d-inline.fa-lg.fa-comments
+            Tanggapi
+        = render partial: 'komentar/komentar', collection: komentar.komentar
