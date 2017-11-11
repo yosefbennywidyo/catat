@@ -41,6 +41,7 @@ gem "haml-rails", "~> 1.0" # Needed to replace Rails's Erb-based generators with
 gem 'jquery-rails'
 gem "font-awesome-rails"
 gem 'simple_form'
+gem "paperclip"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
