@@ -10,6 +10,9 @@
   %p
     %b xx:
     = @surat_keluar.status_surat
+  %p
+    %b Lampiran:
+    = link_to '<button class="btn btn-primary btn-circle btn-m"><i class="fa fa-lg fa-cloud-download" title="Unduh lampiran"></i></button>'.html_safe, @surat_keluar.lampiran_dokumen.url, class: 'center-block'
     
     %p
     - if @status_surat_keluar.nil?
@@ -58,7 +61,7 @@
   %ul
     = render(partial: 'komentar/komentar', collection: @surat_keluar.komentar)    
 
-  = link_to '<button class="btn btn-primary btn-circle btn-xl"><i class="fa fa-lg fa-pencil" title="Edit surat keluar"></i></button>'.html_safe, edit_surat_keluar_path(@surat_keluar), class: 'center-block'
+  = link_to '<button class="btn btn-primary btn-circle btn-lg"><i class="fa fa-lg fa-pencil" title="Edit surat keluar"></i></button>'.html_safe, edit_surat_keluar_path(@surat_keluar), class: 'center-block'
   .row.align-items-center.justify-content-center
     .row
-      = link_to '<button class="btn btn-primary btn-circle btn-xl"><i class="fa fa-lg fa-arrow-left" title="Kembali ke daftar surat keluar"></i></button>'.html_safe, surat_keluar_index_path, class: 'center-block'
+      = link_to '<button class="btn btn-primary btn-circle btn-lg"><i class="fa fa-lg fa-arrow-left" title="Kembali ke daftar surat keluar"></i></button>'.html_safe, surat_keluar_index_path, class: 'center-block'
