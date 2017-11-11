@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171108101029) do
+ActiveRecord::Schema.define(version: 20171111010432) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -88,6 +88,11 @@ ActiveRecord::Schema.define(version: 20171108101029) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "status_surat"
+    t.string "lampiran_dokumen"
+    t.string "lampiran_dokumen_file_name"
+    t.string "lampiran_dokumen_content_type"
+    t.integer "lampiran_dokumen_file_size"
+    t.datetime "lampiran_dokumen_updated_at"
   end
 
   create_table "surat_masuk", force: :cascade do |t|
