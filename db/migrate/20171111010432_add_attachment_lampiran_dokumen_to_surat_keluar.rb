@@ -1,4 +1,4 @@
-class AddAttachmentLampiranDokumenToSuratKeluar < ActiveRecord::Migration
+class AddAttachmentLampiranDokumenToSuratKeluar < ActiveRecord::Migration[5.1]
   def self.up
     change_table :surat_keluar do |t|
       t.attachment :lampiran_dokumen
