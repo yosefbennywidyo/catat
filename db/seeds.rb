@@ -63,6 +63,12 @@ Pengguna.create!([{
   password_confirmation: "Administrator"
   }])
 
+Pengguna.create!([{
+  nama: "Umbu Tagela Ibi Sola, S.Ab",
+  password: "password",
+  password_confirmation: "password"
+  }])
+
 p "Created #{Pengguna.count} pengguna"
 
 
@@ -92,6 +98,9 @@ Jabatan.create!([{
 }])
 Jabatan.create!([{
   nama: "Penyelenggara"
+}])
+Jabatan.create!([{
+  nama: "Pelaksana"
 }])
 
 p "Created #{Jabatan.count} nama jabatan"
@@ -137,6 +146,6 @@ StatusAkun.create!([{
 p "Created #{StatusAkun.count} status akun"
 
 
-Pengguna.find(21).status_akun << StatusAkun.find(3)
+Pengguna.find(3).status_akun << StatusAkun.find(3)
 
 p "Created #{Pengguna.count} pengguna"
