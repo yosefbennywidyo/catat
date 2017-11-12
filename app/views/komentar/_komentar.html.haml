@@ -6,7 +6,7 @@
         %h4
           = komentar.isi
         %p
-          = link_to '<button class="btn btn-primary btn-circle btn-m"><i class="fa fa-lg fa-cloud-download" title="Unduh lampiran"></i></button>'.html_safe, @komentar.lampiran.url, class: 'center-block'
+          = link_to '<button class="btn btn-primary btn-circle btn-m"><i class="fa fa-lg fa-cloud-download" title="Unduh lampiran"></i></button>'.html_safe, komentar.lampiran.url, class: 'center-block'
         %p
           %small
           Komentar dibuat #{time_ago_in_words(komentar.created_at)} yang lalu, oleh: 
