@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171112182753) do
+ActiveRecord::Schema.define(version: 20171112183117) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20171112182753) do
     t.string "lampiran_content_type"
     t.integer "lampiran_file_size"
     t.datetime "lampiran_updated_at"
+    t.string "lampiran"
   end
 
   create_table "pengguna", force: :cascade do |t|
