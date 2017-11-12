@@ -1,11 +1,9 @@
 class AddLampiranToKomentar < ActiveRecord::Migration[5.1]
-  def self.up
-    change_table :komentar do |t|
-      t.attachment :lampiran
-    end
+  def up
+    add_attachment :komentar, :lampiran
   end
 
-  def self.down
+  def down
     remove_attachment :komentar, :lampiran
   end
 end
