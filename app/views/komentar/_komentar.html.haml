@@ -6,12 +6,15 @@
         %h4
           = komentar.isi
         %p
+          = link_to '<button class="btn btn-primary btn-circle btn-m"><i class="fa fa-lg fa-cloud-download" title="Unduh lampiran"></i></button>'.html_safe, @komentar.lampiran.url, class: 'center-block'
+        %p
           %small
           Komentar dibuat #{time_ago_in_words(komentar.created_at)} yang lalu, oleh: 
           = komentar.pengomentar
       .card-block
         = simple_form_for [komentar, Komentar.new] do |f|
           = f.input :isi, placeholder: "Tambahkan tanggapan", label: false
+          = f.input :lampiran
           = button_tag(type: 'submit', class: "btn btn-primary") do
             %i.fa.d-inline.fa-lg.fa-comments
             Tanggapi

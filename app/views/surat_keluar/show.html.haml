@@ -54,6 +54,7 @@
   %br
   = simple_form_for [@surat_keluar, Komentar.new] do |f|
     = f.input :isi, placeholder: "Tambahkan komentar", label: false
+    = f.input :lampiran, label: false
     = button_tag(type: 'submit', class: "btn btn-primary") do
       %i.fa.d-inline.fa-lg.fa-comment
       Tambah komentar
