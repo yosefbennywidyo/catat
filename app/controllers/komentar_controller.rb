@@ -20,12 +20,12 @@ class KomentarController < ApplicationController
 
     private
 
-    def komentar_params
-      params.require(:komentar).permit(:isi, :pengomentar)
-    end
-
-    def find_commentable
-      @commentable = Komentar.find_by_id(params[:komentar_id]) if params[:komentar_id]
-      @commentable = SuratKeluar.find_by_id(params[:surat_keluar_id]) if params[:surat_keluar_id]
-    end
+      def komentar_params
+        params.require(:komentar).permit(:isi, :pengomentar, :lampiran)
+      end
+  
+      def find_commentable
+        @commentable = Komentar.find_by_id(params[:komentar_id]) if params[:komentar_id]
+        @commentable = SuratKeluar.find_by_id(params[:surat_keluar_id]) if params[:surat_keluar_id]
+      end
 end
