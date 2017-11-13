@@ -70,6 +70,6 @@ class DaftarPustakaController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def daftar_pustaka_params
-      params.require(:daftar_pustaka).permit(:judul, :keterangan)
+      params.require(:daftar_pustaka).permit(:judul, :keterangan, :lampiran)
     end
 end
