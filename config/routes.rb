@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   resources :jabatan
   resources :status_kepegawaian
   resources :pengguna
-  resources :daftar_pustaka
+  resources :daftar_pustaka do
+    resources :komentar
+  end
   resources :surat_masuk
   
   resources :surat_keluar do
