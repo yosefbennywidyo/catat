@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Nama:
+  = @status_surat_masuk.nama
+
+= link_to 'Edit', edit_status_surat_masuk_path(@status_surat_masuk)
+\|
+= link_to 'Back', status_surat_masuk_index_path

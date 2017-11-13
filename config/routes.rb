@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :status_surat_masuk
   resources :status_akun
   get 'signup', to: 'pengguna#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'

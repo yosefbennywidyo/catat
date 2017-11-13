@@ -1,0 +1,2 @@
+class StatusSuratMasuk < ApplicationRecord
+end

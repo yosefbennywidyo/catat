@@ -1,0 +1,21 @@
+%h1 Listing status_surat_masuk
+
+%table
+  %thead
+    %tr
+      %th Nama
+      %th
+      %th
+      %th
+
+  %tbody
+    - @status_surat_masuk.each do |status_surat_masuk|
+      %tr
+        %td= status_surat_masuk.nama
+        %td= link_to 'Show', status_surat_masuk
+        %td= link_to 'Edit', edit_status_surat_masuk_path(status_surat_masuk)
+        %td= link_to 'Destroy', status_surat_masuk, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Status surat masuk', new_status_surat_masuk_path
