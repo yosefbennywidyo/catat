@@ -1,13 +1,12 @@
 = render 'elements/header'
 %p#notice= notice
-.add-trbl-margin
-  %p
-    %b Judul:
-    = @daftar_pustaka.judul
-  %p
-    %b Keterangan:
-    = @daftar_pustaka.keterangan
-  
+
+= simple_form_for(@daftar_pustaka, html: { class: 'form-horizontal add-left-margin' }, defaults: { wrapper_html: { class: 'col-md-4 mb-2' } } ) do |f|
+  .row
+    = f.input :judul, label: 'Nama', disabled: true
+  .row
+    = f.input :keterangan, label: 'Keterangan', disabled: true
+
   = link_to '<button class="btn btn-primary btn-circle btn-lg"><i class="fa fa-lg fa-pencil" title="Edit pustaka"></i></button>'.html_safe, edit_daftar_pustaka_path(@daftar_pustaka), class: 'center-block'
   .row.align-items-center.justify-content-center
     .row
