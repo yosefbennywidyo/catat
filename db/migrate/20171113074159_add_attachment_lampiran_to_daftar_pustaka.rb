@@ -1,4 +1,4 @@
-class AddAttachmentLampiranToDaftarPustaka < ActiveRecord::Migration
+class AddAttachmentLampiranToDaftarPustaka < ActiveRecord::Migration[5.1]
   def self.up
     change_table :daftar_pustaka do |t|
       t.attachment :lampiran
