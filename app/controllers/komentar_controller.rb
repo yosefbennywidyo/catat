@@ -27,5 +27,6 @@ class KomentarController < ApplicationController
       def find_commentable
         @commentable = Komentar.find_by_id(params[:komentar_id]) if params[:komentar_id]
         @commentable = SuratKeluar.find_by_id(params[:surat_keluar_id]) if params[:surat_keluar_id]
+        @commentable = DaftarPustaka.find_by_id(params[:daftar_pustaka_id]) if params[:daftar_pustaka_id]
       end
 end
