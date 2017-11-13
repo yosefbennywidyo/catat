@@ -145,7 +145,20 @@ StatusAkun.create!([{
 
 p "Created #{StatusAkun.count} status akun"
 
+Pengguna.find(1).status_akun << StatusAkun.find(2)
+Pengguna.find(2).status_akun << StatusAkun.find(2)
+Pengguna.find(3).status_akun << StatusAkun.find(2)
+Pengguna.find(4).status_akun << StatusAkun.find(3)
 
-Pengguna.find(3).status_akun << StatusAkun.find(3)
+Pengguna.find(2).seksi << Seksi.find(1)
+Pengguna.find(4).seksi << Seksi.find(1)
+
+Pengguna.find(1).jabatan << Jabatan.find(1)
+Pengguna.find(2).jabatan << Jabatan.find(3)
+Pengguna.find(4).jabatan << Jabatan.find(6)
+
+Pengguna.find(1).status_kepegawaian << StatusKepegawaian.find(1)
+Pengguna.find(2).status_kepegawaian << StatusKepegawaian.find(1)
+Pengguna.find(4).status_kepegawaian << StatusKepegawaian.find(2)
 
 p "Created #{Pengguna.count} pengguna"
