@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171113074159) do
+ActiveRecord::Schema.define(version: 20171113085813) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -111,13 +111,10 @@ ActiveRecord::Schema.define(version: 20171113074159) do
     t.string "lampiran"
     t.date "diterima_tgl"
     t.string "no_agenda"
-    t.string "status"
-    t.string "sifat"
     t.string "dari"
     t.string "perihal"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "derajat_pengaman"
   end
 
 end
