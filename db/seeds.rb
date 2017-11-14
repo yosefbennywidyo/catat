@@ -44,6 +44,21 @@ SifatSuratMasuk.create!([{
 p "Created #{SifatSuratMasuk.count} sifat surat masuk"
 
 
+
+DerajatPengaman.create!([{
+  nama: "Sangat Rahasia"
+  }])
+DerajatPengaman.create!([{
+  nama: "Rahasia"
+  }])
+DerajatPengaman.create!([{
+  nama: "Biasa"
+  }])
+
+p "Created #{DerajatPengaman.count} derajat pengaman"
+
+
+
 # Assigned SuratMasuk 1-10 with StatusSuratMasuk.nama = Asli
 SuratMasuk.find(1).status_surat_masuk << StatusSuratMasuk.find(1)
 SuratMasuk.find(2).status_surat_masuk << StatusSuratMasuk.find(1)
@@ -67,6 +82,8 @@ SuratMasuk.find(17).status_surat_masuk << StatusSuratMasuk.find(2)
 SuratMasuk.find(18).status_surat_masuk << StatusSuratMasuk.find(2)
 SuratMasuk.find(19).status_surat_masuk << StatusSuratMasuk.find(2)
 SuratMasuk.find(20).status_surat_masuk << StatusSuratMasuk.find(2)
+
+
 
 # Assigned SuratMasuk 1-6 with SifatSuratMasuk.nama = Sangat Segera/Kilat
 SuratMasuk.find(1).sifat_surat_masuk << SifatSuratMasuk.find(1)
@@ -93,6 +110,35 @@ SuratMasuk.find(17).sifat_surat_masuk << SifatSuratMasuk.find(3)
 SuratMasuk.find(18).sifat_surat_masuk << SifatSuratMasuk.find(3)
 SuratMasuk.find(19).sifat_surat_masuk << SifatSuratMasuk.find(3)
 SuratMasuk.find(20).sifat_surat_masuk << SifatSuratMasuk.find(3)
+
+
+
+# Assigned SuratMasuk 1-6 with DerajatPengaman.nama = Sangat Rahasia
+SuratMasuk.find(1).derajat_pengaman << DerajatPengaman.find(1)
+SuratMasuk.find(2).derajat_pengaman << DerajatPengaman.find(1)
+SuratMasuk.find(3).derajat_pengaman << DerajatPengaman.find(1)
+SuratMasuk.find(4).derajat_pengaman << DerajatPengaman.find(1)
+SuratMasuk.find(5).derajat_pengaman << DerajatPengaman.find(1)
+SuratMasuk.find(6).derajat_pengaman << DerajatPengaman.find(1)
+
+# Assigned SuratMasuk 7-12 with DerajatPengaman.nama = Rahasia
+SuratMasuk.find(7).derajat_pengaman << DerajatPengaman.find(2)
+SuratMasuk.find(8).derajat_pengaman << DerajatPengaman.find(2)
+SuratMasuk.find(9).derajat_pengaman << DerajatPengaman.find(2)
+SuratMasuk.find(10).derajat_pengaman << DerajatPengaman.find(2)
+SuratMasuk.find(11).derajat_pengaman << DerajatPengaman.find(2)
+SuratMasuk.find(12).derajat_pengaman << DerajatPengaman.find(2)
+
+# Assigned SuratMasuk 13-20 with DerajatPengaman.nama = Biasa
+SuratMasuk.find(13).derajat_pengaman << DerajatPengaman.find(3)
+SuratMasuk.find(14).derajat_pengaman << DerajatPengaman.find(3)
+SuratMasuk.find(15).derajat_pengaman << DerajatPengaman.find(3)
+SuratMasuk.find(16).derajat_pengaman << DerajatPengaman.find(3)
+SuratMasuk.find(17).derajat_pengaman << DerajatPengaman.find(3)
+SuratMasuk.find(18).derajat_pengaman << DerajatPengaman.find(3)
+SuratMasuk.find(19).derajat_pengaman << DerajatPengaman.find(3)
+SuratMasuk.find(20).derajat_pengaman << DerajatPengaman.find(3)
+
 
 20.times do |i|
   SuratKeluar.create!([{
