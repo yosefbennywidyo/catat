@@ -70,6 +70,6 @@ class SuratMasukController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def surat_masuk_params
-      params.require(:surat_masuk).permit(:nomor_surat, :tanggal_surat, :lampiran, :diterima_tgl, :no_agenda, :dari, :perihal)
+      params.require(:surat_masuk).permit(:nomor_surat, :tanggal_surat, :lampiran, :diterima_tgl, :no_agenda, :dari, :perihal, status_surat_masuk_ids:[])
     end
 end
