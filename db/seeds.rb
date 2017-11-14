@@ -30,6 +30,20 @@ StatusSuratMasuk.create!([{
 p "Created #{StatusSuratMasuk.count} status surat masuk"
 
 
+
+SifatSuratMasuk.create!([{
+  nama: "Sangat Segera/Kilat"
+  }])
+SifatSuratMasuk.create!([{
+  nama: "Segera"
+  }])
+SifatSuratMasuk.create!([{
+  nama: "Biasa"
+  }])
+
+p "Created #{SifatSuratMasuk.count} sifat surat masuk"
+
+
 # Assigned SuratMasuk 1-10 with StatusSuratMasuk.nama = Asli
 SuratMasuk.find(1).status_surat_masuk << StatusSuratMasuk.find(1)
 SuratMasuk.find(2).status_surat_masuk << StatusSuratMasuk.find(1)
@@ -54,6 +68,31 @@ SuratMasuk.find(18).status_surat_masuk << StatusSuratMasuk.find(2)
 SuratMasuk.find(19).status_surat_masuk << StatusSuratMasuk.find(2)
 SuratMasuk.find(20).status_surat_masuk << StatusSuratMasuk.find(2)
 
+# Assigned SuratMasuk 1-6 with SifatSuratMasuk.nama = Sangat Segera/Kilat
+SuratMasuk.find(1).sifat_surat_masuk << SifatSuratMasuk.find(1)
+SuratMasuk.find(2).sifat_surat_masuk << SifatSuratMasuk.find(1)
+SuratMasuk.find(3).sifat_surat_masuk << SifatSuratMasuk.find(1)
+SuratMasuk.find(4).sifat_surat_masuk << SifatSuratMasuk.find(1)
+SuratMasuk.find(5).sifat_surat_masuk << SifatSuratMasuk.find(1)
+SuratMasuk.find(6).sifat_surat_masuk << SifatSuratMasuk.find(1)
+
+# Assigned SuratMasuk 7-12 with SifatSuratMasuk.nama = Segera
+SuratMasuk.find(7).sifat_surat_masuk << SifatSuratMasuk.find(2)
+SuratMasuk.find(8).sifat_surat_masuk << SifatSuratMasuk.find(2)
+SuratMasuk.find(9).sifat_surat_masuk << SifatSuratMasuk.find(2)
+SuratMasuk.find(10).sifat_surat_masuk << SifatSuratMasuk.find(2)
+SuratMasuk.find(11).sifat_surat_masuk << SifatSuratMasuk.find(2)
+SuratMasuk.find(12).sifat_surat_masuk << SifatSuratMasuk.find(2)
+
+# Assigned SuratMasuk 13-20 with SifatSuratMasuk.nama = Biasa
+SuratMasuk.find(13).sifat_surat_masuk << SifatSuratMasuk.find(3)
+SuratMasuk.find(14).sifat_surat_masuk << SifatSuratMasuk.find(3)
+SuratMasuk.find(15).sifat_surat_masuk << SifatSuratMasuk.find(3)
+SuratMasuk.find(16).sifat_surat_masuk << SifatSuratMasuk.find(3)
+SuratMasuk.find(17).sifat_surat_masuk << SifatSuratMasuk.find(3)
+SuratMasuk.find(18).sifat_surat_masuk << SifatSuratMasuk.find(3)
+SuratMasuk.find(19).sifat_surat_masuk << SifatSuratMasuk.find(3)
+SuratMasuk.find(20).sifat_surat_masuk << SifatSuratMasuk.find(3)
 
 20.times do |i|
   SuratKeluar.create!([{
