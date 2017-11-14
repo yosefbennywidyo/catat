@@ -261,20 +261,28 @@ StatusAkun.create!([{
 
 p "Created #{StatusAkun.count} status akun"
 
+# Assigned Pengguna 1-3 with StatusAkun.keterangan = Aktif
 Pengguna.find(1).status_akun << StatusAkun.find(2)
 Pengguna.find(2).status_akun << StatusAkun.find(2)
 Pengguna.find(3).status_akun << StatusAkun.find(2)
+# Assigned Pengguna 4 with StatusAkun.keterangan = Administrator
 Pengguna.find(4).status_akun << StatusAkun.find(3)
 
+# Assigned Pengguna 2 and 4 with Seksi.nama = Tata Usaha
 Pengguna.find(2).seksi << Seksi.find(1)
 Pengguna.find(4).seksi << Seksi.find(1)
 
+# Assigned Pengguna 1 with Jabatan.nama = Kepala Kantor
 Pengguna.find(1).jabatan << Jabatan.find(1)
+# Assigned Pengguna 2 with Jabatan.nama = Kepala Sub Bagian
 Pengguna.find(2).jabatan << Jabatan.find(3)
+# Assigned Pengguna 4 with Jabatan.nama = Pelaksana
 Pengguna.find(4).jabatan << Jabatan.find(6)
 
+# Assigned Pengguna 1-2 with StatusKepegawaian.status_kepegawaian = PNS
 Pengguna.find(1).status_kepegawaian << StatusKepegawaian.find(1)
 Pengguna.find(2).status_kepegawaian << StatusKepegawaian.find(1)
+# Assigned Pengguna 4 with StatusKepegawaian.status_kepegawaian = PTT
 Pengguna.find(4).status_kepegawaian << StatusKepegawaian.find(2)
 
 p "Created #{Pengguna.count} pengguna"
