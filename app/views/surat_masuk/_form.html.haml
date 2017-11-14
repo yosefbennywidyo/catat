@@ -12,9 +12,9 @@
   .row
     = f.input :diterima_tgl, as: :date, label: 'Diterima tanggal'
     = f.input :no_agenda, label: "Nomor agenda", wrapper_html: { class: 'col-md-3 mb-2' }
-    = f.input :status, label: "Status", wrapper_html: { class: 'col-md-3 mb-2' }
+    = f.association :status_surat_masuk, label: "Status", wrapper_html: { class: 'col-md-3 mb-2' }
   .row
-    = f.input :sifat, label: "Sifat", wrapper_html: { class: 'col-md-3 mb-2' }
+    = f.association :sifat_surat_masuk, label: "Sifat", wrapper_html: { class: 'col-md-3 mb-2' }
     = f.input :derajat_pengaman, label: "Derajat pengaman"
   .row
     = f.input :dari, label: "Dari"
