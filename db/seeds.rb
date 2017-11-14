@@ -12,9 +12,6 @@
   lampiran: "-",
   diterima_tgl: '01/01/2017',
   no_agenda: "-",
-  status: "Asli",
-  sifat: "Sangat Segera/Kilat",
-  derajat_pengaman: "Sangat Rahasia",
   dari: "Orang ke#{i}",
   perihal: "perihal#{i}"
   }])
@@ -31,6 +28,31 @@ StatusSuratMasuk.create!([{
   }])
 
 p "Created #{StatusSuratMasuk.count} status surat masuk"
+
+
+# Assigned SuratMasuk 1-10 with StatusSuratMasuk.nama = Asli
+SuratMasuk.find(1).status_surat_masuk << StatusSuratMasuk.find(1)
+SuratMasuk.find(2).status_surat_masuk << StatusSuratMasuk.find(1)
+SuratMasuk.find(3).status_surat_masuk << StatusSuratMasuk.find(1)
+SuratMasuk.find(4).status_surat_masuk << StatusSuratMasuk.find(1)
+SuratMasuk.find(5).status_surat_masuk << StatusSuratMasuk.find(1)
+SuratMasuk.find(6).status_surat_masuk << StatusSuratMasuk.find(1)
+SuratMasuk.find(7).status_surat_masuk << StatusSuratMasuk.find(1)
+SuratMasuk.find(8).status_surat_masuk << StatusSuratMasuk.find(1)
+SuratMasuk.find(9).status_surat_masuk << StatusSuratMasuk.find(1)
+SuratMasuk.find(10).status_surat_masuk << StatusSuratMasuk.find(1)
+
+# Assigned SuratMasuk 11-20 with StatusSuratMasuk.nama = Tembusan
+SuratMasuk.find(11).status_surat_masuk << StatusSuratMasuk.find(2)
+SuratMasuk.find(12).status_surat_masuk << StatusSuratMasuk.find(2)
+SuratMasuk.find(13).status_surat_masuk << StatusSuratMasuk.find(2)
+SuratMasuk.find(14).status_surat_masuk << StatusSuratMasuk.find(2)
+SuratMasuk.find(15).status_surat_masuk << StatusSuratMasuk.find(2)
+SuratMasuk.find(16).status_surat_masuk << StatusSuratMasuk.find(2)
+SuratMasuk.find(17).status_surat_masuk << StatusSuratMasuk.find(2)
+SuratMasuk.find(18).status_surat_masuk << StatusSuratMasuk.find(2)
+SuratMasuk.find(19).status_surat_masuk << StatusSuratMasuk.find(2)
+SuratMasuk.find(20).status_surat_masuk << StatusSuratMasuk.find(2)
 
 
 20.times do |i|
