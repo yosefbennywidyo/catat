@@ -5,4 +5,5 @@ class SuratMasuk < ApplicationRecord
   validates :perihal, presence: true, length: { minimum: 5, message: "harus terdiri dari minimal 5 karakter"  }
   has_and_belongs_to_many :status_surat_masuk
   has_and_belongs_to_many :sifat_surat_masuk
+  has_and_belongs_to_many :derajat_pengaman
 end
