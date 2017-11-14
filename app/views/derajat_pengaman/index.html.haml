@@ -1,21 +1,26 @@
-%h1 Listing derajat_pengaman
+= render 'elements/header'
+%h1 Daftar Derajat Pengaman
 
-%table
-  %thead
-    %tr
-      %th Nama
-      %th
-      %th
-      %th
+.py-5
+  .row
+    .col-md-12
+      %table.table
+        %thead
+          %tr
+            %th Derajat Pengaman
+            %th
+            %th
+            %th
+        
+        %tbody
+          - @derajat_pengaman.each do |derajat_pengaman|
+            %tr
+              %td= derajat_pengaman.nama
+              %td= link_to '<i class="fa d-inline fa-lg fa-expand" title="Tampilkan derajat pengaman"></i>'.html_safe, derajat_pengaman, class: 'btn btn-sm btn-primary mx-1'
+              %td= link_to '<i class="fa d-inline fa-lg fa-pencil" title="Edit derajat pengaman"></i>'.html_safe, edit_derajat_pengaman_path(derajat_pengaman), class: 'btn btn-sm btn-primary mx-1'
+              %td= link_to '<i class="fa d-inline fa-lg fa-trash" title="Hapus derajat pengaman"></i>'.html_safe, derajat_pengaman, method: :delete, data: { confirm: 'Anda yakin ingin menghapus derajat pengaman ini?' }, class: 'btn btn-sm btn-primary mx-1'
 
-  %tbody
-    - @derajat_pengaman.each do |derajat_pengaman|
-      %tr
-        %td= derajat_pengaman.nama
-        %td= link_to 'Show', derajat_pengaman
-        %td= link_to 'Edit', edit_derajat_pengaman_path(derajat_pengaman)
-        %td= link_to 'Destroy', derajat_pengaman, method: :delete, data: { confirm: 'Are you sure?' }
-
-%br
-
-= link_to 'New Derajat pengaman', new_derajat_pengaman_path
+.row.align-items-center.justify-content-center
+  .row
+    = link_to '<button class="btn btn-primary btn-circle btn-lg"><i class="fa fa-lg fa-arrow-left" title="Kembali ke Dasbor"></i></button>'.html_safe, dasbor_index_path, class: 'center-block'
+    = link_to '<button class="btn btn-primary btn-circle btn-lg"><i class="fa fa-lg fa-plus" title="Buat status surat masuk"></i></button>'.html_safe, new_derajat_pengaman_path, class: 'center-block add-left-margin'

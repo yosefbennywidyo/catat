@@ -1,3 +1,16 @@
+= render 'elements/header'
+%p#notice= notice
+.add-trbl-margin
+  %p
+    %b Derajat pengaman:
+    = @derajat_pengaman.nama
+
+  = link_to '<button class="btn btn-primary btn-circle btn-lg"><i class="fa fa-lg fa-pencil" title="Edit derajat pengaman"></i></button>'.html_safe, edit_derajat_pengaman_path(@derajat_pengaman), class: 'center-block'
+  .row.align-items-center.justify-content-center
+    .row
+      = link_to '<button class="btn btn-primary btn-circle btn-lg"><i class="fa fa-lg fa-arrow-left" title="Kembali ke daftar derajat pengaman"></i></button>'.html_safe, derajat_pengaman_index_path, class: 'center-block'
+
+
 %p#notice= notice
 
 %p

@@ -1,7 +1,9 @@
-%h1 Editing derajat_pengaman
+= render 'elements/header'
+%h1 Edit Derajat Pengaman
 
 = render 'form'
 
-= link_to 'Show', @derajat_pengaman
-\|
-= link_to 'Back', derajat_pengaman_index_path
+.row.align-items-center.justify-content-center
+  .row
+    = link_to '<button class="btn btn-primary btn-circle btn-lg"><i class="fa fa-lg fa-close" title="Batal edit derajat pengaman"></i></button>'.html_safe, derajat_pengaman_index_path, class: 'center-block'
+    = link_to '<button class="btn btn-primary btn-circle btn-lg"><i class="fa fa-lg fa-expand" title="Tampilkan derajat pengaman"></i></button>'.html_safe, @derajat_pengaman, class: 'center-block add-left-margin'
