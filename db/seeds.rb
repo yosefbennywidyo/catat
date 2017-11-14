@@ -264,9 +264,9 @@ p "Created #{StatusAkun.count} status akun"
 # Assigned Pengguna 1-3 with StatusAkun.keterangan = Aktif
 Pengguna.find(1).status_akun << StatusAkun.find(2)
 Pengguna.find(2).status_akun << StatusAkun.find(2)
-Pengguna.find(3).status_akun << StatusAkun.find(2)
+Pengguna.find(4).status_akun << StatusAkun.find(2)
 # Assigned Pengguna 4 with StatusAkun.keterangan = Administrator
-Pengguna.find(4).status_akun << StatusAkun.find(3)
+Pengguna.find(3).status_akun << StatusAkun.find(3)
 
 # Assigned Pengguna 2 and 4 with Seksi.nama = Tata Usaha
 Pengguna.find(2).seksi << Seksi.find(1)
