@@ -1,5 +1,10 @@
-%h1 New sifat_surat_masuk
+= render 'elements/header'
+.container
+%h1.add-left-margin Membuat Sifat Surat Masuk
 
 = render 'form'
 
-= link_to 'Back', sifat_surat_masuk_index_path
+%br
+.row.align-items-center.justify-content-center
+  .row
+    = link_to '<button class="btn btn-primary btn-circle btn-lg"><i class="fa fa-lg fa-arrow-left" title="Batal membuat sifat surat masuk"></i></button>'.html_safe, sifat_surat_masuk_index_path, class: 'center-block'

@@ -1,3 +1,14 @@
+= render 'elements/header'
+%h1 Edit Sifat Surat Masuk
+
+= render 'form'
+
+.row.align-items-center.justify-content-center
+  .row
+    = link_to '<button class="btn btn-primary btn-circle btn-lg"><i class="fa fa-lg fa-close" title="Batal edit sifat surat masuk"></i></button>'.html_safe, sifat_surat_masuk_index_path, class: 'center-block'
+    = link_to '<button class="btn btn-primary btn-circle btn-lg"><i class="fa fa-lg fa-expand" title="Tampilkan sifat surat masuk"></i></button>'.html_safe, @sifat_surat_masuk, class: 'center-block add-left-margin'
+
+
 %h1 Editing sifat_surat_masuk
 
 = render 'form'

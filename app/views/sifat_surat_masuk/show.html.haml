@@ -1,9 +1,11 @@
+= render 'elements/header'
 %p#notice= notice
+.add-trbl-margin
+  %p
+    %b Sifat surat masuk:
+    = @sifat_surat_masuk.nama
 
-%p
-  %b Nama:
-  = @sifat_surat_masuk.nama
-
-= link_to 'Edit', edit_sifat_surat_masuk_path(@sifat_surat_masuk)
-\|
-= link_to 'Back', sifat_surat_masuk_index_path
+  = link_to '<button class="btn btn-primary btn-circle btn-lg"><i class="fa fa-lg fa-pencil" title="Edit sifat surat masuk"></i></button>'.html_safe, edit_sifat_surat_masuk_path(@sifat_surat_masuk), class: 'center-block'
+  .row.align-items-center.justify-content-center
+    .row
+      = link_to '<button class="btn btn-primary btn-circle btn-lg"><i class="fa fa-lg fa-arrow-left" title="Kembali ke daftar sifat surat masuk"></i></button>'.html_safe, sifat_surat_masuk_index_path, class: 'center-block'

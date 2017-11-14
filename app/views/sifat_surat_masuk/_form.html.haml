@@ -1,3 +1,18 @@
+= simple_form_for(@sifat_surat_masuk, html: { class: 'form-horizontal add-left-margin' }, defaults: { wrapper_html: { class: 'col-md-4 mb-2' } } ) do |f|
+  - if @sifat_surat_masuk.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@sifat_surat_masuk.errors.count, "error")} menyebabkan Sifat Surat Masuk yang dibuat tidak dapat disimpan:"
+      %ul
+        - @sifat_surat_masuk.errors.full_messages.each do |message|
+          %li= message
+  .row
+    = f.input :nama, label_method: :nama
+  .row
+    = button_tag(type: 'submit', class: "btn btn-primary") do
+      %i.fa.d-inline.fa-lg.fa-save
+      Simpan
+
+
 = simple_form_for(@sifat_surat_masuk) do |f|
   = f.error_notification
 
