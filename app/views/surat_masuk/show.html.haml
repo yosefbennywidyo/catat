@@ -4,7 +4,7 @@
   .row
     = f.input :nomor_surat, label: 'Nomor surat', disabled: true
   .row
-    = f.date :tanggal_surat, label: 'Tanggal surat', disabled: true
+    = f.input :tanggal_surat, as: :date, label: 'Tanggal surat', disabled: true
   .row
     = f.input :lampiran, label: 'Lampiran', disabled: true
   .row
@@ -13,10 +13,6 @@
     = f.input :no_agenda, label: 'No. agenda', disabled: true
   .row
     = f.association :status_surat_masuk, label_method: :nama, value_method: :id, disabled: true, include_blank: false
-  .row
-    = f.input :sifat, label: 'Sifat', disabled: true
-  .row
-    = f.input :derajat_pengaman, label: 'Derajat pengaman', disabled: true
   .row
     = f.input :dari, label: 'Dari', disabled: true
   .row
