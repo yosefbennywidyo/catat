@@ -1,0 +1,21 @@
+%h1 Listing sifat_surat_masuk
+
+%table
+  %thead
+    %tr
+      %th Nama
+      %th
+      %th
+      %th
+
+  %tbody
+    - @sifat_surat_masuk.each do |sifat_surat_masuk|
+      %tr
+        %td= sifat_surat_masuk.nama
+        %td= link_to 'Show', sifat_surat_masuk
+        %td= link_to 'Edit', edit_sifat_surat_masuk_path(sifat_surat_masuk)
+        %td= link_to 'Destroy', sifat_surat_masuk, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Sifat surat masuk', new_sifat_surat_masuk_path

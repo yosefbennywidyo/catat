@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Nama:
+  = @sifat_surat_masuk.nama
+
+= link_to 'Edit', edit_sifat_surat_masuk_path(@sifat_surat_masuk)
+\|
+= link_to 'Back', sifat_surat_masuk_index_path

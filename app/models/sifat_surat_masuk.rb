@@ -1,0 +1,2 @@
+class SifatSuratMasuk < ApplicationRecord
+end

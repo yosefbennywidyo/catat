@@ -1,0 +1,2 @@
+module SifatSuratMasukHelper
+end
