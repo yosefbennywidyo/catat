@@ -23,6 +23,15 @@ end
 p "Created #{SuratMasuk.count} surat masuk"
 
 
+StatusSuratMasuk.create!([{
+  nama: "Asli"
+  }])
+StatusSuratMasuk.create!([{
+  nama: "Tembusan"
+  }])
+
+p "Created #{StatusSuratMasuk.count} status surat masuk"
+
 
 20.times do |i|
   SuratKeluar.create!([{
