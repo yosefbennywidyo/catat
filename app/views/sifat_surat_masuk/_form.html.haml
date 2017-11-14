@@ -11,13 +11,3 @@
     = button_tag(type: 'submit', class: "btn btn-primary") do
       %i.fa.d-inline.fa-lg.fa-save
       Simpan
-
-
-= simple_form_for(@sifat_surat_masuk) do |f|
-  = f.error_notification
-
-  .form-inputs
-    = f.input :nama
-
-  .form-actions
-    = f.button :submit
