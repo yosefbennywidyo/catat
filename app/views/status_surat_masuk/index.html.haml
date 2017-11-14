@@ -1,21 +1,26 @@
-%h1 Listing status_surat_masuk
+= render 'elements/header'
+%h1 Daftar Status Surat Masuk
 
-%table
-  %thead
-    %tr
-      %th Nama
-      %th
-      %th
-      %th
+.py-5
+  .row
+    .col-md-12
+      %table.table
+        %thead
+          %tr
+            %th Status Surat Masuk
+            %th
+            %th
+            %th
+        
+        %tbody
+          - @status_surat_masuk.each do |status_surat_masuk|
+            %tr
+              %td= status_surat_masuk.nama
+              %td= link_to '<i class="fa d-inline fa-lg fa-expand" title="Tampilkan status surat masuk"></i>'.html_safe, status_surat_masuk, class: 'btn btn-sm btn-primary mx-1'
+              %td= link_to '<i class="fa d-inline fa-lg fa-pencil" title="Edit status surat masuk"></i>'.html_safe, edit_status_surat_masuk_path(status_surat_masuk), class: 'btn btn-sm btn-primary mx-1'
+              %td= link_to '<i class="fa d-inline fa-lg fa-trash" title="Hapus status surat masuk"></i>'.html_safe, status_surat_masuk, method: :delete, data: { confirm: 'Anda yakin ingin menghapus status kepegawaian ini?' }, class: 'btn btn-sm btn-primary mx-1'
 
-  %tbody
-    - @status_surat_masuk.each do |status_surat_masuk|
-      %tr
-        %td= status_surat_masuk.nama
-        %td= link_to 'Show', status_surat_masuk
-        %td= link_to 'Edit', edit_status_surat_masuk_path(status_surat_masuk)
-        %td= link_to 'Destroy', status_surat_masuk, method: :delete, data: { confirm: 'Are you sure?' }
-
-%br
-
-= link_to 'New Status surat masuk', new_status_surat_masuk_path
+.row.align-items-center.justify-content-center
+  .row
+    = link_to '<button class="btn btn-primary btn-circle btn-lg"><i class="fa fa-lg fa-arrow-left" title="Kembali ke Dasbor"></i></button>'.html_safe, dasbor_index_path, class: 'center-block'
+    = link_to '<button class="btn btn-primary btn-circle btn-lg"><i class="fa fa-lg fa-plus" title="Buat status surat masuk"></i></button>'.html_safe, new_status_surat_masuk_path, class: 'center-block add-left-margin'

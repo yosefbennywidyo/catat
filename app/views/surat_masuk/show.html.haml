@@ -1,37 +1,27 @@
 = render 'elements/header'
 %p#notice= notice
-.add-trbl-margin
-  %p
-    %b Nomor surat:
-    = @surat_masuk.nomor_surat
-  %p
-    %b Tanggal surat:
-    = @surat_masuk.tanggal_surat
-  %p
-    %b Lampiran:
-    = @surat_masuk.lampiran
-  %p
-    %b Diterima tgl:
-    = @surat_masuk.diterima_tgl
-  %p
-    %b No agenda:
-    = @surat_masuk.no_agenda
-  %p
-    %b Status:
-    = @surat_masuk.status
-  %p
-    %b Sifat:
-    = @surat_masuk.sifat
-  %p
-    %b Derajat:
-    = @surat_masuk.derajat_pengaman
-  %p
-    %b Dari:
-    = @surat_masuk.dari
-  %p
-    %b Perihal:
-    = @surat_masuk.perihal
-  
+= simple_form_for(@surat_masuk, html: { class: 'form-horizontal add-left-margin' }, defaults: { wrapper_html: { class: 'col-md-4 mb-2' } } ) do |f|
+  .row
+    = f.input :nomor_surat, label: 'Nomor surat', disabled: true
+  .row
+    = f.date :tanggal_surat, label: 'Tanggal surat', disabled: true
+  .row
+    = f.input :lampiran, label: 'Lampiran', disabled: true
+  .row
+    = f.input :diterima_tgl, label: 'Diterima tgl', disabled: true
+  .row
+    = f.input :no_agenda, label: 'No. agenda', disabled: true
+  .row
+    = f.association :status_surat_masuk, label_method: :nama, value_method: :id, disabled: true, include_blank: false
+  .row
+    = f.input :sifat, label: 'Sifat', disabled: true
+  .row
+    = f.input :derajat_pengaman, label: 'Derajat pengaman', disabled: true
+  .row
+    = f.input :dari, label: 'Dari', disabled: true
+  .row
+    = f.input :perihal, label: 'Perihal', disabled: true
+
   = link_to '<button class="btn btn-primary btn-circle btn-lg"><i class="fa fa-lg fa-pencil" title="Edit surat masuk"></i></button>'.html_safe, edit_surat_masuk_path(@surat_masuk), class: 'center-block'
   .row.align-items-center.justify-content-center
     .row
