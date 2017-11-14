@@ -16,6 +16,8 @@
   .row
     = f.association :sifat_surat_masuk, label_method: :nama, value_method: :id, disabled: true, include_blank: false
   .row
+    = f.association :derajat_pengaman, label_method: :nama, value_method: :id, disabled: true, include_blank: false
+  .row
     = f.input :dari, label: 'Dari', disabled: true
   .row
     = f.input :perihal, label: 'Perihal', disabled: true
