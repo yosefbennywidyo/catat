@@ -17,6 +17,18 @@
       .card.p-5.m-1
         .card-block
           %h2
+            %b Status Surat Masuk
+          %p Anda dapat menemukan detil Status Surat Masuk disini
+          %p
+          Jumlah status surat masuk:
+          = @jumlah_status_surat_masuk
+          %p
+        .card-block
+          %a.btn.btn-secondary{:href => status_surat_masuk_index_path} Detil Status Surat Masuk
+    .col-md-6
+      .card.p-5.m-1
+        .card-block
+          %h2
             %b Surat Keluar
           %p Anda dapat menemukan detil Surat Keluar disini
           %p
