@@ -6,6 +6,8 @@ class SuratKeluarController < ApplicationController
   # GET /surat_keluar.json
   def index
     @surat_keluar = SuratKeluar.all
+    @surat_keluar_awal = @surat_keluar.where(status_surat: nil)
+    @surat_keluar_konsep = @surat_keluar.where(status_surat: "Konsep")
   end
 
   # GET /surat_keluar/1
