@@ -1,0 +1,21 @@
+%h1 Listing derajat_pengaman
+
+%table
+  %thead
+    %tr
+      %th Nama
+      %th
+      %th
+      %th
+
+  %tbody
+    - @derajat_pengaman.each do |derajat_pengaman|
+      %tr
+        %td= derajat_pengaman.nama
+        %td= link_to 'Show', derajat_pengaman
+        %td= link_to 'Edit', edit_derajat_pengaman_path(derajat_pengaman)
+        %td= link_to 'Destroy', derajat_pengaman, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Derajat pengaman', new_derajat_pengaman_path

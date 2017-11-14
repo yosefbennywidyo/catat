@@ -1,0 +1,2 @@
+class DerajatPengaman < ApplicationRecord
+end

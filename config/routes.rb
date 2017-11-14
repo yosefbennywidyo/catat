@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :derajat_pengaman
   resources :sifat_surat_masuk
   resources :status_surat_masuk
   resources :status_akun

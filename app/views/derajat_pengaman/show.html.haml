@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Nama:
+  = @derajat_pengaman.nama
+
+= link_to 'Edit', edit_derajat_pengaman_path(@derajat_pengaman)
+\|
+= link_to 'Back', derajat_pengaman_index_path
