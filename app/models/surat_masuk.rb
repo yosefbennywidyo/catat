@@ -6,4 +6,5 @@ class SuratMasuk < ApplicationRecord
   validates :derajat_pengaman, presence: true, length: { minimum: 5, message: "harus terdiri dari minimal 5 karakter"  }
   validates :dari, presence: true, length: { minimum: 5, message: "harus terdiri dari minimal 5 karakter"  }
   validates :perihal, presence: true, length: { minimum: 5, message: "harus terdiri dari minimal 5 karakter"  }
+  has_and_belongs_to_many :status_surat_masuk
 end
