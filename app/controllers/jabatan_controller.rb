@@ -70,6 +70,6 @@ class JabatanController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def jabatan_params
-      params.require(:jabatan).permit(:nama)
+      params.require(:jabatan).permit(:nama, pengguna_ids:[])
     end
 end
