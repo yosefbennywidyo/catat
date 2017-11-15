@@ -60,7 +60,7 @@
       Tambah komentar
     %br
   %ul
-    = render(partial: 'komentar/komentar', collection: @surat_keluar.komentar)    
+    = render(partial: 'komentar/komentar', collection: @surat_keluar.komentar.order('created_at DESC'))    
 
   = link_to '<button class="btn btn-primary btn-circle btn-lg"><i class="fa fa-lg fa-pencil" title="Edit surat keluar"></i></button>'.html_safe, edit_surat_keluar_path(@surat_keluar), class: 'center-block'
   .row.align-items-center.justify-content-center
