@@ -7,7 +7,19 @@ class SuratKeluarController < ApplicationController
   def index
     @surat_keluar = SuratKeluar.all
     @surat_keluar_awal = @surat_keluar.where(status_surat: nil)
-    @surat_keluar_konsep = @surat_keluar.where(status_surat: "Konsep")
+    @surat_keluar_konsep = @surat_keluar.where(status_surat: 'Konsep')
+    @surat_keluar_koreksi_1 = @surat_keluar.where(status_surat: 'Koreksi 1')
+    @surat_keluar_revisi_1 = @surat_keluar.where(status_surat: 'Revisi 1')
+    @surat_keluar_koreksi_2 = @surat_keluar.where(status_surat: 'Koreksi 2')
+    @surat_keluar_revisi_2 = @surat_keluar.where(status_surat: 'Revisi 2')
+    @surat_keluar_koreksi_3 = @surat_keluar.where(status_surat: 'Koreksi 3')
+    @surat_keluar_revisi_3 = @surat_keluar.where(status_surat: 'Revisi 3')
+    @surat_keluar_koreksi_4 = @surat_keluar.where(status_surat: 'Koreksi 4')
+    @surat_keluar_revisi_4 = @surat_keluar.where(status_surat: 'Revisi 4')
+    @surat_keluar_koreksi_5 = @surat_keluar.where(status_surat: 'Koreksi 5')
+    @surat_keluar_fix = @surat_keluar.where(status_surat: 'Fix')
+    @jabatan_pengguna = Pengguna.includes(:jabatan).find(current_user.id).jabatan.collect(&:nama)
+    @seksi_pengguna = Pengguna.includes(:seksi).find(current_user.id).seksi.collect(&:nama)
   end
 
   # GET /surat_keluar/1
@@ -73,6 +85,6 @@ class SuratKeluarController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def surat_keluar_params
-      params.require(:surat_keluar).permit(:judul, :keterangan, :status_surat, :lampiran_dokumen)
+      params.require(:surat_keluar).permit(:judul, :keterangan, :status_surat, :lampiran_dokumen, pengguna_ids:[], jabatan_ids:[])
     end
 end
