@@ -6,7 +6,9 @@ class SuratKeluarController < ApplicationController
   # GET /surat_keluar.json
   def index
     @surat_keluar = SuratKeluar.all
+    Pengguna.includes(:surat_keluar).find(4).surat_keluar
     @surat_keluar_awal = @surat_keluar.where(status_surat: nil)
+    @surat_keluar_tata_usaha_awal = Seksi.includes(:surat_keluar).find(1).surat_keluar.where(status_surat: nil)
     @surat_keluar_konsep = @surat_keluar.where(status_surat: 'Konsep')
     @surat_keluar_koreksi_1 = @surat_keluar.where(status_surat: 'Koreksi 1')
     @surat_keluar_revisi_1 = @surat_keluar.where(status_surat: 'Revisi 1')
@@ -25,12 +27,17 @@ class SuratKeluarController < ApplicationController
   # GET /surat_keluar/1
   # GET /surat_keluar/1.json
   def show
-    @status_surat_keluar = @surat_keluar.status_surat
+    
   end
 
   # GET /surat_keluar/new
   def new
     @surat_keluar = SuratKeluar.new
+    @seksi_pengguna_id = Pengguna.includes(:seksi).find(current_user.id).seksi.collect(&:id)
+    @seksi_pengguna_nama = current_user.id
+    #Pengguna.includes(:seksi).find(current_user.id).seksi.collect(&:id)
+    #Pengguna.includes(:seksi).find('pengguna.id' => current_user.id).seksi.collect(&:id)
+    #Pengguna.joins(:seksi).where('pengguna.id' => current_user.id).collect(&:id)
   end
 
   # GET /surat_keluar/1/edit
@@ -40,7 +47,7 @@ class SuratKeluarController < ApplicationController
   # POST /surat_keluar
   # POST /surat_keluar.json
   def create
-    @surat_keluar = SuratKeluar.new(surat_keluar_params)
+    @surat_keluar = current_user.surat_keluar.new(surat_keluar_params)
 
     respond_to do |format|
       if @surat_keluar.save
@@ -85,6 +92,6 @@ class SuratKeluarController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def surat_keluar_params
-      params.require(:surat_keluar).permit(:judul, :keterangan, :status_surat, :lampiran_dokumen, pengguna_ids:[], jabatan_ids:[])
+      params.require(:surat_keluar).permit(:judul, :keterangan, :status_surat, :lampiran_dokumen, pengguna_ids:[], jabatan_ids:[], seksi_ids:[])
     end
 end

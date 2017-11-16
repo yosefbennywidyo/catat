@@ -1,7 +1,11 @@
 = render 'elements/header'
 %h1 Daftar Surat Keluar
-%p Seksi
+%p seksi_pengguna
 = @seksi_pengguna
+%p ss
+= @seksi_pengguna_id
+%p surat_keluar_seksi
+= @surat_keluar_seksi
 %p Jabatan
 = @jabatan_pengguna.join
 - if @seksi_pengguna.join === "Tata Usaha"
