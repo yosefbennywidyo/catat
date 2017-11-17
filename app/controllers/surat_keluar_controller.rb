@@ -9,6 +9,7 @@ class SuratKeluarController < ApplicationController
     Pengguna.includes(:surat_keluar).find(4).surat_keluar
     @surat_keluar_awal = @surat_keluar.where(status_surat: nil)
     @surat_keluar_tata_usaha_awal = Seksi.includes(:surat_keluar).find(1).surat_keluar.where(status_surat: nil)
+    @surat_keluar_tata_usaha_konsep = Seksi.includes(:surat_keluar).find(1).surat_keluar.where(status_surat: 'Konsep')
     @surat_keluar_konsep = @surat_keluar.where(status_surat: 'Konsep')
     @surat_keluar_koreksi_1 = @surat_keluar.where(status_surat: 'Koreksi 1')
     @surat_keluar_revisi_1 = @surat_keluar.where(status_surat: 'Revisi 1')
