@@ -6,6 +6,7 @@
 * [ ] Create Disposisi model
 * [x] Create SuratKeluar model
   * [x] Add StatusSurat to SuratKeluar
+  * [ ] Add logic to check Pengguna (seksi, jabatan)
 
   > Change StatusSurat state from Konsep to Final
 
