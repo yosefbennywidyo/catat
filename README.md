@@ -11,7 +11,7 @@
 
 * [x] Create SuratMasuk model
 * [x] Create ~~KonsepSurat~~ DaftarPustaka model
-* [ ] Create CatatanKerja model
+* [ ] Create CatatanKerja model (Pemberi, Tgl. Pemberian Tugas, Pelaksana, Tgl. Pelaksanaan Tugas, Tgl. Penyelesaian Tugas)
 * [x] Create Pengguna model
   * [x] Nama
   * [x] Password
@@ -579,6 +579,7 @@ Finished in 1.014562s, 52.2393 runs/s, 60.1244 assertions/s.
 
 ## Learn resources
 * [Rails for Zombies](http://railsforzombies.org)
+* [Ruby Doc](https://ruby-doc.org/core-2.2.0/Array.html)
 * [Ruby Plus](https://rubyplus.com/articles/3901-Polymorphic-Association-in-Rails-5)
 * [Code Mentor](https://www.codementor.io/ruby-on-rails/tutorial/threaded-comments-polymorphic-associations)
 * [Try Ruby](http://tryruby.org)
