@@ -140,7 +140,7 @@ SuratMasuk.find(19).derajat_pengaman << DerajatPengaman.find(3)
 SuratMasuk.find(20).derajat_pengaman << DerajatPengaman.find(3)
 
 
-20.times do |i|
+90.times do |i|
   SuratKeluar.create!([{
   judul: "Surat keluar ke-#{i}",
   keterangan: "Keterangan surat keluar ke-#{i}"
@@ -148,6 +148,7 @@ SuratMasuk.find(20).derajat_pengaman << DerajatPengaman.find(3)
 end
 
 p "Created #{SuratKeluar.count} surat keluar"
+
 
 
 
@@ -349,6 +350,240 @@ Pengguna.find(16).seksi << Seksi.find(8)
 # Assigned Pengguna 9 and 17 with Seksi.nama = Kecamatan Katikutana
 Pengguna.find(9).seksi << Seksi.find(9)
 Pengguna.find(17).seksi << Seksi.find(9)
+
+
+
+# Assigned SuratKeluar 1-10 with Pengguna ke-10
+SuratKeluar.find(1).pengguna << Pengguna.find(10)
+SuratKeluar.find(2).pengguna << Pengguna.find(10)
+SuratKeluar.find(3).pengguna << Pengguna.find(10)
+SuratKeluar.find(4).pengguna << Pengguna.find(10)
+SuratKeluar.find(5).pengguna << Pengguna.find(10)
+SuratKeluar.find(6).pengguna << Pengguna.find(10)
+SuratKeluar.find(7).pengguna << Pengguna.find(10)
+SuratKeluar.find(8).pengguna << Pengguna.find(10)
+SuratKeluar.find(9).pengguna << Pengguna.find(10)
+SuratKeluar.find(10).pengguna << Pengguna.find(10)
+# Assigned SuratKeluar 1-10 with Seksi ke-1
+SuratKeluar.find(1).seksi << Seksi.find(1)
+SuratKeluar.find(2).seksi << Seksi.find(1)
+SuratKeluar.find(3).seksi << Seksi.find(1)
+SuratKeluar.find(4).seksi << Seksi.find(1)
+SuratKeluar.find(5).seksi << Seksi.find(1)
+SuratKeluar.find(6).seksi << Seksi.find(1)
+SuratKeluar.find(7).seksi << Seksi.find(1)
+SuratKeluar.find(8).seksi << Seksi.find(1)
+SuratKeluar.find(9).seksi << Seksi.find(1)
+SuratKeluar.find(10).seksi << Seksi.find(1)
+
+
+
+# Assigned SuratKeluar 11-20 with Pengguna ke-11
+SuratKeluar.find(11).pengguna << Pengguna.find(11)
+SuratKeluar.find(12).pengguna << Pengguna.find(11)
+SuratKeluar.find(13).pengguna << Pengguna.find(11)
+SuratKeluar.find(14).pengguna << Pengguna.find(11)
+SuratKeluar.find(15).pengguna << Pengguna.find(11)
+SuratKeluar.find(16).pengguna << Pengguna.find(11)
+SuratKeluar.find(17).pengguna << Pengguna.find(11)
+SuratKeluar.find(18).pengguna << Pengguna.find(11)
+SuratKeluar.find(19).pengguna << Pengguna.find(11)
+SuratKeluar.find(20).pengguna << Pengguna.find(11)
+
+# Assigned SuratKeluar 11-20 with Seksi ke-2
+SuratKeluar.find(11).seksi << Seksi.find(2)
+SuratKeluar.find(12).seksi << Seksi.find(2)
+SuratKeluar.find(13).seksi << Seksi.find(2)
+SuratKeluar.find(14).seksi << Seksi.find(2)
+SuratKeluar.find(15).seksi << Seksi.find(2)
+SuratKeluar.find(16).seksi << Seksi.find(2)
+SuratKeluar.find(17).seksi << Seksi.find(2)
+SuratKeluar.find(18).seksi << Seksi.find(2)
+SuratKeluar.find(19).seksi << Seksi.find(2)
+SuratKeluar.find(20).seksi << Seksi.find(2)
+
+
+
+# Assigned SuratKeluar 21-30 with Pengguna ke-12
+SuratKeluar.find(21).pengguna << Pengguna.find(12)
+SuratKeluar.find(22).pengguna << Pengguna.find(12)
+SuratKeluar.find(23).pengguna << Pengguna.find(12)
+SuratKeluar.find(24).pengguna << Pengguna.find(12)
+SuratKeluar.find(25).pengguna << Pengguna.find(12)
+SuratKeluar.find(26).pengguna << Pengguna.find(12)
+SuratKeluar.find(27).pengguna << Pengguna.find(12)
+SuratKeluar.find(28).pengguna << Pengguna.find(12)
+SuratKeluar.find(29).pengguna << Pengguna.find(12)
+SuratKeluar.find(30).pengguna << Pengguna.find(12)
+
+# Assigned SuratKeluar 21-30 with Seksi ke-1
+SuratKeluar.find(21).seksi << Seksi.find(3)
+SuratKeluar.find(22).seksi << Seksi.find(3)
+SuratKeluar.find(23).seksi << Seksi.find(3)
+SuratKeluar.find(24).seksi << Seksi.find(3)
+SuratKeluar.find(25).seksi << Seksi.find(3)
+SuratKeluar.find(26).seksi << Seksi.find(3)
+SuratKeluar.find(27).seksi << Seksi.find(3)
+SuratKeluar.find(28).seksi << Seksi.find(3)
+SuratKeluar.find(29).seksi << Seksi.find(3)
+SuratKeluar.find(30).seksi << Seksi.find(3)
+
+
+
+# Assigned SuratKeluar 31-40 with Pengguna ke-13
+SuratKeluar.find(31).pengguna << Pengguna.find(13)
+SuratKeluar.find(32).pengguna << Pengguna.find(13)
+SuratKeluar.find(33).pengguna << Pengguna.find(13)
+SuratKeluar.find(34).pengguna << Pengguna.find(13)
+SuratKeluar.find(35).pengguna << Pengguna.find(13)
+SuratKeluar.find(36).pengguna << Pengguna.find(13)
+SuratKeluar.find(37).pengguna << Pengguna.find(13)
+SuratKeluar.find(38).pengguna << Pengguna.find(13)
+SuratKeluar.find(39).pengguna << Pengguna.find(13)
+SuratKeluar.find(40).pengguna << Pengguna.find(13)
+
+# Assigned SuratKeluar 31-40 with Seksi ke-4
+SuratKeluar.find(31).seksi << Seksi.find(4)
+SuratKeluar.find(32).seksi << Seksi.find(4)
+SuratKeluar.find(33).seksi << Seksi.find(4)
+SuratKeluar.find(34).seksi << Seksi.find(4)
+SuratKeluar.find(35).seksi << Seksi.find(4)
+SuratKeluar.find(36).seksi << Seksi.find(4)
+SuratKeluar.find(37).seksi << Seksi.find(4)
+SuratKeluar.find(38).seksi << Seksi.find(4)
+SuratKeluar.find(39).seksi << Seksi.find(4)
+SuratKeluar.find(40).seksi << Seksi.find(4)
+
+
+
+# Assigned SuratKeluar 41-50 with Pengguna ke-14
+SuratKeluar.find(41).pengguna << Pengguna.find(1)
+SuratKeluar.find(42).pengguna << Pengguna.find(14)
+SuratKeluar.find(43).pengguna << Pengguna.find(14)
+SuratKeluar.find(44).pengguna << Pengguna.find(14)
+SuratKeluar.find(45).pengguna << Pengguna.find(14)
+SuratKeluar.find(46).pengguna << Pengguna.find(14)
+SuratKeluar.find(47).pengguna << Pengguna.find(14)
+SuratKeluar.find(48).pengguna << Pengguna.find(14)
+SuratKeluar.find(49).pengguna << Pengguna.find(14)
+SuratKeluar.find(50).pengguna << Pengguna.find(14)
+
+# Assigned SuratKeluar 41-50 with Seksi ke-1
+SuratKeluar.find(41).seksi << Seksi.find(5)
+SuratKeluar.find(42).seksi << Seksi.find(5)
+SuratKeluar.find(43).seksi << Seksi.find(5)
+SuratKeluar.find(44).seksi << Seksi.find(5)
+SuratKeluar.find(45).seksi << Seksi.find(5)
+SuratKeluar.find(46).seksi << Seksi.find(5)
+SuratKeluar.find(47).seksi << Seksi.find(5)
+SuratKeluar.find(48).seksi << Seksi.find(5)
+SuratKeluar.find(49).seksi << Seksi.find(5)
+SuratKeluar.find(50).seksi << Seksi.find(5)
+
+
+
+# Assigned SuratKeluar 51-60 with Pengguna ke-15
+SuratKeluar.find(51).pengguna << Pengguna.find(15)
+SuratKeluar.find(52).pengguna << Pengguna.find(15)
+SuratKeluar.find(53).pengguna << Pengguna.find(15)
+SuratKeluar.find(54).pengguna << Pengguna.find(15)
+SuratKeluar.find(55).pengguna << Pengguna.find(15)
+SuratKeluar.find(56).pengguna << Pengguna.find(15)
+SuratKeluar.find(57).pengguna << Pengguna.find(15)
+SuratKeluar.find(58).pengguna << Pengguna.find(15)
+SuratKeluar.find(59).pengguna << Pengguna.find(15)
+SuratKeluar.find(60).pengguna << Pengguna.find(15)
+
+# Assigned SuratKeluar 51-60 with Seksi ke-6
+SuratKeluar.find(51).seksi << Seksi.find(6)
+SuratKeluar.find(52).seksi << Seksi.find(6)
+SuratKeluar.find(53).seksi << Seksi.find(6)
+SuratKeluar.find(54).seksi << Seksi.find(6)
+SuratKeluar.find(55).seksi << Seksi.find(6)
+SuratKeluar.find(56).seksi << Seksi.find(6)
+SuratKeluar.find(57).seksi << Seksi.find(6)
+SuratKeluar.find(58).seksi << Seksi.find(6)
+SuratKeluar.find(59).seksi << Seksi.find(6)
+SuratKeluar.find(60).seksi << Seksi.find(6)
+
+
+
+# Assigned SuratKeluar 61-70 with Pengguna ke-16
+SuratKeluar.find(61).pengguna << Pengguna.find(16)
+SuratKeluar.find(62).pengguna << Pengguna.find(16)
+SuratKeluar.find(63).pengguna << Pengguna.find(16)
+SuratKeluar.find(64).pengguna << Pengguna.find(16)
+SuratKeluar.find(65).pengguna << Pengguna.find(16)
+SuratKeluar.find(66).pengguna << Pengguna.find(16)
+SuratKeluar.find(67).pengguna << Pengguna.find(16)
+SuratKeluar.find(68).pengguna << Pengguna.find(16)
+SuratKeluar.find(69).pengguna << Pengguna.find(16)
+SuratKeluar.find(70).pengguna << Pengguna.find(16)
+
+# Assigned SuratKeluar 61-70 with Seksi ke-7
+SuratKeluar.find(61).seksi << Seksi.find(7)
+SuratKeluar.find(62).seksi << Seksi.find(7)
+SuratKeluar.find(63).seksi << Seksi.find(7)
+SuratKeluar.find(64).seksi << Seksi.find(7)
+SuratKeluar.find(65).seksi << Seksi.find(7)
+SuratKeluar.find(66).seksi << Seksi.find(7)
+SuratKeluar.find(67).seksi << Seksi.find(7)
+SuratKeluar.find(68).seksi << Seksi.find(7)
+SuratKeluar.find(69).seksi << Seksi.find(7)
+SuratKeluar.find(70).seksi << Seksi.find(7)
+
+
+
+# Assigned SuratKeluar 71-80 with Pengguna ke-17
+SuratKeluar.find(71).pengguna << Pengguna.find(17)
+SuratKeluar.find(72).pengguna << Pengguna.find(17)
+SuratKeluar.find(73).pengguna << Pengguna.find(17)
+SuratKeluar.find(74).pengguna << Pengguna.find(17)
+SuratKeluar.find(75).pengguna << Pengguna.find(17)
+SuratKeluar.find(76).pengguna << Pengguna.find(17)
+SuratKeluar.find(77).pengguna << Pengguna.find(17)
+SuratKeluar.find(78).pengguna << Pengguna.find(17)
+SuratKeluar.find(79).pengguna << Pengguna.find(17)
+SuratKeluar.find(80).pengguna << Pengguna.find(17)
+
+# Assigned SuratKeluar 71-80 with Seksi ke-8
+SuratKeluar.find(71).seksi << Seksi.find(8)
+SuratKeluar.find(72).seksi << Seksi.find(8)
+SuratKeluar.find(73).seksi << Seksi.find(8)
+SuratKeluar.find(74).seksi << Seksi.find(8)
+SuratKeluar.find(75).seksi << Seksi.find(8)
+SuratKeluar.find(76).seksi << Seksi.find(8)
+SuratKeluar.find(77).seksi << Seksi.find(8)
+SuratKeluar.find(78).seksi << Seksi.find(8)
+SuratKeluar.find(79).seksi << Seksi.find(8)
+SuratKeluar.find(80).seksi << Seksi.find(8)
+
+
+
+# Assigned SuratKeluar 81-90 with Pengguna ke-18
+SuratKeluar.find(81).pengguna << Pengguna.find(18)
+SuratKeluar.find(82).pengguna << Pengguna.find(18)
+SuratKeluar.find(83).pengguna << Pengguna.find(18)
+SuratKeluar.find(84).pengguna << Pengguna.find(18)
+SuratKeluar.find(85).pengguna << Pengguna.find(18)
+SuratKeluar.find(86).pengguna << Pengguna.find(18)
+SuratKeluar.find(87).pengguna << Pengguna.find(18)
+SuratKeluar.find(88).pengguna << Pengguna.find(18)
+SuratKeluar.find(89).pengguna << Pengguna.find(18)
+SuratKeluar.find(90).pengguna << Pengguna.find(18)
+
+# Assigned SuratKeluar 81-90 with Seksi ke-9
+SuratKeluar.find(81).seksi << Seksi.find(9)
+SuratKeluar.find(82).seksi << Seksi.find(9)
+SuratKeluar.find(83).seksi << Seksi.find(9)
+SuratKeluar.find(84).seksi << Seksi.find(9)
+SuratKeluar.find(85).seksi << Seksi.find(9)
+SuratKeluar.find(86).seksi << Seksi.find(9)
+SuratKeluar.find(87).seksi << Seksi.find(9)
+SuratKeluar.find(88).seksi << Seksi.find(9)
+SuratKeluar.find(89).seksi << Seksi.find(9)
+SuratKeluar.find(90).seksi << Seksi.find(9)
+
 
 
 StatusAkun.create!([{
