@@ -1,0 +1,14 @@
+language: ruby
+rvm:
+  - 2.4.0
+bundler_args: --binstubs
+
+before_script:
+  - bundle exec rake db:create --all
+  - bundle exec rake db:migrate
+script:
+  - bundle exec rake ci:tests
+services:
+  - postgresql
+notifications:
+  email: false
