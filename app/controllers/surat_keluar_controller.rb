@@ -10,7 +10,16 @@ class SuratKeluarController < ApplicationController
     @surat_keluar_awal = @surat_keluar.where(status_surat: nil)
     @surat_keluar_tata_usaha_awal = Seksi.includes(:surat_keluar).find(1).surat_keluar.where(status_surat: nil)
     @surat_keluar_tata_usaha_konsep = Seksi.includes(:surat_keluar).find(1).surat_keluar.where(status_surat: 'Konsep')
-    @surat_keluar_konsep = @surat_keluar.where(status_surat: 'Konsep')
+    @surat_keluar_konsep = Seksi.includes(:surat_keluar).find(1).surat_keluar.where(status_surat: 'Konsep')
+    @surat_keluar_tata_usaha_koreksi_ktu_1 = Seksi.includes(:surat_keluar).find(1).surat_keluar.where(status_surat: 'Koreksi 1')
+    
+    @surat_keluar_tata_usaha_koreksi_revisi_1 = Seksi.includes(:surat_keluar).find(1).surat_keluar.where(status_surat: 'Revisi 1')
+    @surat_keluar_tata_usaha_koreksi_ktu_2 = Seksi.includes(:surat_keluar).find(1).surat_keluar.where(status_surat: 'Koreksi 2')
+    @surat_keluar_tata_usaha_koreksi_revisi_2 = Seksi.includes(:surat_keluar).find(1).surat_keluar.where(status_surat: 'Revisi 2')
+    @surat_keluar_tata_usaha_koreksi_kepala_1 = Seksi.includes(:surat_keluar).find(1).surat_keluar.where(status_surat: 'Koreksi 3')
+    @surat_keluar_tata_usaha_koreksi_revisi_3 = Seksi.includes(:surat_keluar).find(1).surat_keluar.where(status_surat: 'Revisi 3')
+    @surat_keluar_tata_usaha_koreksi_kepala_2 = Seksi.includes(:surat_keluar).find(1).surat_keluar.where(status_surat: 'Koreksi 4')
+    @surat_keluar_tata_usaha_koreksi_final = Seksi.includes(:surat_keluar).find(1).surat_keluar.where(status_surat: 'Final')
     @surat_keluar_koreksi_1 = @surat_keluar.where(status_surat: 'Koreksi 1')
     @surat_keluar_revisi_1 = @surat_keluar.where(status_surat: 'Revisi 1')
     @surat_keluar_koreksi_2 = @surat_keluar.where(status_surat: 'Koreksi 2')
@@ -43,6 +52,7 @@ class SuratKeluarController < ApplicationController
 
   # GET /surat_keluar/1/edit
   def edit
+    @seksi_pengguna_id = Pengguna.includes(:seksi).find(current_user.id).seksi.collect(&:id)
   end
 
   # POST /surat_keluar
