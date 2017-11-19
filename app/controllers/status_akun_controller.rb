@@ -1,5 +1,4 @@
 class StatusAkunController < ApplicationController
-  attr_accessible :keterangan
   before_action :authorize
   before_action :set_status_akun, only: [:show, :edit, :update, :destroy]
 
