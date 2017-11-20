@@ -5,21 +5,162 @@ class SuratKeluarController < ApplicationController
   # GET /surat_keluar
   # GET /surat_keluar.json
   def index
+    cek_jabatan_pengguna
+    cek_seksi_pengguna
     @surat_keluar = SuratKeluar.all
     Pengguna.includes(:surat_keluar).find(4).surat_keluar
-    @surat_keluar_awal = @surat_keluar.where(status_surat: nil)
+    # Nil - Pengonsep
     @surat_keluar_tata_usaha_awal = Seksi.includes(:surat_keluar).find(1).surat_keluar.where(status_surat: nil)
-    @surat_keluar_tata_usaha_konsep = Seksi.includes(:surat_keluar).find(1).surat_keluar.where(status_surat: 'Konsep')
-    @surat_keluar_konsep = Seksi.includes(:surat_keluar).find(1).surat_keluar.where(status_surat: 'Konsep')
-    @surat_keluar_tata_usaha_koreksi_ktu_1 = Seksi.includes(:surat_keluar).find(1).surat_keluar.where(status_surat: 'Koreksi 1')
+    @surat_keluar_urusan_agama_katolik_awal = Seksi.includes(:surat_keluar).find(2).surat_keluar.where(status_surat: nil)
+    @surat_keluar_urusan_agama_kristen_awal = Seksi.includes(:surat_keluar).find(3).surat_keluar.where(status_surat: nil)
+    @surat_keluar_pendidikan_agama_katolik_awal = Seksi.includes(:surat_keluar).find(4).surat_keluar.where(status_surat: nil)
+    @surat_keluar_pendidikan_agama_kristen_awal = Seksi.includes(:surat_keluar).find(5).surat_keluar.where(status_surat: nil)
+    @surat_keluar_pendidikan_agama_islam_awal = Seksi.includes(:surat_keluar).find(6).surat_keluar.where(status_surat: nil)
+    @surat_keluar_urusan_agama_islam_awal = Seksi.includes(:surat_keluar).find(7).surat_keluar.where(status_surat: nil)
+    @surat_keluar_haji_dan_umrah_awal = Seksi.includes(:surat_keluar).find(8).surat_keluar.where(status_surat: nil)
+    @surat_keluar_kecamatan_katikutana_awal = Seksi.includes(:surat_keluar).find(9).surat_keluar.where(status_surat: nil)
     
-    @surat_keluar_tata_usaha_koreksi_revisi_1 = Seksi.includes(:surat_keluar).find(1).surat_keluar.where(status_surat: 'Revisi 1')
-    @surat_keluar_tata_usaha_koreksi_ktu_2 = Seksi.includes(:surat_keluar).find(1).surat_keluar.where(status_surat: 'Koreksi 2')
-    @surat_keluar_tata_usaha_koreksi_revisi_2 = Seksi.includes(:surat_keluar).find(1).surat_keluar.where(status_surat: 'Revisi 2')
-    @surat_keluar_tata_usaha_koreksi_kepala_1 = Seksi.includes(:surat_keluar).find(1).surat_keluar.where(status_surat: 'Koreksi 3')
-    @surat_keluar_tata_usaha_koreksi_revisi_3 = Seksi.includes(:surat_keluar).find(1).surat_keluar.where(status_surat: 'Revisi 3')
-    @surat_keluar_tata_usaha_koreksi_kepala_2 = Seksi.includes(:surat_keluar).find(1).surat_keluar.where(status_surat: 'Koreksi 4')
-    @surat_keluar_tata_usaha_koreksi_final = Seksi.includes(:surat_keluar).find(1).surat_keluar.where(status_surat: 'Final')
+    # Konsep - Kasie/Gara/KTU
+    @surat_keluar_tata_usaha_konsep = Seksi.includes(:surat_keluar).find(1).surat_keluar.where(status_surat: 'Konsep')
+    @surat_keluar_urusan_agama_katolik_konsep = Seksi.includes(:surat_keluar).find(2).surat_keluar.where(status_surat: 'Konsep')
+    @surat_keluar_urusan_agama_kristen_konsep = Seksi.includes(:surat_keluar).find(3).surat_keluar.where(status_surat: 'Konsep')
+    @surat_keluar_pendidikan_agama_katolik_konsep = Seksi.includes(:surat_keluar).find(4).surat_keluar.where(status_surat: 'Konsep')
+    @surat_keluar_pendidikan_agama_kristen_konsep = Seksi.includes(:surat_keluar).find(5).surat_keluar.where(status_surat: 'Konsep')
+    @surat_keluar_pendidikan_agama_islam_konsep = Seksi.includes(:surat_keluar).find(6).surat_keluar.where(status_surat: 'Konsep')
+    @surat_keluar_urusan_agama_islam_konsep = Seksi.includes(:surat_keluar).find(7).surat_keluar.where(status_surat: 'Konsep')
+    @surat_keluar_haji_dan_umrah_konsep = Seksi.includes(:surat_keluar).find(8).surat_keluar.where(status_surat: 'Konsep')
+    @surat_keluar_kecamatan_katikutana_konsep = Seksi.includes(:surat_keluar).find(9).surat_keluar.where(status_surat: 'Konsep')
+    
+    # Revisi 1 - Pengonsep
+    @surat_keluar_tata_usaha_revisi_1 = Seksi.includes(:surat_keluar).find(1).surat_keluar.where(status_surat: 'Revisi 1')
+    @surat_keluar_urusan_agama_katolik_revisi_1 = Seksi.includes(:surat_keluar).find(2).surat_keluar.where(status_surat: 'Revisi 1')
+    @surat_keluar_urusan_agama_kristen_revisi_1 = Seksi.includes(:surat_keluar).find(3).surat_keluar.where(status_surat: 'Revisi 1')
+    @surat_keluar_pendidikan_agama_katolik_revisi_1 = Seksi.includes(:surat_keluar).find(4).surat_keluar.where(status_surat: 'Revisi 1')
+    @surat_keluar_pendidikan_agama_kristen_revisi_1 = Seksi.includes(:surat_keluar).find(5).surat_keluar.where(status_surat: 'Revisi 1')
+    @surat_keluar_pendidikan_agama_islam_revisi_1 = Seksi.includes(:surat_keluar).find(6).surat_keluar.where(status_surat: 'Revisi 1')
+    @surat_keluar_urusan_agama_islam_revisi_1 = Seksi.includes(:surat_keluar).find(7).surat_keluar.where(status_surat: 'Revisi 1')
+    @surat_keluar_haji_dan_umrah_revisi_1 = Seksi.includes(:surat_keluar).find(8).surat_keluar.where(status_surat: 'Revisi 1')
+    @surat_keluar_kecamatan_katikutana_revisi_1 = Seksi.includes(:surat_keluar).find(9).surat_keluar.where(status_surat: 'Revisi 1')
+    
+    # Koreksi 1 - Kasie/Gara/KTU
+    @surat_keluar_tata_usaha_koreksi_1 = Seksi.includes(:surat_keluar).find(1).surat_keluar.where(status_surat: 'Koreksi 1')
+    @surat_keluar_urusan_agama_katolik_koreksi_1 = Seksi.includes(:surat_keluar).find(2).surat_keluar.where(status_surat: 'Koreksi 1')
+    @surat_keluar_urusan_agama_kristen_koreksi_1 = Seksi.includes(:surat_keluar).find(3).surat_keluar.where(status_surat: 'Koreksi 1')
+    @surat_keluar_pendidikan_agama_katolik_koreksi_1 = Seksi.includes(:surat_keluar).find(4).surat_keluar.where(status_surat: 'Koreksi 1')
+    @surat_keluar_pendidikan_agama_kristen_koreksi_1 = Seksi.includes(:surat_keluar).find(5).surat_keluar.where(status_surat: 'Koreksi 1')
+    @surat_keluar_pendidikan_agama_islam_koreksi_1 = Seksi.includes(:surat_keluar).find(6).surat_keluar.where(status_surat: 'Koreksi 1')
+    @surat_keluar_urusan_agama_islam_koreksi_1 = Seksi.includes(:surat_keluar).find(7).surat_keluar.where(status_surat: 'Koreksi 1')
+    @surat_keluar_haji_dan_umrah_koreksi_1 = Seksi.includes(:surat_keluar).find(8).surat_keluar.where(status_surat: 'Koreksi 1')
+    @surat_keluar_kecamatan_katikutana_koreksi_1 = Seksi.includes(:surat_keluar).find(9).surat_keluar.where(status_surat: 'Koreksi 1')
+    
+    # Revisi 2 - Pengonsep
+    @surat_keluar_tata_usaha_revisi_2 = Seksi.includes(:surat_keluar).find(1).surat_keluar.where(status_surat: 'Revisi 2')
+    @surat_keluar_urusan_agama_katolik_revisi_2 = Seksi.includes(:surat_keluar).find(2).surat_keluar.where(status_surat: 'Revisi 2')
+    @surat_keluar_urusan_agama_kristen_revisi_2 = Seksi.includes(:surat_keluar).find(3).surat_keluar.where(status_surat: 'Revisi 2')
+    @surat_keluar_pendidikan_agama_katolik_revisi_2 = Seksi.includes(:surat_keluar).find(4).surat_keluar.where(status_surat: 'Revisi 2')
+    @surat_keluar_pendidikan_agama_kristen_revisi_2 = Seksi.includes(:surat_keluar).find(5).surat_keluar.where(status_surat: 'Revisi 2')
+    @surat_keluar_pendidikan_agama_islam_revisi_2 = Seksi.includes(:surat_keluar).find(6).surat_keluar.where(status_surat: 'Revisi 2')
+    @surat_keluar_urusan_agama_islam_revisi_2 = Seksi.includes(:surat_keluar).find(7).surat_keluar.where(status_surat: 'Revisi 2')
+    @surat_keluar_haji_dan_umrah_revisi_2 = Seksi.includes(:surat_keluar).find(8).surat_keluar.where(status_surat: 'Revisi 2')
+    @surat_keluar_kecamatan_katikutana_revisi_2 = Seksi.includes(:surat_keluar).find(9).surat_keluar.where(status_surat: 'Revisi 2')
+    
+    # Koreksi 2 - Kasie/Gara = KTU & TU = Kepala
+    @surat_keluar_tata_usaha_koreksi_2 = Seksi.includes(:surat_keluar).find(1).surat_keluar.where(status_surat: 'Koreksi 2')
+    @surat_keluar_urusan_agama_katolik_koreksi_2 = Seksi.includes(:surat_keluar).find(2).surat_keluar.where(status_surat: 'Koreksi 2')
+    @surat_keluar_urusan_agama_kristen_koreksi_2 = Seksi.includes(:surat_keluar).find(3).surat_keluar.where(status_surat: 'Koreksi 2')
+    @surat_keluar_pendidikan_agama_katolik_koreksi_2 = Seksi.includes(:surat_keluar).find(4).surat_keluar.where(status_surat: 'Koreksi 2')
+    @surat_keluar_pendidikan_agama_kristen_koreksi_2 = Seksi.includes(:surat_keluar).find(5).surat_keluar.where(status_surat: 'Koreksi 2')
+    @surat_keluar_pendidikan_agama_islam_koreksi_2 = Seksi.includes(:surat_keluar).find(6).surat_keluar.where(status_surat: 'Koreksi 2')
+    @surat_keluar_urusan_agama_islam_koreksi_2 = Seksi.includes(:surat_keluar).find(7).surat_keluar.where(status_surat: 'Koreksi 2')
+    @surat_keluar_haji_dan_umrah_koreksi_2 = Seksi.includes(:surat_keluar).find(8).surat_keluar.where(status_surat: 'Koreksi 2')
+    @surat_keluar_kecamatan_katikutana_koreksi_2 = Seksi.includes(:surat_keluar).find(9).surat_keluar.where(status_surat: 'Koreksi 2')
+    
+    # Revisi 3 - Pengonsep
+    @surat_keluar_tata_usaha_revisi_3 = Seksi.includes(:surat_keluar).find(1).surat_keluar.where(status_surat: 'Revisi 3')
+    @surat_keluar_urusan_agama_katolik_revisi_3 = Seksi.includes(:surat_keluar).find(2).surat_keluar.where(status_surat: 'Revisi 3')
+    @surat_keluar_urusan_agama_kristen_revisi_3 = Seksi.includes(:surat_keluar).find(3).surat_keluar.where(status_surat: 'Revisi 3')
+    @surat_keluar_pendidikan_agama_katolik_revisi_3 = Seksi.includes(:surat_keluar).find(4).surat_keluar.where(status_surat: 'Revisi 3')
+    @surat_keluar_pendidikan_agama_kristen_revisi_3 = Seksi.includes(:surat_keluar).find(5).surat_keluar.where(status_surat: 'Revisi 3')
+    @surat_keluar_pendidikan_agama_islam_revisi_3 = Seksi.includes(:surat_keluar).find(6).surat_keluar.where(status_surat: 'Revisi 3')
+    @surat_keluar_urusan_agama_islam_revisi_3 = Seksi.includes(:surat_keluar).find(7).surat_keluar.where(status_surat: 'Revisi 3')
+    @surat_keluar_haji_dan_umrah_revisi_3 = Seksi.includes(:surat_keluar).find(8).surat_keluar.where(status_surat: 'Revisi 3')
+    @surat_keluar_kecamatan_katikutana_revisi_3 = Seksi.includes(:surat_keluar).find(9).surat_keluar.where(status_surat: 'Revisi 3')
+    
+    # Koreksi 3 - Kasie/Gara = KTU & TU = Kepala
+    @surat_keluar_tata_usaha_koreksi_3 = Seksi.includes(:surat_keluar).find(1).surat_keluar.where(status_surat: 'Koreksi 3')
+    @surat_keluar_urusan_agama_katolik_koreksi_3 = Seksi.includes(:surat_keluar).find(2).surat_keluar.where(status_surat: 'Koreksi 3')
+    @surat_keluar_urusan_agama_kristen_koreksi_3 = Seksi.includes(:surat_keluar).find(3).surat_keluar.where(status_surat: 'Koreksi 3')
+    @surat_keluar_pendidikan_agama_katolik_koreksi_3 = Seksi.includes(:surat_keluar).find(4).surat_keluar.where(status_surat: 'Koreksi 3')
+    @surat_keluar_pendidikan_agama_kristen_koreksi_3 = Seksi.includes(:surat_keluar).find(5).surat_keluar.where(status_surat: 'Koreksi 3')
+    @surat_keluar_pendidikan_agama_islam_koreksi_3 = Seksi.includes(:surat_keluar).find(6).surat_keluar.where(status_surat: 'Koreksi 3')
+    @surat_keluar_urusan_agama_islam_koreksi_3 = Seksi.includes(:surat_keluar).find(7).surat_keluar.where(status_surat: 'Koreksi 3')
+    @surat_keluar_haji_dan_umrah_koreksi_3 = Seksi.includes(:surat_keluar).find(8).surat_keluar.where(status_surat: 'Koreksi 3')
+    @surat_keluar_kecamatan_katikutana_koreksi_3 = Seksi.includes(:surat_keluar).find(9).surat_keluar.where(status_surat: 'Koreksi 3')
+    
+    # Revisi 4  = Pengonsep - TU Final
+    @surat_keluar_tata_usaha_revisi_4 = Seksi.includes(:surat_keluar).find(1).surat_keluar.where(status_surat: 'Revisi 4')
+    @surat_keluar_urusan_agama_katolik_revisi_4 = Seksi.includes(:surat_keluar).find(2).surat_keluar.where(status_surat: 'Revisi 4')
+    @surat_keluar_urusan_agama_kristen_revisi_4 = Seksi.includes(:surat_keluar).find(3).surat_keluar.where(status_surat: 'Revisi 4')
+    @surat_keluar_pendidikan_agama_katolik_revisi_4 = Seksi.includes(:surat_keluar).find(4).surat_keluar.where(status_surat: 'Revisi 4')
+    @surat_keluar_pendidikan_agama_kristen_revisi_4 = Seksi.includes(:surat_keluar).find(5).surat_keluar.where(status_surat: 'Revisi 4')
+    @surat_keluar_pendidikan_agama_islam_revisi_4 = Seksi.includes(:surat_keluar).find(6).surat_keluar.where(status_surat: 'Revisi 4')
+    @surat_keluar_urusan_agama_islam_revisi_4 = Seksi.includes(:surat_keluar).find(7).surat_keluar.where(status_surat: 'Revisi 4')
+    @surat_keluar_haji_dan_umrah_revisi_4 = Seksi.includes(:surat_keluar).find(8).surat_keluar.where(status_surat: 'Revisi 4')
+    @surat_keluar_kecamatan_katikutana_revisi_4 = Seksi.includes(:surat_keluar).find(9).surat_keluar.where(status_surat: 'Revisi 4')
+    
+    # Koreksi 4 - Kasie/Gara = Kepala
+    @surat_keluar_urusan_agama_katolik_koreksi_4 = Seksi.includes(:surat_keluar).find(2).surat_keluar.where(status_surat: 'Koreksi 4')
+    @surat_keluar_urusan_agama_kristen_koreksi_4 = Seksi.includes(:surat_keluar).find(3).surat_keluar.where(status_surat: 'Koreksi 4')
+    @surat_keluar_pendidikan_agama_katolik_koreksi_4 = Seksi.includes(:surat_keluar).find(4).surat_keluar.where(status_surat: 'Koreksi 4')
+    @surat_keluar_pendidikan_agama_kristen_koreksi_4 = Seksi.includes(:surat_keluar).find(5).surat_keluar.where(status_surat: 'Koreksi 4')
+    @surat_keluar_pendidikan_agama_islam_koreksi_4 = Seksi.includes(:surat_keluar).find(6).surat_keluar.where(status_surat: 'Koreksi 4')
+    @surat_keluar_urusan_agama_islam_koreksi_4 = Seksi.includes(:surat_keluar).find(7).surat_keluar.where(status_surat: 'Koreksi 4')
+    @surat_keluar_haji_dan_umrah_koreksi_4 = Seksi.includes(:surat_keluar).find(8).surat_keluar.where(status_surat: 'Koreksi 4')
+    @surat_keluar_kecamatan_katikutana_koreksi_4 = Seksi.includes(:surat_keluar).find(9).surat_keluar.where(status_surat: 'Koreksi 4')
+    
+    # Revisi 5 - Pengonsep
+    @surat_keluar_urusan_agama_katolik_revisi_5 = Seksi.includes(:surat_keluar).find(2).surat_keluar.where(status_surat: 'Revisi 5')
+    @surat_keluar_urusan_agama_kristen_revisi_5 = Seksi.includes(:surat_keluar).find(3).surat_keluar.where(status_surat: 'Revisi 5')
+    @surat_keluar_pendidikan_agama_katolik_revisi_5 = Seksi.includes(:surat_keluar).find(4).surat_keluar.where(status_surat: 'Revisi 5')
+    @surat_keluar_pendidikan_agama_kristen_revisi_5 = Seksi.includes(:surat_keluar).find(5).surat_keluar.where(status_surat: 'Revisi 5')
+    @surat_keluar_pendidikan_agama_islam_revisi_5 = Seksi.includes(:surat_keluar).find(6).surat_keluar.where(status_surat: 'Revisi 5')
+    @surat_keluar_urusan_agama_islam_revisi_5 = Seksi.includes(:surat_keluar).find(7).surat_keluar.where(status_surat: 'Revisi 5')
+    @surat_keluar_haji_dan_umrah_revisi_5 = Seksi.includes(:surat_keluar).find(8).surat_keluar.where(status_surat: 'Revisi 5')
+    @surat_keluar_kecamatan_katikutana_revisi_5 = Seksi.includes(:surat_keluar).find(9).surat_keluar.where(status_surat: 'Revisi 5')
+    
+    # Koreksi 5 - Kasie/Gara = Kepala
+    @surat_keluar_urusan_agama_katolik_koreksi_5 = Seksi.includes(:surat_keluar).find(2).surat_keluar.where(status_surat: 'Koreksi 5')
+    @surat_keluar_urusan_agama_kristen_koreksi_5 = Seksi.includes(:surat_keluar).find(3).surat_keluar.where(status_surat: 'Koreksi 5')
+    @surat_keluar_pendidikan_agama_katolik_koreksi_5 = Seksi.includes(:surat_keluar).find(4).surat_keluar.where(status_surat: 'Koreksi 5')
+    @surat_keluar_pendidikan_agama_kristen_koreksi_5 = Seksi.includes(:surat_keluar).find(5).surat_keluar.where(status_surat: 'Koreksi 5')
+    @surat_keluar_pendidikan_agama_islam_koreksi_5 = Seksi.includes(:surat_keluar).find(6).surat_keluar.where(status_surat: 'Koreksi 5')
+    @surat_keluar_urusan_agama_islam_koreksi_5 = Seksi.includes(:surat_keluar).find(7).surat_keluar.where(status_surat: 'Koreksi 5')
+    @surat_keluar_haji_dan_umrah_koreksi_5 = Seksi.includes(:surat_keluar).find(8).surat_keluar.where(status_surat: 'Koreksi 5')
+    @surat_keluar_kecamatan_katikutana_koreksi_5 = Seksi.includes(:surat_keluar).find(9).surat_keluar.where(status_surat: 'Koreksi 5')
+    
+    # Revisi 6 - Pengonsep - Kasie/Gara Final
+    @surat_keluar_urusan_agama_katolik_revisi_6 = Seksi.includes(:surat_keluar).find(2).surat_keluar.where(status_surat: 'Revisi 6')
+    @surat_keluar_urusan_agama_kristen_revisi_6 = Seksi.includes(:surat_keluar).find(3).surat_keluar.where(status_surat: 'Revisi 6')
+    @surat_keluar_pendidikan_agama_katolik_revisi_6 = Seksi.includes(:surat_keluar).find(4).surat_keluar.where(status_surat: 'Revisi 6')
+    @surat_keluar_pendidikan_agama_kristen_revisi_6 = Seksi.includes(:surat_keluar).find(5).surat_keluar.where(status_surat: 'Revisi 6')
+    @surat_keluar_pendidikan_agama_islam_revisi_6 = Seksi.includes(:surat_keluar).find(6).surat_keluar.where(status_surat: 'Revisi 6')
+    @surat_keluar_urusan_agama_islam_revisi_6 = Seksi.includes(:surat_keluar).find(7).surat_keluar.where(status_surat: 'Revisi 6')
+    @surat_keluar_haji_dan_umrah_revisi_6 = Seksi.includes(:surat_keluar).find(8).surat_keluar.where(status_surat: 'Revisi 6')
+    @surat_keluar_kecamatan_katikutana_revisi_6 = Seksi.includes(:surat_keluar).find(9).surat_keluar.where(status_surat: 'Revisi 6')
+    
+    # Final - Pengonsep
+    @surat_keluar_tata_usaha_final = Seksi.includes(:surat_keluar).find(1).surat_keluar.where(status_surat: 'Final')
+    @surat_keluar_urusan_agama_katolik_final = Seksi.includes(:surat_keluar).find(2).surat_keluar.where(status_surat: 'Final')
+    @surat_keluar_urusan_agama_kristen_final = Seksi.includes(:surat_keluar).find(3).surat_keluar.where(status_surat: 'Final')
+    @surat_keluar_pendidikan_agama_katolik_final = Seksi.includes(:surat_keluar).find(4).surat_keluar.where(status_surat: 'Final')
+    @surat_keluar_pendidikan_agama_kristen_final = Seksi.includes(:surat_keluar).find(5).surat_keluar.where(status_surat: 'Final')
+    @surat_keluar_pendidikan_agama_islam_final = Seksi.includes(:surat_keluar).find(6).surat_keluar.where(status_surat: 'Final')
+    @surat_keluar_urusan_agama_islam_final = Seksi.includes(:surat_keluar).find(7).surat_keluar.where(status_surat: 'Final')
+    @surat_keluar_haji_dan_umrah_final = Seksi.includes(:surat_keluar).find(8).surat_keluar.where(status_surat: 'Final')
+    @surat_keluar_kecamatan_katikutana_final = Seksi.includes(:surat_keluar).find(9).surat_keluar.where(status_surat: 'Final')
+
+
+
     @surat_keluar_koreksi_1 = @surat_keluar.where(status_surat: 'Koreksi 1')
     @surat_keluar_revisi_1 = @surat_keluar.where(status_surat: 'Revisi 1')
     @surat_keluar_koreksi_2 = @surat_keluar.where(status_surat: 'Koreksi 2')
@@ -30,14 +171,14 @@ class SuratKeluarController < ApplicationController
     @surat_keluar_revisi_4 = @surat_keluar.where(status_surat: 'Revisi 4')
     @surat_keluar_koreksi_5 = @surat_keluar.where(status_surat: 'Koreksi 5')
     @surat_keluar_fix = @surat_keluar.where(status_surat: 'Fix')
-    @jabatan_pengguna = Pengguna.includes(:jabatan).find(current_user.id).jabatan.collect(&:nama)
-    @seksi_pengguna = Pengguna.includes(:seksi).find(current_user.id).seksi.collect(&:nama)
   end
 
   # GET /surat_keluar/1
   # GET /surat_keluar/1.json
   def show
-    
+    cek_jabatan_pengguna
+    cek_seksi_pengguna
+    cek_status_surat_keluar
   end
 
   # GET /surat_keluar/new
@@ -52,7 +193,7 @@ class SuratKeluarController < ApplicationController
 
   # GET /surat_keluar/1/edit
   def edit
-    @seksi_pengguna_id = Pengguna.includes(:seksi).find(current_user.id).seksi.collect(&:id)
+    cek_jabatan_pengguna
   end
 
   # POST /surat_keluar
@@ -97,6 +238,21 @@ class SuratKeluarController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def cek_status_surat_keluar
+      @status_surat_keluar = @surat_keluar.status_surat
+    end
+    
+    def cek_seksi_pengguna
+      @seksi_pengguna = Pengguna.includes(:seksi).find(current_user.id).seksi.collect(&:nama)
+    end
+    
+    def cek_seksi_pengguna_id
+      @seksi_pengguna_id = Pengguna.includes(:seksi).find(current_user.id).seksi.collect(&:id)
+    end
+    
+    def cek_jabatan_pengguna
+      @jabatan_pengguna = Pengguna.includes(:jabatan).find(current_user.id).jabatan.collect(&:nama)
+    end
     def set_surat_keluar
       @surat_keluar = SuratKeluar.find(params[:id])
     end
