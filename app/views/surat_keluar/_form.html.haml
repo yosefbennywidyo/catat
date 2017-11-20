@@ -11,9 +11,18 @@
     = f.input :keterangan, label: 'Keterangan'
   .row
     = f.input :lampiran_dokumen
-  .row.hide
-    = f.association :seksi, label_method: :nama, value_method: :id, include_blank: false, selected: @seksi_pengguna_id
-  .row
-    = button_tag(type: 'submit', class: "btn btn-primary") do
-      %i.fa.d-inline.fa-lg.fa-save
-      Simpan
+  - if @jabatan_pengguna.join != "Pelaksana"
+    .row
+      = button_tag(type: 'submit', class: "btn btn-primary") do
+        %i.fa.d-inline.fa-lg.fa-save
+        Simpan
+  - else
+    .row.hide
+      = f.association :seksi, label_method: :nama, value_method: :id, include_blank: false, selected: @seksi_pengguna_id
+    .row
+      = button_tag(type: 'submit', class: "btn btn-primary") do
+        %i.fa.d-inline.fa-lg.fa-save
+        Simpan
+-#  .row.hide
+-#    = f.association :seksi, label_method: :nama, value_method: :id, include_blank: false, selected: @seksi_pengguna_id
+  
