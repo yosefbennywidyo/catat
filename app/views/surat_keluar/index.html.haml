@@ -15,8 +15,8 @@
     .p-5.text-center
       .card-deck
         - @surat_keluar_tata_usaha_awal.each do |surat_keluar|
-          .col-md-4
-            .card.p-5.m-1
+          .col-md-3
+            .card.p-4.m-1
               .card-block
                 %h4
                   %b= surat_keluar.judul
@@ -32,7 +32,7 @@
     %h2 Koreksi ke-1 dari Kasubag
     .p-5.text-center
       .card-deck
-        - @surat_keluar_tata_usaha_koreksi_ktu_1.each do |surat_keluar|
+        - @surat_keluar_tata_usaha_revisi_1.each do |surat_keluar|
           .col-md-3
             .card.p-4.m-1
               .card-block
@@ -50,7 +50,7 @@
     %h2 Koreksi ke-2 dari Kasubag
     .p-5.text-center
       .card-deck
-        - @surat_keluar_tata_usaha_koreksi_ktu_2.each do |surat_keluar|
+        - @surat_keluar_tata_usaha_revisi_2.each do |surat_keluar|
           .col-md-3
             .card.p-4.m-1
               .card-block
@@ -68,7 +68,7 @@
     %h2 Koreksi ke-1 dari Kepala
     .p-5.text-center
       .card-deck
-        - @surat_keluar_tata_usaha_koreksi_kepala_1.each do |surat_keluar|
+        - @surat_keluar_tata_usaha_revisi_3.each do |surat_keluar|
           .col-md-3
             .card.p-4.m-1
               .card-block
@@ -86,7 +86,7 @@
     %h2 Koreksi ke-2 dari Kepala
     .p-5.text-center
       .card-deck
-        - @surat_keluar_tata_usaha_koreksi_kepala_2.each do |surat_keluar|
+        - @surat_keluar_tata_usaha_revisi_4.each do |surat_keluar|
           .col-md-3
             .card.p-4.m-1
               .card-block
@@ -101,10 +101,10 @@
                 = link_to '<i class="fa d-inline fa-lg fa-pencil" title="Edit surat keluar"></i>'.html_safe, edit_surat_keluar_path(surat_keluar), class: 'btn btn-sm btn-primary mx-1'
                 %a
                 = link_to '<i class="fa d-inline fa-lg fa-trash" title="Hapus surat keluar"></i>'.html_safe, surat_keluar, method: :delete, data: { confirm: 'Anda yakin ingin menghapus surat ini?' }, class: 'btn btn-sm btn-primary mx-1'
-    %h2 Surat keluar final
+    %h2 Surat Tata Usaha Final
     .p-5.text-center
       .card-deck
-        - @surat_keluar_tata_usaha_koreksi_final.each do |surat_keluar|
+        - @surat_keluar_tata_usaha_final.each do |surat_keluar|
           .col-md-3
             .card.p-4.m-1
               .card-block
@@ -120,7 +120,151 @@
                 %a
                 = link_to '<i class="fa d-inline fa-lg fa-trash" title="Hapus surat keluar"></i>'.html_safe, surat_keluar, method: :delete, data: { confirm: 'Anda yakin ingin menghapus surat ini?' }, class: 'btn btn-sm btn-primary mx-1'
   - elsif @seksi_pengguna.join == "Urusan Agama Katolik"
-    Anda sebagai Pelaksana di Urusan Agama Katolik
+    %h2 Anda sebagai Pelaksana di Urusan Agama Katolik
+    %h3 Surat Keluar Belum Diajukan untuk Dikoreksi 
+    .p-5.text-center
+      .card-deck
+        - @surat_keluar_katolik_awal.each do |surat_keluar|
+          .col-md-4
+            .card.p-5.m-1
+              .card-block
+                %h4
+                  %b= surat_keluar.judul
+                %p= surat_keluar.keterangan
+                %p
+              .card-block
+                %a
+                = link_to '<i class="fa d-inline fa-lg fa-expand" title="Tampilkan surat keluar"></i>'.html_safe, surat_keluar, class: 'btn btn-sm btn-primary mx-1'
+                %a
+                = link_to '<i class="fa d-inline fa-lg fa-pencil" title="Edit surat keluar"></i>'.html_safe, edit_surat_keluar_path(surat_keluar), class: 'btn btn-sm btn-primary mx-1'
+                %a
+                = link_to '<i class="fa d-inline fa-lg fa-trash" title="Hapus surat keluar"></i>'.html_safe, surat_keluar, method: :delete, data: { confirm: 'Anda yakin ingin menghapus surat ini?' }, class: 'btn btn-sm btn-primary mx-1'
+    %h2 Koreksi ke-1 dari Penyelenggara
+    .p-5.text-center
+      .card-deck
+        - @surat_keluar_urusan_agama_katolik_revisi_1.each do |surat_keluar|
+          .col-md-3
+            .card.p-4.m-1
+              .card-block
+                %h5
+                  %b= surat_keluar.judul
+                %p= surat_keluar.keterangan
+                %p
+              .card-block
+                %a
+                = link_to '<i class="fa d-inline fa-lg fa-expand" title="Tampilkan surat keluar"></i>'.html_safe, surat_keluar, class: 'btn btn-sm btn-primary mx-1'
+                %a
+                = link_to '<i class="fa d-inline fa-lg fa-pencil" title="Edit surat keluar"></i>'.html_safe, edit_surat_keluar_path(surat_keluar), class: 'btn btn-sm btn-primary mx-1'
+                %a
+                = link_to '<i class="fa d-inline fa-lg fa-trash" title="Hapus surat keluar"></i>'.html_safe, surat_keluar, method: :delete, data: { confirm: 'Anda yakin ingin menghapus surat ini?' }, class: 'btn btn-sm btn-primary mx-1'
+    %h2 Koreksi ke-2 dari Penyelenggara
+    .p-5.text-center
+      .card-deck
+        - @surat_keluar_urusan_agama_katolik_revisi_2.each do |surat_keluar|
+          .col-md-3
+            .card.p-4.m-1
+              .card-block
+                %h5
+                  %b= surat_keluar.judul
+                %p= surat_keluar.keterangan
+                %p
+              .card-block
+                %a
+                = link_to '<i class="fa d-inline fa-lg fa-expand" title="Tampilkan surat keluar"></i>'.html_safe, surat_keluar, class: 'btn btn-sm btn-primary mx-1'
+                %a
+                = link_to '<i class="fa d-inline fa-lg fa-pencil" title="Edit surat keluar"></i>'.html_safe, edit_surat_keluar_path(surat_keluar), class: 'btn btn-sm btn-primary mx-1'
+                %a
+                = link_to '<i class="fa d-inline fa-lg fa-trash" title="Hapus surat keluar"></i>'.html_safe, surat_keluar, method: :delete, data: { confirm: 'Anda yakin ingin menghapus surat ini?' }, class: 'btn btn-sm btn-primary mx-1'
+    %h2 Koreksi ke-1 dari Kasubag
+    .p-5.text-center
+      .card-deck
+        - @surat_keluar_urusan_agama_katolik_revisi_3.each do |surat_keluar|
+          .col-md-3
+            .card.p-4.m-1
+              .card-block
+                %h5
+                  %b= surat_keluar.judul
+                %p= surat_keluar.keterangan
+                %p
+              .card-block
+                %a
+                = link_to '<i class="fa d-inline fa-lg fa-expand" title="Tampilkan surat keluar"></i>'.html_safe, surat_keluar, class: 'btn btn-sm btn-primary mx-1'
+                %a
+                = link_to '<i class="fa d-inline fa-lg fa-pencil" title="Edit surat keluar"></i>'.html_safe, edit_surat_keluar_path(surat_keluar), class: 'btn btn-sm btn-primary mx-1'
+                %a
+                = link_to '<i class="fa d-inline fa-lg fa-trash" title="Hapus surat keluar"></i>'.html_safe, surat_keluar, method: :delete, data: { confirm: 'Anda yakin ingin menghapus surat ini?' }, class: 'btn btn-sm btn-primary mx-1'
+    %h2 Koreksi ke-2 dari Kasubag
+    .p-5.text-center
+      .card-deck
+        - @surat_keluar_urusan_agama_katolik_revisi_4.each do |surat_keluar|
+          .col-md-3
+            .card.p-4.m-1
+              .card-block
+                %h5
+                  %b= surat_keluar.judul
+                %p= surat_keluar.keterangan
+                %p
+              .card-block
+                %a
+                = link_to '<i class="fa d-inline fa-lg fa-expand" title="Tampilkan surat keluar"></i>'.html_safe, surat_keluar, class: 'btn btn-sm btn-primary mx-1'
+                %a
+                = link_to '<i class="fa d-inline fa-lg fa-pencil" title="Edit surat keluar"></i>'.html_safe, edit_surat_keluar_path(surat_keluar), class: 'btn btn-sm btn-primary mx-1'
+                %a
+                = link_to '<i class="fa d-inline fa-lg fa-trash" title="Hapus surat keluar"></i>'.html_safe, surat_keluar, method: :delete, data: { confirm: 'Anda yakin ingin menghapus surat ini?' }, class: 'btn btn-sm btn-primary mx-1'
+    %h2 Koreksi ke-1 dari Kepala
+    .p-5.text-center
+      .card-deck
+        - @surat_keluar_urusan_agama_katolik_revisi_5.each do |surat_keluar|
+          .col-md-3
+            .card.p-4.m-1
+              .card-block
+                %h5
+                  %b= surat_keluar.judul
+                %p= surat_keluar.keterangan
+                %p
+              .card-block
+                %a
+                = link_to '<i class="fa d-inline fa-lg fa-expand" title="Tampilkan surat keluar"></i>'.html_safe, surat_keluar, class: 'btn btn-sm btn-primary mx-1'
+                %a
+                = link_to '<i class="fa d-inline fa-lg fa-pencil" title="Edit surat keluar"></i>'.html_safe, edit_surat_keluar_path(surat_keluar), class: 'btn btn-sm btn-primary mx-1'
+                %a
+                = link_to '<i class="fa d-inline fa-lg fa-trash" title="Hapus surat keluar"></i>'.html_safe, surat_keluar, method: :delete, data: { confirm: 'Anda yakin ingin menghapus surat ini?' }, class: 'btn btn-sm btn-primary mx-1'
+    %h2 Koreksi ke-2 dari Kepala
+    .p-5.text-center
+      .card-deck
+        - @surat_keluar_urusan_agama_katolik_revisi_6.each do |surat_keluar|
+          .col-md-3
+            .card.p-4.m-1
+              .card-block
+                %h5
+                  %b= surat_keluar.judul
+                %p= surat_keluar.keterangan
+                %p
+              .card-block
+                %a
+                = link_to '<i class="fa d-inline fa-lg fa-expand" title="Tampilkan surat keluar"></i>'.html_safe, surat_keluar, class: 'btn btn-sm btn-primary mx-1'
+                %a
+                = link_to '<i class="fa d-inline fa-lg fa-pencil" title="Edit surat keluar"></i>'.html_safe, edit_surat_keluar_path(surat_keluar), class: 'btn btn-sm btn-primary mx-1'
+                %a
+                = link_to '<i class="fa d-inline fa-lg fa-trash" title="Hapus surat keluar"></i>'.html_safe, surat_keluar, method: :delete, data: { confirm: 'Anda yakin ingin menghapus surat ini?' }, class: 'btn btn-sm btn-primary mx-1'
+    %h2 Surat Keluar Urusan Agama Katolik Final
+    .p-5.text-center
+      .card-deck
+        - @surat_keluar_urusan_agama_katolik_final.each do |surat_keluar|
+          .col-md-3
+            .card.p-4.m-1
+              .card-block
+                %h5
+                  %b= surat_keluar.judul
+                %p= surat_keluar.keterangan
+                %p
+              .card-block
+                %a
+                = link_to '<i class="fa d-inline fa-lg fa-expand" title="Tampilkan surat keluar"></i>'.html_safe, surat_keluar, class: 'btn btn-sm btn-primary mx-1'
+                %a
+                = link_to '<i class="fa d-inline fa-lg fa-pencil" title="Edit surat keluar"></i>'.html_safe, edit_surat_keluar_path(surat_keluar), class: 'btn btn-sm btn-primary mx-1'
+                %a
+                = link_to '<i class="fa d-inline fa-lg fa-trash" title="Hapus surat keluar"></i>'.html_safe, surat_keluar, method: :delete, data: { confirm: 'Anda yakin ingin menghapus surat ini?' }, class: 'btn btn-sm btn-primary mx-1'
   - elsif @seksi_pengguna.join == "Urusan Agama Kristen"
     Anda sebagai Pelaksana di Urusan Agama Kristen
   - elsif @seksi_pengguna.join == "Pendidikan Agama Kristen"
@@ -149,7 +293,7 @@
     Anda sebagai Kepala Seksi di Seksi mana ya?
 - elsif @jabatan_pengguna.join == "Kepala Sub Bagian"
   %h2 Surat Keluar Tata Usaha
-  %h3 Konsep yang Belum Dikoreksi
+  %h3 Konsep Tata Usaha
   .p-5.text-center
     .card-deck
       - @surat_keluar_tata_usaha_konsep.each do |surat_keluar|
@@ -167,13 +311,143 @@
               = link_to '<i class="fa d-inline fa-lg fa-pencil" title="Edit surat keluar"></i>'.html_safe, edit_surat_keluar_path(surat_keluar), class: 'btn btn-sm btn-primary mx-1'
               %a
               = link_to '<i class="fa d-inline fa-lg fa-trash" title="Hapus surat keluar"></i>'.html_safe, surat_keluar, method: :delete, data: { confirm: 'Anda yakin ingin menghapus surat ini?' }, class: 'btn btn-sm btn-primary mx-1'
-  Surat Keluar Urusan Agama Katolik
+  %h3 Revisi Tata Usaha
+  .p-5.text-center
+    .card-deck
+      - @surat_keluar_tata_usaha_koreksi_1.each do |surat_keluar|
+        .col-md-3
+          .card.p-4.m-1
+            .card-block
+              %h5
+                %b= surat_keluar.judul
+              %p= surat_keluar.keterangan
+              %p
+            .card-block
+              %a
+              = link_to '<i class="fa d-inline fa-lg fa-expand" title="Tampilkan surat keluar"></i>'.html_safe, surat_keluar, class: 'btn btn-sm btn-primary mx-1'
+              %a
+              = link_to '<i class="fa d-inline fa-lg fa-pencil" title="Edit surat keluar"></i>'.html_safe, edit_surat_keluar_path(surat_keluar), class: 'btn btn-sm btn-primary mx-1'
+              %a
+              = link_to '<i class="fa d-inline fa-lg fa-trash" title="Hapus surat keluar"></i>'.html_safe, surat_keluar, method: :delete, data: { confirm: 'Anda yakin ingin menghapus surat ini?' }, class: 'btn btn-sm btn-primary mx-1'
+  %h2 Surat Keluar Urusan Agama Katolik
+  %h3 Konsep Urusan Agama Katolik
+  .p-5.text-center
+    .card-deck
+      - @surat_keluar_urusan_agama_katolik_koreksi_2.each do |surat_keluar|
+        .col-md-3
+          .card.p-4.m-1
+            .card-block
+              %h5
+                %b= surat_keluar.judul
+              %p= surat_keluar.keterangan
+              %p
+            .card-block
+              %a
+              = link_to '<i class="fa d-inline fa-lg fa-expand" title="Tampilkan surat keluar"></i>'.html_safe, surat_keluar, class: 'btn btn-sm btn-primary mx-1'
+              %a
+              = link_to '<i class="fa d-inline fa-lg fa-pencil" title="Edit surat keluar"></i>'.html_safe, edit_surat_keluar_path(surat_keluar), class: 'btn btn-sm btn-primary mx-1'
+              %a
+              = link_to '<i class="fa d-inline fa-lg fa-trash" title="Hapus surat keluar"></i>'.html_safe, surat_keluar, method: :delete, data: { confirm: 'Anda yakin ingin menghapus surat ini?' }, class: 'btn btn-sm btn-primary mx-1'
+  %h3 Revisi Urusan Agama Katolik
+  .p-5.text-center
+    .card-deck
+      - @surat_keluar_urusan_agama_katolik_koreksi_3.each do |surat_keluar|
+        .col-md-3
+          .card.p-4.m-1
+            .card-block
+              %h5
+                %b= surat_keluar.judul
+              %p= surat_keluar.keterangan
+              %p
+            .card-block
+              %a
+              = link_to '<i class="fa d-inline fa-lg fa-expand" title="Tampilkan surat keluar"></i>'.html_safe, surat_keluar, class: 'btn btn-sm btn-primary mx-1'
+              %a
+              = link_to '<i class="fa d-inline fa-lg fa-pencil" title="Edit surat keluar"></i>'.html_safe, edit_surat_keluar_path(surat_keluar), class: 'btn btn-sm btn-primary mx-1'
+              %a
+              = link_to '<i class="fa d-inline fa-lg fa-trash" title="Hapus surat keluar"></i>'.html_safe, surat_keluar, method: :delete, data: { confirm: 'Anda yakin ingin menghapus surat ini?' }, class: 'btn btn-sm btn-primary mx-1'
   Surat Keluar Urusan Agama Kristen
   Surat Keluar Pendidikan Agama Katolik
   Surat Keluar Pendidikan Agama Kristen
   Surat Keluar Pendidikan dan Bimbingan Masyarakat Islam
   Surat Keluar Haji dan Umrah
-- elsif @jabatan_pengguna.join == "PLT Kepala Kantor" or @jabatan_pengguna.join == "Kepala Kantor"
+
+
+- elsif @jabatan_pengguna.join === "PLT Kepala Kantor" or @jabatan_pengguna.join === "Kepala Kantor"
+  %h2 Surat Keluar Tata Usaha
+  %h3 Revisi ke-3
+  .p-5.text-center
+    .card-deck
+      - @surat_keluar_tata_usaha_koreksi_2.each do |surat_keluar|
+        .col-md-3
+          .card.p-4.m-1
+            .card-block
+              %h5
+                %b= surat_keluar.judul
+              %p= surat_keluar.keterangan
+              %p
+            .card-block
+              %a
+              = link_to '<i class="fa d-inline fa-lg fa-expand" title="Tampilkan surat keluar"></i>'.html_safe, surat_keluar, class: 'btn btn-sm btn-primary mx-1'
+              %a
+              = link_to '<i class="fa d-inline fa-lg fa-pencil" title="Edit surat keluar"></i>'.html_safe, edit_surat_keluar_path(surat_keluar), class: 'btn btn-sm btn-primary mx-1'
+              %a
+              = link_to '<i class="fa d-inline fa-lg fa-trash" title="Hapus surat keluar"></i>'.html_safe, surat_keluar, method: :delete, data: { confirm: 'Anda yakin ingin menghapus surat ini?' }, class: 'btn btn-sm btn-primary mx-1'
+  %h3 Revisi ke-4
+  .p-5.text-center
+    .card-deck
+      - @surat_keluar_tata_usaha_koreksi_3.each do |surat_keluar|
+        .col-md-3
+          .card.p-4.m-1
+            .card-block
+              %h5
+                %b= surat_keluar.judul
+              %p= surat_keluar.keterangan
+              %p
+            .card-block
+              %a
+              = link_to '<i class="fa d-inline fa-lg fa-expand" title="Tampilkan surat keluar"></i>'.html_safe, surat_keluar, class: 'btn btn-sm btn-primary mx-1'
+              %a
+              = link_to '<i class="fa d-inline fa-lg fa-pencil" title="Edit surat keluar"></i>'.html_safe, edit_surat_keluar_path(surat_keluar), class: 'btn btn-sm btn-primary mx-1'
+              %a
+              = link_to '<i class="fa d-inline fa-lg fa-trash" title="Hapus surat keluar"></i>'.html_safe, surat_keluar, method: :delete, data: { confirm: 'Anda yakin ingin menghapus surat ini?' }, class: 'btn btn-sm btn-primary mx-1'
+  %h2 Surat Keluar Urusan Agama Katolik
+  %h3 Konsep Urusan Agama Katolik
+  .p-5.text-center
+    .card-deck
+      - @surat_keluar_urusan_agama_katolik_koreksi_4.each do |surat_keluar|
+        .col-md-3
+          .card.p-4.m-1
+            .card-block
+              %h5
+                %b= surat_keluar.judul
+              %p= surat_keluar.keterangan
+              %p
+            .card-block
+              %a
+              = link_to '<i class="fa d-inline fa-lg fa-expand" title="Tampilkan surat keluar"></i>'.html_safe, surat_keluar, class: 'btn btn-sm btn-primary mx-1'
+              %a
+              = link_to '<i class="fa d-inline fa-lg fa-pencil" title="Edit surat keluar"></i>'.html_safe, edit_surat_keluar_path(surat_keluar), class: 'btn btn-sm btn-primary mx-1'
+              %a
+              = link_to '<i class="fa d-inline fa-lg fa-trash" title="Hapus surat keluar"></i>'.html_safe, surat_keluar, method: :delete, data: { confirm: 'Anda yakin ingin menghapus surat ini?' }, class: 'btn btn-sm btn-primary mx-1'
+  %h3 Revisi Urusan Agama Katolik
+  .p-5.text-center
+    .card-deck
+      - @surat_keluar_urusan_agama_katolik_koreksi_5.each do |surat_keluar|
+        .col-md-3
+          .card.p-4.m-1
+            .card-block
+              %h5
+                %b= surat_keluar.judul
+              %p= surat_keluar.keterangan
+              %p
+            .card-block
+              %a
+              = link_to '<i class="fa d-inline fa-lg fa-expand" title="Tampilkan surat keluar"></i>'.html_safe, surat_keluar, class: 'btn btn-sm btn-primary mx-1'
+              %a
+              = link_to '<i class="fa d-inline fa-lg fa-pencil" title="Edit surat keluar"></i>'.html_safe, edit_surat_keluar_path(surat_keluar), class: 'btn btn-sm btn-primary mx-1'
+              %a
+              = link_to '<i class="fa d-inline fa-lg fa-trash" title="Hapus surat keluar"></i>'.html_safe, surat_keluar, method: :delete, data: { confirm: 'Anda yakin ingin menghapus surat ini?' }, class: 'btn btn-sm btn-primary mx-1'
   Surat Keluar Tata Usaha
   Surat Keluar Urusan Agama Katolik
   Surat Keluar Urusan Agama Kristen
