@@ -246,7 +246,7 @@ Jabatan.create!([{
 }])
 # Jabatan ke-6
 Jabatan.create!([{
-  nama: "Kepala KUA"
+  nama: "Kepala"
 }])
 # Jabatan ke-7
 Jabatan.create!([{
@@ -318,7 +318,7 @@ Seksi.create!([{
 }])
 # Seksi ke-9
 Seksi.create!([{
-  nama: "Kecamatan Katikutana"
+  nama: "KUA Kecamatan Katikutana"
 }])
 
 p "Created #{Seksi.count} nama seksi"
