@@ -22,5 +22,8 @@
 
 .row.align-items-center.justify-content-center
   .row
-    = link_to '<button class="btn btn-primary btn-circle btn-lg"><i class="fa fa-lg fa-arrow-left" title="Kembali ke Dasbor"></i></button>'.html_safe, dasbor_index_path, class: 'center-block'
-    = link_to '<button class="btn btn-primary btn-circle btn-lg"><i class="fa fa-lg fa-plus" title="Buat pengguna"></i></button>'.html_safe, new_pengguna_path, class: 'center-block add-left-margin'
+    - if @status_akun_pengguna == "Administrator"
+      = link_to '<button class="btn btn-primary btn-circle btn-lg"><i class="fa fa-lg fa-arrow-left" title="Kembali ke Dasbor"></i></button>'.html_safe, dasbor_index_path, class: 'center-block'
+      = link_to '<button class="btn btn-primary btn-circle btn-lg"><i class="fa fa-lg fa-plus" title="Buat pengguna"></i></button>'.html_safe, new_pengguna_path, class: 'center-block add-left-margin'
+    - else
+      = link_to '<button class="btn btn-primary btn-circle btn-lg"><i class="fa fa-lg fa-arrow-left" title="Kembali ke Dasbor"></i></button>'.html_safe, dasbor_index_path, class: 'center-block'
