@@ -1,5 +1,4 @@
 class DasborController < ApplicationController
-  before_action :authorize
   def index
     @jumlah_surat_keluar = SuratKeluar.count
     @jumlah_surat_masuk = SuratMasuk.count

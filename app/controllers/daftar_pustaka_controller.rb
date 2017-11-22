@@ -1,5 +1,4 @@
 class DaftarPustakaController < ApplicationController
-  before_action :authorize
   before_action :set_daftar_pustaka, only: [:show, :edit, :update, :destroy]
 
   # GET /daftar_pustaka

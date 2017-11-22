@@ -1,5 +1,4 @@
 class StatusAkunController < ApplicationController
-  before_action :authorize
   before_action :set_status_akun, only: [:show, :edit, :update, :destroy]
 
   # GET /status_akun

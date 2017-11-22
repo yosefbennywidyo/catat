@@ -1,6 +1,4 @@
 class KomentarController < ApplicationController
-  before_action :authorize
-  
   before_action :find_commentable
 
     def new

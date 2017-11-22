@@ -1,5 +1,4 @@
 class JabatanController < ApplicationController
-  before_action :authorize
   before_action :set_jabatan, only: [:show, :edit, :update, :destroy]
 
   # GET /jabatan
