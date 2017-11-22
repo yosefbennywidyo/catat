@@ -67,6 +67,10 @@ class PenggunaController < ApplicationController
       @pengguna = Pengguna.find(params[:id])
     end
     
+    def cek_status_akun_pengguna
+      @status_akun_pengguna = Pengguna.includes(:status_akun).find(current_user.id).status_akun.collect(&:keterangan)
+    end
+    
     # Never trust parameters from the scary internet, only allow the white list through.
     def pengguna_params
       params.require(:pengguna).permit(:nama, :password, :password_confirmation, surat_keluar_ids:[], status_kepegawaian_ids:[], jabatan_ids:[], seksi_ids:[], status_akun_ids:[])
