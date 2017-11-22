@@ -63,11 +63,6 @@ ActiveRecord::Schema.define(version: 20171122033936) do
     t.datetime "lampiran_updated_at"
   end
 
-  create_table "komentar_pengguna", id: false, force: :cascade do |t|
-    t.bigint "pengguna_id", null: false
-    t.bigint "komentar_id", null: false
-  end
-
   create_table "pengguna", force: :cascade do |t|
     t.string "nama"
     t.datetime "created_at", null: false
@@ -156,7 +151,6 @@ ActiveRecord::Schema.define(version: 20171122033936) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "status_surat"
-    t.string "lampiran_dokumen"
     t.string "lampiran_dokumen_file_name"
     t.string "lampiran_dokumen_content_type"
     t.integer "lampiran_dokumen_file_size"
