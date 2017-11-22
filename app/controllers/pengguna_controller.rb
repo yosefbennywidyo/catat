@@ -1,5 +1,4 @@
 class PenggunaController < ApplicationController
-  before_action :authorize, except: [:new]
   before_action :set_pengguna, only: [:show, :edit, :update, :destroy]
 
   # GET /pengguna
