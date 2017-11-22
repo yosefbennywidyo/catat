@@ -2,8 +2,8 @@ class AddDeviseToPengguna < ActiveRecord::Migration[5.1]
   def self.up
     change_table :pengguna do |t|
       ## Database authenticatable
-      t.string :email,              null: false, default: ""
-      t.string :encrypted_password, null: false, default: ""
+      #t.string :email,              null: false, default: ""
+      #t.string :encrypted_password, null: false, default: ""
 
       ## Recoverable
       t.string   :reset_password_token
@@ -35,7 +35,7 @@ class AddDeviseToPengguna < ActiveRecord::Migration[5.1]
       # t.timestamps null: false
     end
 
-    add_index :pengguna, :email,                unique: true
+    add_index :pengguna, :nama,                unique: true
     add_index :pengguna, :reset_password_token, unique: true
     # add_index :pengguna, :confirmation_token,   unique: true
     # add_index :pengguna, :unlock_token,         unique: true
