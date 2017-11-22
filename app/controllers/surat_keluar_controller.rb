@@ -179,6 +179,8 @@ class SuratKeluarController < ApplicationController
     cek_jabatan_pengguna
     cek_seksi_pengguna
     cek_status_surat_keluar
+    set_surat_keluar
+    cek_seksi_surat_keluar
   end
 
   # GET /surat_keluar/new
@@ -244,6 +246,10 @@ class SuratKeluarController < ApplicationController
     
     def cek_seksi_pengguna
       @seksi_pengguna = Pengguna.includes(:seksi).find(current_user.id).seksi.collect(&:nama)
+    end
+    
+    def cek_seksi_surat_keluar
+      @seksi_surat_keluar = SuratKeluar.includes(:seksi).find(params[:id]).seksi.collect(&:nama)
     end
     
     def cek_seksi_pengguna_id
