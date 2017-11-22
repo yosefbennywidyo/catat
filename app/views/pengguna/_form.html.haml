@@ -12,7 +12,7 @@
       = f.input :password, label: 'Kata kunci'
     .row
       = f.input :password_confirmation, label: 'Konfirmasi kata kunci'
-    .row.invisible
+    .row.hide
       = f.association :status_akun, label_method: :keterangan, value_method: :id, include_blank: false, selected: 1
   - elsif Pengguna.find(current_user.id).status_akun.where("keterangan = 'Administrator'").count === 1
     .row
