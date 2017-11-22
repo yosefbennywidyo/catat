@@ -34,9 +34,36 @@
             :class => "btn btn-primary", :method => :put
         - elsif @status_surat_keluar == "Final"
           %i.fa.fa-lg.fa-archive
+      - elsif @seksi_pengguna.join == "Urusan Agama Katolik" or @seksi_pengguna.join == "Urusan Agama Kristen" or @seksi_pengguna.join == "Pendidikan Agama Katolik" or @seksi_pengguna.join == "Pendidikan Agama Kristen" or @seksi_pengguna.join == "Pendidikan Agama Islam" or @seksi_pengguna.join == "Urusan Agama Islam" or @seksi_pengguna.join == "Haji dan Umrah" or @seksi_pengguna.join == "KUA Kecamatan Katikutana"
+        - if @status_surat_keluar.nil?
+          = button_to "Kirim konsep surat", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Konsep'}),
+            :class => "btn btn-primary", :method => :put
+        - elsif @status_surat_keluar == "Revisi 1"
+          = button_to "Kirim revisi ke-1", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Koreksi 1'}),
+            :class => "btn btn-primary", :method => :put
+        - elsif @status_surat_keluar == "Revisi 2"
+          = button_to "Kirim revisi ke-2", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Koreksi 2'}),
+            :class => "btn btn-primary", :method => :put
+        - elsif @status_surat_keluar == "Revisi 3"
+          = button_to "Kirim revisi ke-3", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Koreksi 3'}),
+            :class => "btn btn-primary", :method => :put
+        - elsif @status_surat_keluar == "Revisi 4"
+          = button_to "Kirim revisi ke-4", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Koreksi 4'}),
+            :class => "btn btn-primary", :method => :put
+        - elsif @status_surat_keluar == "Revisi 5"
+          = button_to "Kirim revisi ke-5", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Koreksi 5'}),
+            :class => "btn btn-primary", :method => :put
+        - elsif @status_surat_keluar == "Revisi 6"
+          = button_to "Kirim revisi ke-6", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Koreksi 6'}),
+            :class => "btn btn-primary", :method => :put
+        - elsif @status_surat_keluar == "Revisi 6"
+          = button_to "Kirim revisi ke-6", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Final'}),
+            :class => "btn btn-primary", :method => :put
+        - elsif @status_surat_keluar == "Final"
+          %i.fa.fa-lg.fa-archive
     
     - elsif @jabatan_pengguna.join == "Kepala Sub Bagian"
-      - if @seksi_pengguna.join == "Tata Usaha"
+      - if @seksi_surat_keluar.join == "Tata Usaha"
         - if @status_surat_keluar == "Konsep"
           = button_to "Kirim koreksi ke-1", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Revisi 1'}),
             :class => "btn btn-primary", :method => :put
@@ -45,25 +72,37 @@
             :class => "btn btn-primary", :method => :put
       - else
         - if @status_surat_keluar == "Koreksi 2"
-          = button_to "Kirim koreksi ke-1", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Revisi 3'}),
+          = button_to "Kirim koreksi ke-3", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Revisi 3'}),
             :class => "btn btn-primary", :method => :put
         - elsif @status_surat_keluar == "Koreksi 3"
-          = button_to "Kirim koreksi ke-2", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Revisi 4'}),
+          = button_to "Kirim koreksi ke-4", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Revisi 4'}),
+            :class => "btn btn-primary", :method => :put
+    
+    - elsif @jabatan_pengguna.join == "Penyelenggara" or @jabatan_pengguna.join == "Kepala Seksi" or @jabatan_pengguna.join == "Kepala"
+      - if @seksi_surat_keluar.join == "Urusan Agama Katolik" or @seksi_surat_keluar.join == "Urusan Agama Kristen" or @seksi_surat_keluar.join == "Pendidikan Agama Katolik" or @seksi_surat_keluar.join == "Pendidikan Agama Kristen" or @seksi_surat_keluar.join == "Pendidikan Agama Islam" or @seksi_surat_keluar.join == "Urusan Agama Islam" or @seksi_surat_keluar.join == "Haji dan Umrah" or @seksi_surat_keluar.join == "KUA Kecamatan Katikutana"
+        - if @status_surat_keluar == "Konsep"
+          = button_to "Kirim koreksi ke-1", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Revisi 1'}),
+            :class => "btn btn-primary", :method => :put
+        - elsif @status_surat_keluar == "Koreksi 1"
+          = button_to "Kirim koreksi ke-2", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Revisi 2'}),
             :class => "btn btn-primary", :method => :put
 
     - elsif @jabatan_pengguna.join == "Kepala Kantor" or @jabatan_pengguna.join == "PLT Kepala Kantor"
-      - if @status_surat_keluar == "Koreksi 2"
-        = button_to "Kirim koreksi ke-3", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Revisi 3'}),
-          :class => "btn btn-primary", :method => :put
-      - elsif @status_surat_keluar == "Koreksi 3"
-        = button_to "Kirim koreksi ke-4", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Revisi 4'}),
-          :class => "btn btn-primary", :method => :put
-      - elsif @status_surat_keluar == "Koreksi 4"
-        = button_to "Kirim koreksi ke-4", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Revisi 5'}),
-          :class => "btn btn-primary", :method => :put
-      - elsif @status_surat_keluar == "Koreksi 5"
-        = button_to "Kirim koreksi ke-5", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Revisi 6'}),
-          :class => "btn btn-primary", :method => :put
+      - if @seksi_surat_keluar.join == "Tata Usaha"
+        - if @status_surat_keluar == "Koreksi 2"
+          = button_to "Kirim koreksi ke-3", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Revisi 3'}),
+            :class => "btn btn-primary", :method => :put
+        - elsif @status_surat_keluar == "Koreksi 3"
+          = button_to "Kirim koreksi ke-4", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Revisi 4'}),
+            :class => "btn btn-primary", :method => :put
+
+      - elsif @seksi_surat_keluar.join == "Urusan Agama Katolik" or @seksi_surat_keluar.join == "Urusan Agama Kristen" or @seksi_surat_keluar.join == "Pendidikan Agama Katolik" or @seksi_surat_keluar.join == "Pendidikan Agama Kristen" or @seksi_surat_keluar.join == "Pendidikan Agama Islam" or @seksi_surat_keluar.join == "Urusan Agama Islam" or @seksi_surat_keluar.join == "Haji dan Umrah" or @seksi_surat_keluar.join == "KUA Kecamatan Katikutana"
+        - if @status_surat_keluar == "Koreksi 4"
+          = button_to "Kirim koreksi ke-4", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Revisi 5'}),
+            :class => "btn btn-primary", :method => :put
+        - elsif @status_surat_keluar == "Koreksi 5"
+          = button_to "Kirim koreksi ke-5", surat_keluar_path(@surat_keluar, surat_keluar: {status_surat: 'Revisi 6'}),
+            :class => "btn btn-primary", :method => :put
 
   %br
   = simple_form_for [@surat_keluar, Komentar.new] do |f|
