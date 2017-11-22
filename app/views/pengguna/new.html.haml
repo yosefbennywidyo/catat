@@ -1,15 +1,16 @@
 = render 'elements/header'
 .container
 %h1.add-left-margin Membuat Pengguna
-
-= render 'form'
-
--if current_user.nil?
+- if @status_akun_pengguna == "Administrator"
+  = render 'form'
+- else
+  %p Anda tidak berhak membuat akun pengguna
+- if current_user.nil?
   %br
   .row.align-items-center.justify-content-center
     .row
       = link_to '<button class="btn btn-primary btn-circle btn-lg"><i class="fa fa-lg fa-arrow-left" title="Batal membuat pengguna"></i></button>'.html_safe, salam_index_path, class: 'center-block'
--else
+- else
   %br
   .row.align-items-center.justify-content-center
     .row
