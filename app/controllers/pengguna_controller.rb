@@ -1,6 +1,10 @@
 class PenggunaController < ApplicationController
   before_action :authorize, except: [:new]
   before_action :set_pengguna, only: [:show, :edit, :update, :destroy]
+  
+  def pemberitahuan_surat_keluar(pengguna)
+    Notification.create(notify_type: 'pemberitahuan_surat_keluar', actor: self, pengguna: pengguna)
+  end
 
   # GET /pengguna
   # GET /pengguna.json
