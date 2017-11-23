@@ -6,6 +6,7 @@
     #navbar2SupportedContent.collapse.navbar-collapse.text-center.justify-content-end
       - if current_user
         Anda masuk sebagai #{current_user.nama}.
+        = render 'notifications/pemberitahuan_surat_keluar'
         %a.btn.navbar-btn.btn-primary.ml-2.text-white{:href => logout_path}
           %i.fa.d-inline.fa-lg.fa-sign-out
           Keluar

@@ -3,7 +3,7 @@ class PenggunaController < ApplicationController
   before_action :set_pengguna, only: [:show, :edit, :update, :destroy]
   
   def pemberitahuan_surat_keluar(pengguna)
-    Notification.create(notify_type: 'pemberitahuan_surat_keluar', actor: self, pengguna: pengguna)
+    Notification.create(notify_type: 'pemberitahuan_surat_keluar', actor: self, pengguna: current_user)
   end
 
   # GET /pengguna
@@ -77,6 +77,6 @@ class PenggunaController < ApplicationController
     
     # Never trust parameters from the scary internet, only allow the white list through.
     def pengguna_params
-      params.require(:pengguna).permit(:nama, :password, :password_confirmation, surat_keluar_ids:[], status_kepegawaian_ids:[], jabatan_ids:[], seksi_ids:[], status_akun_ids:[])
+      params.require(:pengguna).permit(:nama, :password, :password_confirmation, surat_keluar_ids:[], status_kepegawaian_ids:[], jabatan_ids:[], seksi_ids:[], status_akun_ids:[], actor)
     end
 end
