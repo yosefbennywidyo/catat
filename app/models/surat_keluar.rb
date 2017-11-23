@@ -1,4 +1,7 @@
 class SuratKeluar < ApplicationRecord
+  include PublicActivity::Model
+  tracked
+  
   has_attached_file :lampiran_dokumen
   has_many :komentar, as: :commentable
   validates :judul, presence: true, length: { minimum: 8, message: "harus terdiri dari minimal 8 karakter - contoh: Undangan" }
