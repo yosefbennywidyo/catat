@@ -185,7 +185,8 @@ class SuratKeluarController < ApplicationController
 
   # GET /surat_keluar/new
   def new
-    @surat_keluar = SuratKeluar.new
+    cek_jabatan_pengguna
+    @surat_keluar = current_user.surat_keluar.new
     @seksi_pengguna_id = Pengguna.includes(:seksi).find(current_user.id).seksi.collect(&:id)
     @seksi_pengguna_nama = current_user.id
     #Pengguna.includes(:seksi).find(current_user.id).seksi.collect(&:id)
@@ -201,6 +202,7 @@ class SuratKeluarController < ApplicationController
   # POST /surat_keluar
   # POST /surat_keluar.json
   def create
+    cek_jabatan_pengguna
     @surat_keluar = current_user.surat_keluar.new(surat_keluar_params)
 
     respond_to do |format|
