@@ -1,4 +1,6 @@
 class KomentarController < ApplicationController
+  tracked owner: ->(controller, model) { controller.current_user }
+  
   before_action :authorize
   
   before_action :find_commentable
@@ -9,6 +11,7 @@ class KomentarController < ApplicationController
 
     def create
       @komentar = @commentable.komentar.new komentar_params
+      @komentar.create_activity :create, owner: current_user
       @komentar.pengomentar = current_user.nama if current_user
 
       if @komentar.save

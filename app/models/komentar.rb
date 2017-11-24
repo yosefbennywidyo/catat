@@ -5,4 +5,6 @@ class Komentar < ApplicationRecord
   validates :isi, presence: true, length: { minimum: 2, message: "harus terdiri dari minimal 2 karakter - contoh: Ok" }
   validates_attachment :lampiran
   do_not_validate_attachment_file_type :lampiran
+  
+  include PublicActivity::Common
 end
