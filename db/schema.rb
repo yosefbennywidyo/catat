@@ -10,10 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171115072600) do
+ActiveRecord::Schema.define(version: 20171127040957) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "activities", force: :cascade do |t|
+    t.string "trackable_type"
+    t.bigint "trackable_id"
+    t.string "owner_type"
+    t.bigint "owner_id"
+    t.string "key"
+    t.text "parameters"
+    t.string "recipient_type"
+    t.bigint "recipient_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["owner_id", "owner_type"], name: "index_activities_on_owner_id_and_owner_type"
+    t.index ["owner_type", "owner_id"], name: "index_activities_on_owner_type_and_owner_id"
+    t.index ["recipient_id", "recipient_type"], name: "index_activities_on_recipient_id_and_recipient_type"
+    t.index ["recipient_type", "recipient_id"], name: "index_activities_on_recipient_type_and_recipient_id"
+    t.index ["trackable_id", "trackable_type"], name: "index_activities_on_trackable_id_and_trackable_type"
+    t.index ["trackable_type", "trackable_id"], name: "index_activities_on_trackable_type_and_trackable_id"
+  end
 
   create_table "daftar_pustaka", force: :cascade do |t|
     t.string "judul"
@@ -68,6 +87,23 @@ ActiveRecord::Schema.define(version: 20171115072600) do
     t.bigint "komentar_id", null: false
   end
 
+  create_table "notifications", id: :serial, force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "actor_id"
+    t.string "notify_type", null: false
+    t.string "target_type"
+    t.integer "target_id"
+    t.string "second_target_type"
+    t.integer "second_target_id"
+    t.string "third_target_type"
+    t.integer "third_target_id"
+    t.datetime "read_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "notify_type"], name: "index_notifications_on_user_id_and_notify_type"
+    t.index ["user_id"], name: "index_notifications_on_user_id"
+  end
+
   create_table "pengguna", force: :cascade do |t|
     t.string "nama"
     t.datetime "created_at", null: false
@@ -115,6 +151,13 @@ ActiveRecord::Schema.define(version: 20171115072600) do
   create_table "sifat_surat_masuk_surat_masuk", id: false, force: :cascade do |t|
     t.bigint "sifat_surat_masuk_id", null: false
     t.bigint "surat_masuk_id", null: false
+  end
+
+  create_table "status", force: :cascade do |t|
+    t.string "status_type"
+    t.string "string"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "status_akun", force: :cascade do |t|
