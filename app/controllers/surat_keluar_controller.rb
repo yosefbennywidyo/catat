@@ -246,6 +246,10 @@ class SuratKeluarController < ApplicationController
       @status_surat_keluar = @surat_keluar.status_surat
     end
     
+    def update_status
+      Status.create(event: "Status baru")
+    end
+    
     def cek_seksi_pengguna
       @seksi_pengguna = Pengguna.includes(:seksi).find(current_user.id).seksi.collect(&:nama)
     end

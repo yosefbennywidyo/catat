@@ -9,10 +9,4 @@ class SuratKeluar < ApplicationRecord
   has_and_belongs_to_many :pengguna
   has_and_belongs_to_many :seksi
   has_many :status
-  
-  private
- 
-  def update_status
-    Status.create(event: "Status baru")
-  end
 end
