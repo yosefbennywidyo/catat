@@ -4,6 +4,6 @@ class StatusController < ApplicationController
   
   private
   def status_params
-      params.require(:status).permit(:status_type, surat_keluar_ids:[])
-    end
+    params.require(:status).permit(:status_type, surat_keluar_ids:[])
+  end
 end

@@ -1,6 +1,7 @@
 class SuratKeluarController < ApplicationController
   before_action :authorize
   before_action :set_surat_keluar, only: [:show, :edit, :update, :destroy]
+  after_update [update_status]
 
   # GET /surat_keluar
   # GET /surat_keluar.json
@@ -247,7 +248,7 @@ class SuratKeluarController < ApplicationController
     end
     
     def update_status
-      Status.create(event: "Status baru")
+      Status.create(keterangan: "Status baru")
     end
     
     def cek_seksi_pengguna
@@ -271,6 +272,6 @@ class SuratKeluarController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def surat_keluar_params
-      params.require(:surat_keluar).permit(:judul, :keterangan, :status_surat, :lampiran_dokumen, pengguna_ids:[], jabatan_ids:[], seksi_ids:[])
+      params.require(:surat_keluar).permit(:judul, :keterangan, :status_surat, :lampiran_dokumen, pengguna_ids:[], jabatan_ids:[], seksi_ids:[], status_ids:[])
     end
 end
