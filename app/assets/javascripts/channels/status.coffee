@@ -7,6 +7,7 @@ App.status = App.cable.subscriptions.create "StatusChannel",
 
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
+    $("#card-deck").append(data["judul"], data["keterangan"])
 
   update: ->
     @perform 'update'

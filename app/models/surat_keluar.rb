@@ -7,4 +7,9 @@ class SuratKeluar < ApplicationRecord
   do_not_validate_attachment_file_type :lampiran_dokumen
   has_and_belongs_to_many :pengguna
   has_and_belongs_to_many :seksi
+  
+  after_create_commit do
+    SuratKeluarCreateEventJob.perform_later(self)
+  end
+
 end
