@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get 'aktivitas/index'
+  
+  resources :aktivitas
 
   resources :derajat_pengaman
   resources :sifat_surat_masuk
