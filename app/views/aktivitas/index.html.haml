@@ -1,2 +1,3 @@
-%h1 Aktivitas#index
-%p Find me in app/views/aktivitas/index.html.haml
+%h1 Aktivitas
+- @aktivitas.each do |aktivitas|
+  = aktivitas.inspect
