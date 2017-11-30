@@ -2,4 +2,4 @@
 - @aktivitas.each do |aktivitas|
   .aktivitas
   = link_to aktivitas.owner.nama, aktivitas.owner if aktivitas.owner
-  memperbarui #{link_to aktivitas.trackable.judul, aktivitas.trackable}
+  = render_activity aktivitas
