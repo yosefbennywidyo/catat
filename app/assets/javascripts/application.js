@@ -12,4 +12,13 @@
 //
 //= require rails-ujs
 //= require turbolinks
-//= require_tree .
+//= require_tree ./channels
+$(function() {
+  $("button").click(function() {
+    // when user click button, it would perform the creation
+      // App.item would dispatch the creation function
+      // on KomentarChannel ruby instance
+      App.komentar.create($(this).val());
+      $(this).val("");
+  });
+});

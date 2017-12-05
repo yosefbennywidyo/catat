@@ -3,7 +3,7 @@
   .col-md-12
     .card.p-5.m-1
       .card-block
-        %h4
+        %h4#isi_komentar
           = komentar.isi
         %p
           = link_to '<button class="btn btn-primary btn-circle btn-m"><i class="fa fa-lg fa-cloud-download" title="Unduh lampiran"></i></button>'.html_safe, komentar.lampiran.url, class: 'center-block'
