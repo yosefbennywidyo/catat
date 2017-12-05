@@ -2,7 +2,7 @@
   %span.glyphicon.glyphicon-edit
   %small.text-muted= activity.created_at.strftime('%H:%M:%S %-d %B %Y')
   %br
-  %strong= activity.owner ? activity.owner.nama : 'Tamu'
+  %strong= activity.owner
   - if activity.trackable
     mengedit Surat Keluar #{link_to activity.trackable.judul, story_path(activity.trackable)}.
   - else
