@@ -1,0 +1,9 @@
+%li.list-group-item
+  %span.glyphicon.glyphicon-plus
+  %small.text-muted= activity.created_at.strftime('%H:%M:%S %-d %B %Y')
+  %br
+  %strong= activity.owner ? activity.owner.nama : 'Tamu'
+  - if activity.trackable
+    membuat Surat Keluar #{link_to activity.trackable.judul, story_path(activity.trackable)}.
+  - else
+    Anda tidak dapat menambahkan Surat Keluar yang telah dihapus
