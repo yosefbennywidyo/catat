@@ -1,6 +1,6 @@
 class SuratKeluar < ApplicationRecord
   include PublicActivity::Model
-  tracked
+  tracked owner: Proc.new { |controller, model| controller.current_user ? controller.current_user : nil }
   
   has_attached_file :lampiran_dokumen
   has_many :komentar, as: :commentable
