@@ -1,6 +1,9 @@
 class SuratKeluarController < ApplicationController
   before_action :authorize
   before_action :set_surat_keluar, only: [:show, :edit, :update, :destroy]
+  before_action :load_activities, only: [:index, :show, :new, :edit]
+
+
 
   # GET /surat_keluar
   # GET /surat_keluar.json
@@ -263,6 +266,10 @@ class SuratKeluarController < ApplicationController
     end
     def set_surat_keluar
       @surat_keluar = SuratKeluar.find(params[:id])
+    end
+    
+    def load_activities
+      @activities = PublicActivity::Activity.order('created_at DESC').limit(100)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
