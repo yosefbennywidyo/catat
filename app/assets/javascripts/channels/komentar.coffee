@@ -7,3 +7,9 @@ App.komentar = App.cable.subscriptions.create "KomentarChannel",
 
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
+    $("h4").append(data["isi"])
+  
+  create: (isi) ->
+    # calling perform to dispatch the create function
+    # on KomentarChannel with hash { isi: isi }
+    @perform 'create', isi: isi
