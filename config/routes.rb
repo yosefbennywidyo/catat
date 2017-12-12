@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :disposisi
   get 'aktivitas/index'
   
   resources :aktivitas

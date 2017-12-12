@@ -1,0 +1,19 @@
+%h1 Listing disposisi
+
+%table
+  %thead
+    %tr
+      %th
+      %th
+      %th
+
+  %tbody
+    - @disposisi.each do |disposisi|
+      %tr
+        %td= link_to 'Show', disposisi
+        %td= link_to 'Edit', edit_disposisi_path(disposisi)
+        %td= link_to 'Destroy', disposisi, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Disposisi', new_disposisi_path
