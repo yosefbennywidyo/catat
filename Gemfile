@@ -41,7 +41,7 @@ gem "haml-rails", "~> 1.0" # Needed to replace Rails's Erb-based generators with
 gem 'jquery-rails'
 gem "font-awesome-rails"
 gem 'simple_form'
-gem "paperclip"
+gem "paperclip", "~> 5.2.1"
 gem "public_activity"
 
 group :development, :test do
