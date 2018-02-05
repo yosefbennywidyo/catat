@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171129051647) do
+ActiveRecord::Schema.define(version: 20171212015510) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,11 @@ ActiveRecord::Schema.define(version: 20171129051647) do
     t.bigint "surat_masuk_id", null: false
   end
 
+  create_table "disposisi", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "jabatan", force: :cascade do |t|
     t.string "nama"
     t.datetime "created_at", null: false
@@ -85,6 +90,12 @@ ActiveRecord::Schema.define(version: 20171129051647) do
   create_table "komentar_pengguna", id: false, force: :cascade do |t|
     t.bigint "pengguna_id", null: false
     t.bigint "komentar_id", null: false
+  end
+
+  create_table "pemberitahuan", force: :cascade do |t|
+    t.string "kejadian"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "pengguna", force: :cascade do |t|
